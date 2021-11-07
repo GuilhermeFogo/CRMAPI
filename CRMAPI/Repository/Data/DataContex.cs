@@ -1,0 +1,22 @@
+﻿using CRMAPI.Modal;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace CRMAPI.Repository.Data
+{
+    public class DataContext : DbContext
+    {
+        public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Endereco> Enderecos { get; set; }
+
+        public DbSet<Usuario> Usuarios { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer("Server=localhost;Database=MeuCRM;User ID =sa; Password=123456;Persist Security Info=True;MultipleActiveResultSets=True");
+        }
+    }
+}
