@@ -45,6 +45,33 @@ namespace CRMAPI
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CRMAPI", Version = "v1" });
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Description =
+                        "JWT Authorization Header - utilizado com Bearer Authentication.\r\n\r\n" +
+                        "Digite 'Bearer' [espaço] e então seu token no campo abaixo.\r\n\r\n" +
+                        "Exemplo (informar sem as aspas): 'Bearer 12345abcdef'",
+                    Name = "Authorization",
+                    In = ParameterLocation.Header,
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer",
+                    BearerFormat = "JWT",
+                });
+
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        },
+                        Array.Empty<string>()
+                    }
+                });
             });
 
             services.AddCors();
@@ -56,40 +83,21 @@ namespace CRMAPI
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            //if (env.IsDevelopment())
-            //{
-            //    app.UseDeveloperExceptionPage();
-            //    app.UseSwagger();
-            //    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CRMAPI v1"));
-            //}
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "CRMAPI v1");
-                c.
-                c.AddSecurityDefinition("Bearer",
-                    new ApiKeyScheme
-                    {
-                        In = "header",
-                        Description = "Please enter into field the word 'Bearer' following by space and JWT",
-                        Name = "Authorization",
-                        Type = "apiKey"
-                    });
-                c.AddSecurityRequirement(new Dictionary<string, IEnumerable<string>> {
-                    { "Bearer", Enumerable.Empty<string>() },
             });
-                app.UseCors();
-                app.UseRouting();
+            app.UseCors();
+            app.UseRouting();
 
-                app.UseAuthorization();
+            app.UseAuthorization();
 
-                app.UseEndpoints(endpoints =>
-                {
-                    endpoints.MapControllerRoute(
-                        name: "defaut",
-                        pattern: "api/[controller]");
-                });
-
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "defaut",
+                    pattern: "api/[controller]");
             });
         }
 
