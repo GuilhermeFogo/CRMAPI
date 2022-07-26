@@ -4,6 +4,7 @@ using CRMAPI.DTO;
 using CRMAPI.Modal;
 using CRMAPI.Repository.Interfaces;
 using CRMAPI.Services.Interfaces;
+using CRMAPI.Transformar;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,30 +25,25 @@ namespace CRMAPI.Services
         {
             try
             {
-                var usu = this.usuarioRepository.PesquisaUsuario(usuario.Nome);
-                if (usu.Nome == usuario.Nome && usu.Senha == usuario.Senha)
-                {
-                    var user = this.parseUsuario(usu);
-                    return this.autenticacaoService.CriarToken(user);
-                }
 
-                return "Nome ou Senha Invalidos";
+                var usu = this.usuarioRepository.PesquisaUsuario(usuario.Nome);
+                if (usu != null)
+                {
+                    if ((usu.Nome == usuario.Nome && usu.Senha == usuario.Senha) && usu.Ativado == true)
+                    {
+                        var user = Parsers.ParseUsuarioAuth(usu);
+                        return this.autenticacaoService.CriarToken(user);
+                    }
+
+                    return null;
+                }
+                return null;
             }
             catch (Exception)
             {
                 return null;
             }
 
-        }
-
-        private UsuarioAutentic parseUsuario(Usuario usuario)
-        {
-            return new UsuarioAutentic
-            {
-                Nome = usuario.Nome,
-                Role = usuario.Role,
-                Senha = usuario.Senha
-            };
         }
     }
 }

@@ -20,12 +20,21 @@ namespace CRMAPI.Repository
 
         public void Atualizar(Usuario usuario)
         {
-            this.usuarioDB.Update(usuario);
+            var user = this.usuarioDB.Usuarios.Where((x) => x.Id == usuario.Id).FirstOrDefault();
+            user.Nome = usuario.Nome;
+            user.Role = usuario.Role;
+            user.Ativado = usuario.Ativado;
+            user.Email = usuario.Email;
+
+            this.usuarioDB.Update(user);
+            this.usuarioDB.SaveChanges();
         }
 
         public void Delete(Usuario usuario)
         {
-            this.usuarioDB.Remove(usuario);
+            var user = this.usuarioDB.Usuarios.Where((x) => x.Id == usuario.Id).FirstOrDefault();   
+            this.usuarioDB.Remove(user);
+            this.usuarioDB.SaveChanges();
         }
 
         public IEnumerable<Usuario> ListarTodos()
@@ -35,7 +44,7 @@ namespace CRMAPI.Repository
 
         public Usuario PesquisaUsuario(int id)
         {
-           var usu= this.usuarioDB.Usuarios.Where((x) => x.id == id);
+           var usu= this.usuarioDB.Usuarios.Where((x) => x.Id == id);
            return usu.AsEnumerable().FirstOrDefault();
         }
 
