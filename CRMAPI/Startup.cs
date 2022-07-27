@@ -32,6 +32,8 @@ namespace CRMAPI
     }
     public class Startup
     {
+
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -44,8 +46,8 @@ namespace CRMAPI
             InjecaoDependencia(services);
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "CRMAPI", Version = "v1" });
-                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "LGPDAPI", Version = "v1" });
+                var teste = new OpenApiSecurityScheme
                 {
                     Description =
                         "JWT Authorization Header - utilizado com Bearer Authentication.\r\n\r\n" +
@@ -53,10 +55,11 @@ namespace CRMAPI
                         "Exemplo (informar sem as aspas): 'Bearer 12345abcdef'",
                     Name = "Authorization",
                     In = ParameterLocation.Header,
-                    Type = SecuritySchemeType.ApiKey,
+                    Type = SecuritySchemeType.Http,
                     Scheme = "Bearer",
                     BearerFormat = "JWT",
-                });
+                };
+                c.AddSecurityDefinition("Bearer", teste);
 
                 c.AddSecurityRequirement(new OpenApiSecurityRequirement
                 {
@@ -73,8 +76,16 @@ namespace CRMAPI
                     }
                 });
             });
-
-            services.AddCors();
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                                  builder =>
+                                  {
+                                      builder.AllowAnyOrigin()
+                                        .AllowAnyMethod()
+                                        .AllowAnyHeader();
+                                  });
+            });
             this.Autenticacao(services);
 
 
@@ -88,7 +99,7 @@ namespace CRMAPI
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "CRMAPI v1");
             });
-            app.UseCors();
+            app.UseCors(MyAllowSpecificOrigins);
             app.UseRouting();
 
             app.UseAuthorization();
