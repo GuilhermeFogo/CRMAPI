@@ -25,14 +25,12 @@ using System.Threading.Tasks;
 
 namespace CRMAPI
 {
-
     class Segredos
     {
         public string Segredo { get; set; }
     }
     public class Startup
     {
-
         readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         public Startup(IConfiguration configuration)
         {
@@ -102,6 +100,7 @@ namespace CRMAPI
             app.UseCors(MyAllowSpecificOrigins);
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -117,12 +116,11 @@ namespace CRMAPI
             services.AddDbContext<DataContext>();
             services.AddScoped<IClienteRepository, ClienteRepository>();
             services.AddScoped<IClienteService, ClienteService>();
-
+            
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
             services.AddScoped<IUsuarioService, UsuarioService>();
             services.AddScoped<IAutenticacao, AutenticacaoService>();
             services.AddScoped<ITokenService, MeuTokenService>();
-
         }
 
         private void Autenticacao(IServiceCollection services)
@@ -137,7 +135,7 @@ namespace CRMAPI
                     x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
                 }).AddJwtBearer(token =>
                 {
-                    token.RequireHttpsMetadata = false;
+                    token.RequireHttpsMetadata = true;
                     token.SaveToken = true;
                     token.TokenValidationParameters = new TokenValidationParameters
                     {
