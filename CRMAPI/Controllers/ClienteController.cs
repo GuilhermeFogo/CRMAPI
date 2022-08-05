@@ -2,6 +2,7 @@
 using CRMAPI.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 
 namespace CRMAPI.Controllers
@@ -44,7 +45,7 @@ namespace CRMAPI.Controllers
         [Authorize(Roles = "Gerente")]
         public IActionResult Put(int id, [FromBody] ClienteDTO cliente)
         {
-            if (cliente != null && cliente.Id !=id)
+            if (cliente != null && !cliente.Id.Equals(Convert.ToString(id)))
             {
                 this.clienteService.Atualizar(cliente);
                 return Ok();

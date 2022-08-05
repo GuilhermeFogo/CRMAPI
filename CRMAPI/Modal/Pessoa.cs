@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CRMAPI
 {
-    public class Pessoa
+    public abstract class Pessoa
     {
         public string Nome { get; set; }
         public string Email { get; set; }
@@ -18,7 +18,7 @@ namespace CRMAPI
             this.Endereco = new Endereco();
         }
 
-        public Pessoa(string nome, string email, string tel, string rua, string cep, string complemento, string bairro, int id_endereco)
+        public Pessoa(string nome, string email, string tel, string rua, string cep, string complemento, string bairro, string id_endereco)
         {
             this.Endereco = new Endereco();
             this.Nome = nome;

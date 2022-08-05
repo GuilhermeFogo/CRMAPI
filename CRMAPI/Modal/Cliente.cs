@@ -11,20 +11,22 @@ namespace CRMAPI.Modal
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public string Id { get; set; }
 
         public bool consentimento { get; set; }
-
+        public bool Ativo { get; set; }
         public Cliente()
         {
             
         }
 
-        public Cliente (string nome, string email, string tel, string rua, string cep, string complemento, string bairro, int id_endereco, int id, bool consentimento):
+        public Cliente (string nome, string email, string tel, string rua, string cep, string complemento, string bairro, string id_endereco, string id, bool consentimento, 
+            bool ativo):
             base(nome,email,tel,rua,cep,complemento,bairro,id_endereco)
         {
             this.Id = id;
             this.consentimento = consentimento;
+            this.Ativo = ativo;
         }
     }
 }

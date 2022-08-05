@@ -18,11 +18,29 @@ namespace CRMAPI.Repository
 
         public void Atualizar(Cliente cliente)
         {
-            this.clientesDB.Update(cliente);        }
+            var endereço = this.clientesDB.Enderecos.Where(x => x.Id == cliente.Endereco.Id).FirstOrDefault();
+            var clientes = this.clientesDB.Clientes.Where(y => y.Id == cliente.Id).FirstOrDefault();
+            clientes.Nome = cliente.Nome;
+            clientes.Telefone = cliente.Telefone;
+            clientes.Email = cliente.Email;
+            clientes.consentimento = cliente.consentimento;
+            endereço.Rua= clientes.Endereco.Rua;
+            endereço.CEP = cliente.Endereco.CEP;
+            endereço.Bairo = cliente.Endereco.Bairo;
+            endereço.Complemento = cliente.Endereco.Complemento;
+            
+            this.clientesDB.Update(clientes);
+            this.clientesDB.Update(endereço);
+        }
 
         public void Delete(Cliente cliente)
         {
-            this.clientesDB.Remove(cliente);
+            var endereço = this.clientesDB.Enderecos.Where(x => x.Id == cliente.Endereco.Id).FirstOrDefault();
+            var clientes = this.clientesDB.Clientes.Where(y => y.Id == cliente.Id).FirstOrDefault();
+
+            this.clientesDB.Remove(clientes);
+            this.clientesDB.Remove(endereço);
+            this.clientesDB.SaveChanges();
         }
 
         public IEnumerable<Cliente> ListarTodos()
@@ -34,7 +52,8 @@ namespace CRMAPI.Repository
         public Cliente PesquisaCliente(int id)
         {
             var JoinClientes= this.JoinClientes();
-            var cliente =  JoinClientes.Where((cliente) => cliente.Id == id);
+            string ids = Convert.ToString(id);
+            var cliente =  JoinClientes.Where((cliente) => cliente.Id.Equals(ids));
             return cliente.AsEnumerable().FirstOrDefault();
         }
 
@@ -60,7 +79,8 @@ namespace CRMAPI.Repository
                     endereco.Bairo,
                     endereco.Id,
                     cliente.Id,
-                    cliente.consentimento
+                    cliente.consentimento,
+                    cliente.Ativo
                     )
                 );
 

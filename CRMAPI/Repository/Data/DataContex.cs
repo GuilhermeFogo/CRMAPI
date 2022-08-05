@@ -14,6 +14,10 @@ namespace CRMAPI.Repository.Data
 
         public DbSet<Usuario> Usuarios { get; set; }
 
+        public DbSet<Produto> Produtos { get; set; }
+
+        public DbSet<Oportunidade> Oportunidade { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Server=localhost;Database=MeuCRM;User ID =sa; Password=123456;Persist Security Info=True;MultipleActiveResultSets=True");

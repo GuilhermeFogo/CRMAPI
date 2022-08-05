@@ -11,7 +11,7 @@ namespace CRMAPI.Modal
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string Rua { get; set; }
         public string Complemento { get; set; }
         public string Bairo { get; set; }
@@ -22,7 +22,7 @@ namespace CRMAPI.Modal
 
         }
 
-        public Endereco(int id, string rua, string complemento, string bairro, string cep)
+        public Endereco(string id, string rua, string complemento, string bairro, string cep)
         {
             this.Id = id;
             this.CEP = cep;

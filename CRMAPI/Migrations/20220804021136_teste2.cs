@@ -2,7 +2,7 @@
 
 namespace CRMAPI.Migrations
 {
-    public partial class Auto_increment : Migration
+    public partial class teste2 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
