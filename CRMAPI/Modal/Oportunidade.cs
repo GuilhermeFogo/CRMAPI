@@ -20,6 +20,8 @@ namespace CRMAPI.Modal
 
         public string Tipo { get; set; }
 
+        public bool Ativo { get; set; }
+
         public Oportunidade()
         {
             this.Produto = new Produto();
