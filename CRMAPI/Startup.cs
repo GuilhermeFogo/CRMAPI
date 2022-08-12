@@ -116,7 +116,7 @@ namespace CRMAPI
             services.AddDbContext<DataContext>();
             services.AddScoped<IClienteRepository, ClienteRepository>();
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
-            services.AddScoped<IRepositoryOportunidade, RepositoryOportunidade>();
+            services.AddScoped<IRepositoryOportunidade, OportunidadeRepository>();
             
             services.AddScoped<IClienteService, ClienteService>();
             services.AddScoped<IUsuarioService, UsuarioService>();
