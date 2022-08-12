@@ -31,6 +31,7 @@ namespace CRMAPI.Repository
             
             this.clientesDB.Update(clientes);
             this.clientesDB.Update(endereço);
+            this.clientesDB.SaveChanges();
         }
 
         public void Delete(Cliente cliente)
