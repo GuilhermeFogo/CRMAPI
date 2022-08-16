@@ -120,6 +120,7 @@ namespace CRMAPI
             
             services.AddScoped<IClienteService, ClienteService>();
             services.AddScoped<IUsuarioService, UsuarioService>();
+            services.AddScoped<IServiceOportunidade, ServiceOportunidade>();
             
             services.AddScoped<IAutenticacao, AutenticacaoService>();
             services.AddScoped<ITokenService, MeuTokenService>();

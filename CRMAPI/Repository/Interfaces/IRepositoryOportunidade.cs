@@ -15,6 +15,6 @@ namespace CRMAPI.Repository.Interfaces
 
         IEnumerable<Oportunidade> ListarTodos();
 
-        Oportunidade PesquisaProduto(Oportunidade oportunidade);
+        Oportunidade PesquisaOportunidade(Oportunidade oportunidade);
     }
 }

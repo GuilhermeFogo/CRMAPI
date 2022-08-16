@@ -58,7 +58,7 @@ namespace CRMAPI.Repository
             return join.AsEnumerable<Oportunidade>().ToList();
         }
 
-        public Oportunidade PesquisaProduto(Oportunidade oportunidade)
+        public Oportunidade PesquisaOportunidade(Oportunidade oportunidade)
         {
             var pesquisa =this.JoinOportunidade().Where(x => x.Id_Oportunidade == oportunidade.Id_Oportunidade).FirstOrDefault();
             return pesquisa;

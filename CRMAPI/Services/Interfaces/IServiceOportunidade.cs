@@ -1,4 +1,5 @@
 ﻿using CRMAPI.DTO;
+using CRMAPI.Modal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,6 @@ namespace CRMAPI.Services.Interfaces
 
         IEnumerable<OportunidadeDTO> ListarTodos();
 
-        OportunidadeDTO PesquisarCliente(int id);
+        Oportunidade PesquisarOportunidade(OportunidadeDTO oportunidade);
     }
 }

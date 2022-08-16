@@ -1,6 +1,8 @@
 ﻿using CRMAPI.DTO;
+using CRMAPI.Modal;
 using CRMAPI.Repository;
 using CRMAPI.Services.Interfaces;
+using CRMAPI.Transformar;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,29 +14,41 @@ namespace CRMAPI.Services
     {
 
         private readonly OportunidadeRepository oportunidadeRepository;
+
+        public ServiceOportunidade(OportunidadeRepository oportunidadeRepository)
+        {
+            this.oportunidadeRepository = oportunidadeRepository;
+        }
+
         public void Atualizar(OportunidadeDTO oportunidade)
         {
-            throw new NotImplementedException();
+            var dado = Parsers2.OportunidadeDTO2Modal(oportunidade);
+            this.oportunidadeRepository.Atualizar(dado);
         }
 
         public void Delete(OportunidadeDTO oportunidade)
         {
-            throw new NotImplementedException();
+            var dado = Parsers2.OportunidadeDTO2Modal(oportunidade);
+            this.oportunidadeRepository.Delete(dado);
         }
 
         public IEnumerable<OportunidadeDTO> ListarTodos()
         {
-            throw new NotImplementedException();
+            var todas_opo = this.oportunidadeRepository.ListarTodos();
+            return Parsers2.ListOportunidade2DTO(todas_opo);
         }
 
-        public OportunidadeDTO PesquisarCliente(int id)
+        public Oportunidade PesquisarOportunidade(OportunidadeDTO id)
         {
-            throw new NotImplementedException();
+            var dado = Parsers2.OportunidadeDTO2Modal(id);
+            var oportunidade = this.oportunidadeRepository.PesquisaOportunidade(dado);
+            return oportunidade;
         }
 
         public void Save(OportunidadeDTO oportunidade)
         {
-            throw new NotImplementedException();
+            var transforma =Parsers2.OportunidadeDTO2Modal(oportunidade);
+            this.oportunidadeRepository.Save(transforma);
         }
     }
 }
