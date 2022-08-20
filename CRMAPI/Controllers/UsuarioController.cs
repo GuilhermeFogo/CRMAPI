@@ -1,4 +1,4 @@
-﻿
+﻿ 
 using CRMAPI.DTO;
 using CRMAPI.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
@@ -22,7 +22,7 @@ namespace CRMAPI.Controllers
 
         // GET: api/<UsuarioController>
         [HttpGet]
-        [Authorize(Roles ="Funcionario, Gerente")]
+        [Authorize(Roles ="Funcionario, Gerente, ADM")]
         public IEnumerable<UsuarioDTO> Get()
         {
             return this.usuarioServices.ListarTodos();
@@ -30,7 +30,7 @@ namespace CRMAPI.Controllers
 
         // GET api/<UsuarioController>/5
         [HttpGet("{id}")]
-        [Authorize(Roles ="Funcionario, Gerente")]
+        [Authorize(Roles ="Funcionario, Gerente, ADM")]
         public IActionResult GetUsuer(int id)
         {
             if (id > 0)
@@ -46,7 +46,7 @@ namespace CRMAPI.Controllers
 
         // POST api/<UsuarioController>
         [HttpPost]
-        [Authorize(Roles ="Funcionario, Gerente")]
+        [Authorize(Roles ="Funcionario, Gerente, ADM")]
         public IActionResult Post([FromBody] UsuarioDTO value)
         {
             if(value != null)
@@ -62,7 +62,7 @@ namespace CRMAPI.Controllers
 
         // PUT api/<UsuarioController>/5
         [HttpPut("{id}")]
-        [Authorize(Roles = "Gerente")]
+        [Authorize(Roles = "Gerente, ADM")]
         public IActionResult Put(int id, [FromBody] UsuarioDTO usuarioDTO)
         {
             if(usuarioDTO!=null && id > 0)
@@ -83,7 +83,7 @@ namespace CRMAPI.Controllers
 
         // DELETE api/<UsuarioController>/5
         [HttpDelete("{id}")]
-        [Authorize(Roles = "Gerente")]
+        [Authorize(Roles = "Gerente, ADM")]
         public IActionResult Delete(int id)
         {
             if (id > 0)

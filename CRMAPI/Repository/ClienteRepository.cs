@@ -23,7 +23,7 @@ namespace CRMAPI.Repository
             clientes.Nome = cliente.Nome;
             clientes.Telefone = cliente.Telefone;
             clientes.Email = cliente.Email;
-            clientes.consentimento = cliente.consentimento;
+            clientes.Consentimento = cliente.Consentimento;
             endereço.Rua= clientes.Endereco.Rua;
             endereço.CEP = cliente.Endereco.CEP;
             endereço.Bairo = cliente.Endereco.Bairo;
@@ -80,7 +80,7 @@ namespace CRMAPI.Repository
                     endereco.Bairo,
                     endereco.Id,
                     cliente.Id,
-                    cliente.consentimento,
+                    cliente.Consentimento,
                     cliente.Ativo
                     )
                 );

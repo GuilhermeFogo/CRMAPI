@@ -102,7 +102,7 @@ namespace CRMAPI.Transformar
                     Complemento = clienteDTO.Complemento,
                     Id = clienteDTO.Id_Endereco
                 },
-                consentimento = clienteDTO.Consentimento
+                Consentimento = clienteDTO.Consentimento
             };
         }
 
@@ -110,7 +110,7 @@ namespace CRMAPI.Transformar
         {
             return new ClienteDTO(
                 cliente.Nome, cliente.Email, cliente.Telefone, cliente.Endereco.Rua, cliente.Endereco.CEP, cliente.Endereco.Complemento, cliente.Endereco.Bairo,
-                cliente.Endereco.Id, cliente.Id, cliente.consentimento);
+                cliente.Endereco.Id, cliente.Id, cliente.Consentimento);
         }
 
 

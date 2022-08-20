@@ -34,7 +34,7 @@ namespace CRMAPI.Transformar
             {
                 Ativo_Oportunidade = oportunidade.Ativo,
                 Ativo_Cliente = oportunidade.Cliente.Ativo,
-                Consentimento = oportunidade.Cliente.consentimento,
+                Consentimento = oportunidade.Cliente.Consentimento,
                 Email_cliente = oportunidade.Cliente.Email,
                 Id_cliente = oportunidade.Cliente.Id,
                 Id_oportunidade  = oportunidade.Id_Oportunidade,

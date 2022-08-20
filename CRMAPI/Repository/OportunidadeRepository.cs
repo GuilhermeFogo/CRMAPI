@@ -36,7 +36,7 @@ namespace CRMAPI.Repository
 
             var cliente = this.DB.Clientes.Where(x => x.Id == oportunidade.Cliente.Id).FirstOrDefault();
             cliente.Email = oportunidade.Cliente.Email;
-            cliente.consentimento = oportunidade.Cliente.consentimento;
+            cliente.Consentimento = oportunidade.Cliente.Consentimento;
             cliente.Ativo = oportunidade.Cliente.Ativo;
             cliente.Nome = oportunidade.Cliente.Nome;
             cliente.Telefone = oportunidade.Cliente.Telefone;
@@ -89,7 +89,7 @@ namespace CRMAPI.Repository
             var joincliente_parcial = joinProdutos.Join(this.DB.Clientes,
                (opo2) => opo2.Id_oportunidade, (cliente) => cliente.Id,
                (opo2, cliente) => new Oportunidade(opo2.Responsavel,opo2.Id_oportunidade,opo2.Id_produto,opo2.Nome_prod,opo2.Preco,opo2.Tipo_prod,cliente.Nome,
-               cliente.Email,cliente.Telefone,"","","","","",cliente.Id,cliente.consentimento,opo2.Tipo_oportunidade));
+               cliente.Email,cliente.Telefone,"","","","","",cliente.Id,cliente.Consentimento,opo2.Tipo_oportunidade));
 
             return joincliente_parcial;
         }

@@ -39,7 +39,7 @@ namespace CRMAPI.Modal
             this.Produto.Tipo = tipo_produto;
             this.Cliente.Id = id_cliente;
             this.Cliente.Email = email;
-            this.Cliente.consentimento = consentimento;
+            this.Cliente.Consentimento = consentimento;
             this.Cliente.Endereco.Rua = rua;
             this.Cliente.Endereco.Bairo = bairro;
             this.Cliente.Endereco.CEP = cep;

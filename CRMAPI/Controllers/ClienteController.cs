@@ -19,14 +19,14 @@ namespace CRMAPI.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Funcionario, Gerente")]
+        [Authorize(Roles = "Funcionario, Gerente, ADM")]
         public IEnumerable<ClienteDTO> ListaTodos()
         {
             return this.clienteService.ListarTodos();
         }
 
         [HttpPost]
-        [Authorize(Roles =  "Funcionario, Gerente")]
+        [Authorize(Roles =  "Funcionario, Gerente, ADM")]
         public IActionResult Post([FromBody] ClienteDTO value)
         {
             if (value !=null)
@@ -42,7 +42,7 @@ namespace CRMAPI.Controllers
         }
 
         [HttpPut("{id}")]
-        [Authorize(Roles = "Gerente")]
+        [Authorize(Roles = "Gerente, ADM")]
         public IActionResult Put(int id, [FromBody] ClienteDTO cliente)
         {
             if (cliente != null && !cliente.Id.Equals(Convert.ToString(id)))
@@ -57,7 +57,7 @@ namespace CRMAPI.Controllers
         }
 
         [HttpDelete("{id}")]
-        [Authorize(Roles = "Gerente")]
+        [Authorize(Roles = "Gerente, ADM")]
         public IActionResult Delete(int id)
         {
             if (id > 0)
