@@ -1,0 +1,15 @@
+<form [formGroup]="form" autocomplete="off">
+    <mat-form-field>
+        <mat-label>Nome usuario</mat-label>
+        <input matInput formControlName="nameUser" placeholder="Nome do usuario">
+        <mat-error>Algo de errado aconteceu com o campo usuario, Tente novamente</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <mat-label>Senha</mat-label>
+        <input matInput formControlName="pass" type="password" placeholder="Sua Senha aqui">
+        <mat-error>Algo de errado aconteceu com o campo senha, Tente novamente</mat-error>
+    </mat-form-field>
+    <br>
+    <button mat-button (click)="OnSubmit()" [disabled]="form.invalid">Entar</button>
+</form>

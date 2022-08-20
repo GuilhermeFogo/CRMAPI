@@ -1,0 +1,38 @@
+<app-menu></app-menu>
+<button mat-mini-fab color="accent" (click)="Criaruser()" class="bgcolor">
+  <mat-icon>plus_one</mat-icon>
+</button>
+<table mat-table [dataSource]="dataSource">
+
+  <ng-container matColumnDef="nome">
+    <th mat-header-cell *matHeaderCellDef> Nome </th>
+    <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="role">
+    <th mat-header-cell *matHeaderCellDef> Tipo user </th>
+    <td mat-cell *matCellDef="let element"> {{element.role ==1 ?'Funcionario':element.role ==2?'Cliente' :element.role
+      ==3? 'Gerente': element.role ==4? 'ADM': 'Inexistente'}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef> E-mail </th>
+    <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="ativo">
+    <th mat-header-cell *matHeaderCellDef> Ativado ? </th>
+    <td mat-cell *matCellDef="let element"> {{element.ativado ? 'Ativado': 'Desativado'}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Edit">
+    <th mat-header-cell *matHeaderCellDef> Ações </th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-flat-button color="" (click)="Atualizar(element)">Editar</button>
+      <button mat-flat-button color="warn" (click)="Deletar(element)">Deletar</button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

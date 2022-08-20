@@ -1,0 +1,7 @@
+<div [formGroup] ="form">
+  <mat-select formControlName="roles">
+    <mat-option *ngFor="let item of array" [value]="item.values" [disabled]="item.disable">
+      {{item.viewValue}}
+    </mat-option>
+  </mat-select>
+</div>

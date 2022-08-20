@@ -1,0 +1,11 @@
+<div class="quadrado">
+    <app-btn-sair></app-btn-sair>
+    <div class="ajuste">
+        <div *ngFor="let item of configMenu" class="justify">
+            <button color="primary" mat-button (click)="Click(item.rota)" [disabled]="item.display">
+                <!-- <mat-icon>{{item.icon}}</mat-icon> -->
+                {{item.titulo}}
+            </button>
+        </div>
+    </div>
+</div>
