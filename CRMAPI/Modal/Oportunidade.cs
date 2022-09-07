@@ -13,6 +13,7 @@ namespace CRMAPI.Modal
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string Id_Oportunidade { get; set; }
         public string Responsavel { get; set; }
+        public string Aprovador { get; set; }
 
         public Produto Produto { get; set; }
 
@@ -22,14 +23,18 @@ namespace CRMAPI.Modal
 
         public bool Ativo { get; set; }
 
+        public DateTime Data { get; set; }
+        
+
         public Oportunidade()
         {
             this.Produto = new Produto();
             this.Cliente = new Cliente();
+            this.Data = new DateTime();
         }
         public Oportunidade(string responsavel, string id_oportunidade, string id_produto, string nome_produto, string preco, string tipo_produto,
             string nome_cliente, string email, string tel, string rua, string cep, string complemento, string bairro, string id_endereco, string id_cliente, bool consentimento,
-            string tipo_oportunidade) 
+            string tipo_oportunidade, DateTime data, string aprovador) 
         {
             this.Responsavel = responsavel;
             this.Id_Oportunidade = id_oportunidade;
@@ -48,6 +53,8 @@ namespace CRMAPI.Modal
             this.Cliente.Telefone = tel;
             this.Cliente.Endereco.Id = id_endereco;
             this.Tipo = tipo_oportunidade;
+            this.Data = data;
+            this.Aprovador = aprovador;
         }
     }
 }

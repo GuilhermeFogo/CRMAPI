@@ -24,8 +24,8 @@ export class MenuComponent implements OnInit {
         display: false
       },
       {
-        titulo:"Datamapping",
-        rota: "/DataMapping",
+        titulo:"Oportunidades",
+        rota: "/Oportunidades",
         display: false
       }, 
       {

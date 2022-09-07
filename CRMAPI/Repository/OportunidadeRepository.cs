@@ -83,13 +83,15 @@ namespace CRMAPI.Repository
                     Nome_prod = prod.Nome,
                     Preco = prod.Preco,
                     Tipo_prod = prod.Tipo,
-                    Ativo = opo.Ativo
+                    Ativo = opo.Ativo,
+                    Data = opo.Data,
+                    Aprovador = opo.Aprovador
                 });
 
             var joincliente_parcial = joinProdutos.Join(this.DB.Clientes,
                (opo2) => opo2.Id_oportunidade, (cliente) => cliente.Id,
                (opo2, cliente) => new Oportunidade(opo2.Responsavel,opo2.Id_oportunidade,opo2.Id_produto,opo2.Nome_prod,opo2.Preco,opo2.Tipo_prod,cliente.Nome,
-               cliente.Email,cliente.Telefone,"","","","","",cliente.Id,cliente.Consentimento,opo2.Tipo_oportunidade));
+               cliente.Email,cliente.Telefone,"","","","","",cliente.Id,cliente.Consentimento,opo2.Tipo_oportunidade,opo2.Data, opo2.Aprovador));
 
             return joincliente_parcial;
         }

@@ -1,28 +1,30 @@
-class Cliente {
+import { Endereco } from "./Endereco";
+
+export class Cliente {
     public readonly Nome: string;
     public readonly Email: string;
     public readonly Id_Cliente: string;
     public readonly Telefone: string;
-    public readonly Rua: string;
-    public readonly CEP: string;
-    public readonly Complemento: string;
-    public readonly Consentimento: string;
-    public readonly Bairro: string;
-    public readonly Id_Endereço:string;
+    public readonly endereco: Endereco;
 
-    constructor({nome, email, tel, id_cliente, rua, cep, complemento, bairro, consentimento, id_endereco}:{
-        nome: string, email:string, tel:string, id_cliente:string, rua:string, cep:string, complemento: string, bairro:string, consentimento:string, id_endereco:string
-    }) {
-        this.Nome = nome;
-        this.Bairro = bairro;
-        this.CEP = cep,
-        this.Complemento = complemento,
-        this.Consentimento = consentimento;
-        this.Email = email;
-        this.Id_Cliente = id_cliente;
-        this.Id_Endereço = id_endereco;
-        this.Rua = rua;
-        this.Telefone = tel;
+    constructor({ id_Cliente, nome, telefone, email, 
+        idEndereco, cep, complemento, estado, cidade, rua, bairro }: 
+        { id_Cliente: string, nome: string, telefone: string, email: string , 
+            idEndereco: string, cep: string, cidade: string, complemento:string, 
+            estado: string, rua: string, bairro: string}) {
+            this.Email = email;
+            this.Id_Cliente = id_Cliente;
+            this.Nome = nome;
+            this.Telefone = telefone;
+            this.endereco = new Endereco({
+                idEndereco: idEndereco,
+                cep:  cep,
+                cidade: cidade,
+                complemento: complemento,
+                estado: estado,
+                rua: rua,
+                bairro: bairro
+            })
     }
     
 }

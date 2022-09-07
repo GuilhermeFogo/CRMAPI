@@ -44,7 +44,7 @@ namespace CRMAPI
             InjecaoDependencia(services);
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "LGPDAPI", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "CRMAPI", Version = "v1" });
                 var teste = new OpenApiSecurityScheme
                 {
                     Description =

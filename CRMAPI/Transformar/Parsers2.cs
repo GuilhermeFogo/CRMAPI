@@ -45,7 +45,9 @@ namespace CRMAPI.Transformar
                 Responsavel = oportunidade.Responsavel,
                 Telefone_cliente = oportunidade.Cliente.Telefone,
                 Tipo_oportunidade = oportunidade.Tipo,
-                Tipo_Produto = oportunidade.Produto.Tipo
+                Tipo_Produto = oportunidade.Produto.Tipo,
+                Aprovador = oportunidade.Aprovador,
+                Data = oportunidade.Data
             };
         }
 

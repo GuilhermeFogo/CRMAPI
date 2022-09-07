@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GerenciaUserModule } from './Pages/gerencia-user/gerencia-user.module';
 import { LoginModule } from './Pages/login/login.module';
 import { DashboardModule } from './Pages/dashboard/dashboard.module';
+import { OportunidadesModule } from './Pages/oportunidades/oportunidades.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DashboardModule } from './Pages/dashboard/dashboard.module';
     ErrorModule,
     GerenciaUserModule,
     LoginModule,
-    DashboardModule
+    DashboardModule,
+    OportunidadesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

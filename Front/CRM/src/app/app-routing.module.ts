@@ -1,3 +1,4 @@
+import { OportunidadesComponent } from './Pages/oportunidades/oportunidades.component';
 import { GerenciaUserComponent } from './Pages/gerencia-user/gerencia-user.component';
 import { ErrorComponent } from './Pages/error/error.component';
 import { LoginBlockService } from './Services/guard/login-block.service';
@@ -13,6 +14,7 @@ const routes: Routes = [
   },
   {path:'DashBoard', component: DashboardComponent, canActivate: [GuardService]},
   {path:'Users', component: GerenciaUserComponent, canActivate: [GuardService]},
+  {path:'Oportunidades', component: OportunidadesComponent, canActivate:[GuardService]},
   {path:'**', component: ErrorComponent}
 
 ];

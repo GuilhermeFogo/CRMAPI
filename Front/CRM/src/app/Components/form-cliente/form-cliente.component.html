@@ -1,0 +1,61 @@
+<h2>{{CreateEdit}} Cliente</h2>
+<form [formGroup]="form" autocomplete="off">
+    <mat-form-field class="w-75">
+        <mat-label>Nome usuario</mat-label>
+        <input matInput formControlName="nome" placeholder="Nome do usuario">
+    </mat-form-field>
+
+    <mat-form-field class="w-75">
+        <mat-label>Telefone</mat-label>
+        <input matInput formControlName="telefone" type="tel" placeholder="(11) 999999999">
+    </mat-form-field>
+
+    <mat-form-field class="w-75">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" type="email" placeholder="email@exemple.com">
+    </mat-form-field>
+
+    <mat-form-field class="w-75">
+        <mat-label>CEP</mat-label>
+        <input matInput formControlName="cep" type="text" placeholder="000000000" (keydown.Tab)="searchCEP()"
+            (keyup.enter)="searchCEP()" maxlength="9">
+    </mat-form-field>
+
+
+    <mat-form-field class="w-75">
+        <mat-label>Rua</mat-label>
+        <input matInput formControlName="rua" type="text">
+    </mat-form-field>
+
+    <mat-form-field class="w-75 ">
+        <mat-label>Bairro</mat-label>
+        <input matInput formControlName="bairro" type="text">
+    </mat-form-field>
+
+
+    <mat-form-field class="w-75">
+        <mat-label>Cidade</mat-label>
+        <input matInput formControlName="cidade" type="text" placeholder="São Paulo">
+    </mat-form-field>
+
+    <mat-form-field class="w-75">
+        <mat-label>Estado</mat-label>
+        <input matInput formControlName="estado" type="text" placeholder="São Paulo">
+    </mat-form-field>
+
+
+    <mat-form-field class="w-75">
+        <mat-label>Complemento</mat-label>
+        <input matInput formControlName="complemento" type="text">
+    </mat-form-field>
+
+    <mat-form-field class="invisible" hidden>
+        <input matInput type="number" formControlName="id">
+    </mat-form-field>
+    <mat-form-field class="invisible" hidden>
+        <input matInput type="number" formControlName="id_Endereco">
+    </mat-form-field>
+
+    <button mat-button (click)="Onsubmit()" [disabled]="form.invalid">Salvar</button>
+    <button mat-button (click)="Close()">Sair</button>
+</form>
