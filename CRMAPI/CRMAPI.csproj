@@ -27,6 +27,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Autenticacao\Autenticacao.csproj" />
+    <ProjectReference Include="..\JWT Docsign-c#\JWT-Console\JWT-Console.csproj" />
   </ItemGroup>
 
 </Project>

@@ -2,6 +2,24 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "DocuSign.eSign.dll/5.9.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.5.0",
+          "Microsoft.IdentityModel.Protocols": "5.4.0",
+          "Newtonsoft.Json": "11.0.2",
+          "Portable.BouncyCastle": "1.8.10",
+          "RestSharp": "106.12.0",
+          "System.ComponentModel.Annotations": "4.5.0",
+          "System.IdentityModel.Tokens.Jwt": "5.4.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/DocuSign.eSign.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/DocuSign.eSign.dll": {}
+        }
+      },
       "Humanizer.Core/2.8.26": {
         "type": "package",
         "compile": {
@@ -714,8 +732,38 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {}
+        }
+      },
+      "Portable.BouncyCastle/1.8.10": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {}
+        }
+      },
       "RabbitMQ/3.6.2": {
         "type": "package"
+      },
+      "RestSharp/106.12.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/RestSharp.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/RestSharp.dll": {}
+        }
       },
       "runtime.native.System/4.3.0": {
         "type": "package",
@@ -946,7 +994,7 @@
           "System.Security.Permissions": "4.7.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {}
+          "ref/netstandard2.0/System.Configuration.ConfigurationManager.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll": {}
@@ -1335,7 +1383,7 @@
           "System.Configuration.ConfigurationManager": "4.7.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {}
+          "ref/netstandard2.0/System.Runtime.Caching.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Runtime.Caching.dll": {}
@@ -1812,10 +1860,41 @@
         "runtime": {
           "bin/placeholder/Autenticacao.dll": {}
         }
+      },
+      "JWT-Console/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "DocuSign.eSign.dll": "5.9.0",
+          "Newtonsoft.Json.Bson": "1.0.2",
+          "System.Configuration.ConfigurationManager": "4.7.0",
+          "System.Runtime.Caching": "4.7.0"
+        },
+        "compile": {
+          "bin/placeholder/JWT-Console.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/JWT-Console.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "DocuSign.eSign.dll/5.9.0": {
+      "sha512": "6Tive3sO1hMiysjbnMT4bvtTpWi1yQ+3z4WqvdIe5sfkr/9kJl49E2oqWERE509VMkX9otklSIgLHLZRP3/L/A==",
+      "type": "package",
+      "path": "docusign.esign.dll/5.9.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "docusign.esign.dll.5.9.0.nupkg.sha512",
+        "docusign.esign.dll.nuspec",
+        "lib/net452/DocuSign.eSign.dll",
+        "lib/net452/DocuSign.eSign.xml",
+        "lib/netstandard2.0/DocuSign.eSign.dll",
+        "lib/netstandard2.0/DocuSign.eSign.xml"
+      ]
+    },
     "Humanizer.Core/2.8.26": {
       "sha512": "OiKusGL20vby4uDEswj2IgkdchC1yQ6rwbIkZDVBPIR6al2b7n3pC91elBul9q33KaBgRKhbZH3+2Ur4fnWx2A==",
       "type": "package",
@@ -2836,6 +2915,42 @@
         "packageIcon.png"
       ]
     },
+    "Newtonsoft.Json.Bson/1.0.2": {
+      "sha512": "QYFyxhaABwmq3p/21VrZNYvCg3DaEoN/wUuw5nmfAf0X3HLjgupwhkEWdgfb9nvGAUIv3osmZoD3kKl4jxEmYQ==",
+      "type": "package",
+      "path": "newtonsoft.json.bson/1.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net45/Newtonsoft.Json.Bson.dll",
+        "lib/net45/Newtonsoft.Json.Bson.pdb",
+        "lib/net45/Newtonsoft.Json.Bson.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.Bson.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.Bson.pdb",
+        "lib/netstandard1.3/Newtonsoft.Json.Bson.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.Bson.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.Bson.pdb",
+        "lib/netstandard2.0/Newtonsoft.Json.Bson.xml",
+        "newtonsoft.json.bson.1.0.2.nupkg.sha512",
+        "newtonsoft.json.bson.nuspec"
+      ]
+    },
+    "Portable.BouncyCastle/1.8.10": {
+      "sha512": "XLhjNAwuVB9ynwn11l5K44eyozh8q6gFseTrlnLNttejimglX7+F9+vxh60LPjvA/DAt6fUdS43N3ah8K6eaWg==",
+      "type": "package",
+      "path": "portable.bouncycastle/1.8.10",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/BouncyCastle.Crypto.dll",
+        "lib/net40/BouncyCastle.Crypto.xml",
+        "lib/netstandard2.0/BouncyCastle.Crypto.dll",
+        "lib/netstandard2.0/BouncyCastle.Crypto.xml",
+        "portable.bouncycastle.1.8.10.nupkg.sha512",
+        "portable.bouncycastle.nuspec"
+      ]
+    },
     "RabbitMQ/3.6.2": {
       "sha512": "4g9ODHrc0eMH2qnOD4u/+dIxPDi+TaVMk7r6YTQ/F6ZZ/T84II64u8E3nJ+wohYlisDMqN5LW+6p4V/vkVdpiA==",
       "type": "package",
@@ -3027,6 +3142,22 @@
         "tools/binary/sbin/rabbitmq-server.bat",
         "tools/binary/sbin/rabbitmq-service.bat",
         "tools/binary/sbin/rabbitmqctl.bat"
+      ]
+    },
+    "RestSharp/106.12.0": {
+      "sha512": "irOsQHe5nTJB0BKxGQnTX1dsgCPl5dLTxvL7gbl98JiFPiHMN4wpFyUG/66ZpaFCsIrPKh6XwozWXlwYe9JwYQ==",
+      "type": "package",
+      "path": "restsharp/106.12.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net452/RestSharp.dll",
+        "lib/net452/RestSharp.xml",
+        "lib/netstandard2.0/RestSharp.dll",
+        "lib/netstandard2.0/RestSharp.xml",
+        "restsharp.106.12.0.nupkg.sha512",
+        "restsharp.nuspec",
+        "restsharp.png"
       ]
     },
     "runtime.native.System/4.3.0": {
@@ -6473,11 +6604,17 @@
       "type": "project",
       "path": "../Autenticacao/Autenticacao.csproj",
       "msbuildProject": "../Autenticacao/Autenticacao.csproj"
+    },
+    "JWT-Console/1.0.0": {
+      "type": "project",
+      "path": "../JWT Docsign-c#/JWT-Console/JWT-Console.csproj",
+      "msbuildProject": "../JWT Docsign-c#/JWT-Console/JWT-Console.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
       "Autenticacao >= 1.0.0",
+      "JWT-Console >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 5.0.11",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.11",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.11",
@@ -6525,6 +6662,9 @@
           "projectReferences": {
             "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\Autenticacao\\Autenticacao.csproj": {
               "projectPath": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\Autenticacao\\Autenticacao.csproj"
+            },
+            "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\JWT Docsign-c#\\JWT-Console\\JWT-Console.csproj": {
+              "projectPath": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\JWT Docsign-c#\\JWT-Console\\JWT-Console.csproj"
             }
           }
         }

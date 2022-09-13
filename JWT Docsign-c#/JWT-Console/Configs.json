@@ -1,0 +1,6 @@
+{
+  "ClientId": "6b46b067-4ad0-42d4-8717-38be7f4bb0f7",
+  "AuthServer": "account-d.docusign.com",
+  "ImpersonatedUserID": "2e6d2540-7e09-43c5-b0cc-ca2cbf33c7bd",
+  "PrivateKeyFile": "..\\JWT Docsign-c#\\JWT-Console\\private.key"
+}
