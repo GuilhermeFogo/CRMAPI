@@ -5,6 +5,8 @@ using CRMAPI.Repository.Data;
 using CRMAPI.Repository.Interfaces;
 using CRMAPI.Services;
 using CRMAPI.Services.Interfaces;
+using JWT_Console.Servicos_Gerais;
+using JWT_Console.Servicos_Gerais.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -125,6 +127,8 @@ namespace CRMAPI
             
             services.AddScoped<IAutenticacao, AutenticacaoService>();
             services.AddScoped<ITokenService, MeuTokenService>();
+
+            services.AddScoped<IEnvia_envelope, Envia_envelopeService>();
         }
 
         private void Autenticacao(IServiceCollection services)
