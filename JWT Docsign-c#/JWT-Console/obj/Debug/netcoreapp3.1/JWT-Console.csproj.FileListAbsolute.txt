@@ -36,3 +36,13 @@ C:\Users\Guilherme\Desktop\Docsign teste\JWT Docsign-c#\JWT Docsign-c#\JWT-Conso
 C:\Users\Guilherme\Desktop\Docsign teste\JWT Docsign-c#\JWT Docsign-c#\JWT-Console\obj\Debug\netcoreapp3.1\JWT-Console.dll
 C:\Users\Guilherme\Desktop\Docsign teste\JWT Docsign-c#\JWT Docsign-c#\JWT-Console\obj\Debug\netcoreapp3.1\JWT-Console.pdb
 C:\Users\Guilherme\Desktop\Docsign teste\JWT Docsign-c#\JWT Docsign-c#\JWT-Console\obj\Debug\netcoreapp3.1\JWT-Console.genruntimeconfig.cache
+C:\Users\Guilherme\Desktop\MeuTreinamento\MeuCRM\JWT Docsign-c#\JWT-Console\bin\Debug\netcoreapp3.1\JWT-Console.deps.json
+C:\Users\Guilherme\Desktop\MeuTreinamento\MeuCRM\JWT Docsign-c#\JWT-Console\bin\Debug\netcoreapp3.1\JWT-Console.dll
+C:\Users\Guilherme\Desktop\MeuTreinamento\MeuCRM\JWT Docsign-c#\JWT-Console\bin\Debug\netcoreapp3.1\JWT-Console.pdb
+C:\Users\Guilherme\Desktop\MeuTreinamento\MeuCRM\JWT Docsign-c#\JWT-Console\obj\Debug\netcoreapp3.1\JWT-Console.csproj.AssemblyReference.cache
+C:\Users\Guilherme\Desktop\MeuTreinamento\MeuCRM\JWT Docsign-c#\JWT-Console\obj\Debug\netcoreapp3.1\JWT-Console.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Guilherme\Desktop\MeuTreinamento\MeuCRM\JWT Docsign-c#\JWT-Console\obj\Debug\netcoreapp3.1\JWT-Console.AssemblyInfoInputs.cache
+C:\Users\Guilherme\Desktop\MeuTreinamento\MeuCRM\JWT Docsign-c#\JWT-Console\obj\Debug\netcoreapp3.1\JWT-Console.AssemblyInfo.cs
+C:\Users\Guilherme\Desktop\MeuTreinamento\MeuCRM\JWT Docsign-c#\JWT-Console\obj\Debug\netcoreapp3.1\JWT-Console.csproj.CoreCompileInputs.cache
+C:\Users\Guilherme\Desktop\MeuTreinamento\MeuCRM\JWT Docsign-c#\JWT-Console\obj\Debug\netcoreapp3.1\JWT-Console.dll
+C:\Users\Guilherme\Desktop\MeuTreinamento\MeuCRM\JWT Docsign-c#\JWT-Console\obj\Debug\netcoreapp3.1\JWT-Console.pdb
