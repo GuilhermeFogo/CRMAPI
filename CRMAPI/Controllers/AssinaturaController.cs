@@ -23,39 +23,15 @@ namespace CRMAPI.Controllers
         {
             this.assinaturaDigital = assinaturaDigital;
         }
-        //// GET: api/<ValuesController>
-        //[HttpGet]
-        //public IEnumerable<string> Get()
-        //{
-        //    return new string[] { "value1", "value2" };
-        //}
-
-        //// GET api/<ValuesController>/5
-        //[HttpGet("{id}")]
-        //public string Get(int id)
-        //{
-        //    return "value";
-        //}
+       
 
         // POST api/<ValuesController>
         [HttpPost]
-        //[Authorize (Roles ="Funcionario, Gerente, ADM")]
+        [Authorize (Roles ="Funcionario, Gerente, ADM")]
         [AllowAnonymous]
         public void Post([FromBody] DocsingDTO docsingDTO)
         {
             this.assinaturaDigital.EnviaAssinatura(docsingDTO.signerEmail, docsingDTO.signerName, docsingDTO.ccEmail, docsingDTO.ccName);
         }
-
-        //// PUT api/<ValuesController>/5
-        //[HttpPut("{id}")]
-        //public void Put(int id, [FromBody] string value)
-        //{
-        //}
-
-        //// DELETE api/<ValuesController>/5
-        //[HttpDelete("{id}")]
-        //public void Delete(int id)
-        //{
-        //}
     }
 }

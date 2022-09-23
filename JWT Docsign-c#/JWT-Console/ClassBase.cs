@@ -1,5 +1,4 @@
-﻿using DocuSign.CodeExamples.Authentication;
-using DocuSign.eSign.Client;
+﻿using DocuSign.eSign.Client;
 using static DocuSign.eSign.Client.Auth.OAuth;
 using static DocuSign.eSign.Client.Auth.OAuth.UserInfo;
 using eSignature.Examples;
@@ -12,30 +11,28 @@ using System.Web;
 using System.IO;
 using Newtonsoft.Json;
 using JWT_Console.ModalConfig;
+using Helpers;
 
 namespace JWT_Console
 {
-    public class Starter
+    public abstract class ClassBase
     {
+        public readonly ConfigBaseDocsign ConfigDocsignBase;
+        private OAuthToken accessToken;
         private string DevCenterPage;
-        private ConfigBaseDocsign ConfigDocsignBase { get; set; }
-        public OAuthToken accessToken { get; set; }
-
-        public Starter()
+        public ClassBase()
         {
+            var lendo = File.ReadAllText("../JWT Docsign-c#/JWT-Console/Configs.json");
+            ConfigDocsignBase = JsonConvert.DeserializeObject<ConfigBaseDocsign>(lendo);
             this.DevCenterPage = "https://developers.docusign.com/platform/auth/consent";
         }
 
-
-        public OAuthToken GetToken()
+        public OAuthToken Autenticar()
         {
-
             try
             {
-                var lendo = File.ReadAllText("../JWT Docsign-c#/JWT-Console/Configs.json");
-                this.ConfigDocsignBase = JsonConvert.DeserializeObject<ConfigBaseDocsign>(lendo);
-                
-                this.accessToken = JWTAuth.AuthenticateWithJWT("ESignature", this.ConfigDocsignBase.ClientId, this.ConfigDocsignBase.ImpersonatedUserID,
+
+                accessToken = JWTAuth.AuthenticateWithJWT("ESignature", this.ConfigDocsignBase.ClientId, this.ConfigDocsignBase.ImpersonatedUserID,
                                                             this.ConfigDocsignBase.AuthServer, this.ConfigDocsignBase.PrivateKeyFile);
             }
             catch (ApiException apiExp)
@@ -51,8 +48,8 @@ namespace JWT_Console
                     }
 
                     // build a URL to provide consent for this Integration Key and this userId
-                    string url = "https://" + ConfigurationManager.AppSettings["AuthServer"] + "/oauth/auth?response_type=code" + caret + "&scope=impersonation%20signature" + caret +
-                        "&client_id=" + ConfigurationManager.AppSettings["ClientId"] + caret + "&redirect_uri=" + DevCenterPage;
+                    string url = "https://" + ConfigDocsignBase.AuthServer + "/oauth/auth?response_type=code" + caret + "&scope=impersonation%20signature" + caret +
+                        "&client_id=" + ConfigDocsignBase.ClientId + caret + "&redirect_uri=" + DevCenterPage;
                     //Console.WriteLine($"Consent is required - launching browser (URL is {url})");
 
                     // Start new browser window for login and consent to this app by DocuSign user
@@ -73,18 +70,18 @@ namespace JWT_Console
             return this.accessToken;
         }
 
-        public void Cliente_DocSing(string signerEmail, string signerName, string ccEmail, string ccName, string docDocx, string docPdf)
-        {
-            var apiClient = new ApiClient();
-            apiClient.SetOAuthBasePath(this.ConfigDocsignBase.AuthServer);
-            UserInfo userInfo = apiClient.GetUserInfo(this.accessToken.access_token);
-            Account acct = userInfo.Accounts.FirstOrDefault();
+        //public void Cliente_DocSing(string signerEmail, string signerName, string ccEmail, string ccName, string docDocx, string docPdf)
+        //{
+        //    var apiClient = new ApiClient();
+        //    apiClient.SetOAuthBasePath(this.ConfigDocsignBase.AuthServer);
+        //    UserInfo userInfo = apiClient.GetUserInfo(this.accessToken.access_token);
+        //    Account acct = userInfo.Accounts.FirstOrDefault();
 
-            docDocx = "../JWT Docsign-c#/JWT-Console/launcher-csharp/World_Wide_Corp_salary.docx";
-            docPdf = "../JWT Docsign-c#/JWT-Console/launcher-csharp/World_Wide_Corp_lorem.pdf";
-            //Console.WriteLine("");
-            string envelopeId = SigningViaEmail.SendEnvelopeViaEmail(signerEmail, signerName, ccEmail, ccName, accessToken.access_token, acct.BaseUri + "/restapi",
-                acct.AccountId, docDocx, docPdf, "sent");
-        }
+        //    docDocx = "../JWT Docsign-c#/JWT-Console/launcher-csharp/World_Wide_Corp_salary.docx";
+        //    docPdf = "../JWT Docsign-c#/JWT-Console/launcher-csharp/World_Wide_Corp_lorem.pdf";
+        //    //Console.WriteLine("");
+        //    string envelopeId = SigningViaEmail.SendEnvelopeViaEmail(signerEmail, signerName, ccEmail, ccName, accessToken.access_token, acct.BaseUri + "/restapi",
+        //        acct.AccountId, docDocx, docPdf, "sent");
+        //}
     }
 }

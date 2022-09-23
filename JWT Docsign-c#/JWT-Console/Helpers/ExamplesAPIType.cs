@@ -1,4 +1,4 @@
-﻿namespace DocuSign.CodeExamples.Common
+﻿namespace Helpers
 {
     public enum ExamplesAPIType
     {

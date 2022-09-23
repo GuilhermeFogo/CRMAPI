@@ -1,10 +1,10 @@
-﻿using DocuSign.CodeExamples.Common;
+﻿
 using DocuSign.eSign.Client;
-using static DocuSign.eSign.Client.Auth.OAuth;
-using System.Collections.Generic;
 using System;
+using System.Collections.Generic;
+using static DocuSign.eSign.Client.Auth.OAuth;
 
-namespace DocuSign.CodeExamples.Authentication
+namespace Helpers
 {
     internal static class JWTAuth
     {
