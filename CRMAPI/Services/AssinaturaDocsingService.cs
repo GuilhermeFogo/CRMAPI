@@ -17,9 +17,10 @@ namespace CRMAPI.Services
             this.envia_Envelope = envia_Envelope;
         }
 
-        public void EnviaAssinatura(string signerEmail, string signerName, string ccEmail, string ccName)
+        public string EnviaAssinatura(string signerEmail, string signerName, string ccEmail, string ccName)
         {
-            this.envia_Envelope.Enviar(signerEmail, signerName, ccEmail, ccName);
+            var envelope =this.envia_Envelope.Enviar(signerEmail, signerName, ccEmail, ccName);
+            return envelope;
         }
     }
 }

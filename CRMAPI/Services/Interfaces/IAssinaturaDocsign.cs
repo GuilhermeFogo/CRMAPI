@@ -7,6 +7,6 @@ namespace CRMAPI.Services.Interfaces
 {
     public interface IAssinaturaDigital
     {
-        public void EnviaAssinatura(string signerEmail, string signerName, string ccEmail, string ccName);
+        public string EnviaAssinatura(string signerEmail, string signerName, string ccEmail, string ccName);
     }
 }

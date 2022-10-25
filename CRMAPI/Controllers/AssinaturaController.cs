@@ -28,10 +28,10 @@ namespace CRMAPI.Controllers
         // POST api/<ValuesController>
         [HttpPost]
         [Authorize (Roles ="Funcionario, Gerente, ADM")]
-        [AllowAnonymous]
-        public void Post([FromBody] DocsingDTO docsingDTO)
+        public IActionResult Post([FromBody] DocsingDTO docsingDTO)
         {
             this.assinaturaDigital.EnviaAssinatura(docsingDTO.signerEmail, docsingDTO.signerName, docsingDTO.ccEmail, docsingDTO.ccName);
+            return Ok();
         }
     }
 }

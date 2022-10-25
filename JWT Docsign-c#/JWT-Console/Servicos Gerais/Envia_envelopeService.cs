@@ -23,7 +23,7 @@ namespace JWT_Console.Servicos_Gerais
         }
 
 
-        public void Enviar(string signerEmail, string signerName, string ccEmail, string ccName)
+        public string Enviar(string signerEmail, string signerName, string ccEmail, string ccName)
         {
             var autenticar = Autenticar();
             this.apiClient.SetOAuthBasePath(this.ConfigDocsignBase.AuthServer);
@@ -31,10 +31,11 @@ namespace JWT_Console.Servicos_Gerais
             Account acct = userInfo.Accounts.FirstOrDefault();
 
 
-            string docDocx = Path.Combine(@"..", "..", "..", "..", "launcher-csharp", "World_Wide_Corp_salary.docx");
-            string docPdf = Path.Combine(@"..", "..", "..", "..", "launcher-csharp", "World_Wide_Corp_lorem.pdf");
-            string envelopeId = SigningViaEmail.SendEnvelopeViaEmail(signerEmail, signerName, ccEmail, ccName, autenticar.access_token, acct.BaseUri + "/restapi", acct.AccountId, docDocx, docPdf, "sent");
-            
+            string docDocx = "../JWT Docsign-c#/JWT-Console/launcher-csharp/World_Wide_Corp_salary.docx";
+            string docPdf = "../JWT Docsign-c#/JWT-Console/launcher-csharp/World_Wide_Corp_lorem.pdf";
+            string envelopeId = SigningViaEmail.SendEnvelopeViaEmail(signerEmail, signerName, ccEmail, ccName, autenticar.access_token, 
+                acct.BaseUri + "/restapi", acct.AccountId, docDocx, docPdf, "sent");
+            return envelopeId;
         }
     }
 }
