@@ -5,6 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using JWT_Console;
 using JWT_Console.Servicos_Gerais.Interfaces;
+using JWT_Console.ModalConfig;
+using CRMAPI.DTO;
 
 namespace CRMAPI.Services
 {
@@ -17,9 +19,25 @@ namespace CRMAPI.Services
             this.envia_Envelope = envia_Envelope;
         }
 
-        public string EnviaAssinatura(string signerEmail, string signerName, string ccEmail, string ccName)
+        public string EnviaAssinatura(List<DocsingDTO> docsingDTOs)
         {
-            var envelope =this.envia_Envelope.Enviar(signerEmail, signerName, ccEmail, ccName);
+
+            var lista = new List<MeuDocsign>();
+            docsingDTOs.ForEach(x =>
+            {
+            var doc3 = new MeuDocsign
+            {
+                signerEmail = x.signerEmail,
+                ccEmail = x.ccEmail,
+                ccName = x.ccName,
+                signerName = x.signerName
+            };
+            lista.Add(doc3);
+
+            });
+
+            var envelope =this.envia_Envelope.Enviar(lista);
+            
             return envelope;
         }
     }

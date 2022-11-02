@@ -4,6 +4,7 @@ using System.Text;
 using DocuSign.eSign.Api;
 using DocuSign.eSign.Client;
 using DocuSign.eSign.Model;
+using JWT_Console.ModalConfig;
 
 namespace eSignature.Examples
 {
@@ -23,20 +24,20 @@ namespace eSignature.Examples
         /// <param name="docDocx">String of bytes representing the Word document (docx)</param>
         /// <param name="envStatus">Status to set the envelope to</param>
         /// <returns>EnvelopeId for the new envelope</returns>
-        public static string SendEnvelopeViaEmail(string signerEmail, string signerName, string ccEmail, string ccName, string accessToken, string basePath, string accountId, string docDocx, string docPdf, string envStatus)
+        public static string SendEnvelopeViaEmail(List<MeuDocsign> meuDocsign, string accessToken, string basePath, string accountId, string docDocx, string docPdf, string envStatus)
         {
             // Step 1 start
-            EnvelopeDefinition env = MakeEnvelope(signerEmail, signerName, ccEmail, ccName, docDocx, docPdf, envStatus);
+            EnvelopeDefinition env = MakeEnvelope(meuDocsign, docDocx, docPdf, envStatus);
             var apiClient = new ApiClient(basePath);
             apiClient.Configuration.DefaultHeader.Add("Authorization", "Bearer " + accessToken);
-
             EnvelopesApi envelopesApi = new EnvelopesApi(apiClient);
             EnvelopeSummary results = envelopesApi.CreateEnvelope(accountId, env);
+
             return results.EnvelopeId;
             // Step 1 end
         }
 
-        private static EnvelopeDefinition MakeEnvelope(string signerEmail, string signerName, string ccEmail, string ccName, string docDocx, string docPdf, string envStatus)
+        private static EnvelopeDefinition MakeEnvelope(List<MeuDocsign> meuDocsign, string docDocx, string docPdf, string envStatus)
         {
             // Data for this method
             // signerEmail
@@ -65,16 +66,19 @@ namespace eSignature.Examples
             // Step 2 end
 
             // Step 3 start
+
+            //List<EnvelopeDefinition> listaEnvelope = new List<EnvelopeDefinition>();
             EnvelopeDefinition env = new EnvelopeDefinition();
             env.EmailSubject = "Please sign this document set";
-
             // Create document objects, one per document
-            Document doc1 = new Document();
-            string b64 = Convert.ToBase64String(document1(signerEmail, signerName, ccEmail, ccName));
-            doc1.DocumentBase64 = b64;
-            doc1.Name = "Order acknowledgement"; // can be different from actual file name
-            doc1.FileExtension = "html"; // Source data format. Signed docs are always pdf.
-            doc1.DocumentId = "1"; // a label used to reference the doc
+
+            //Document doc1 = new Document();
+            //string b64 = Convert.ToBase64String(document1(item));
+            //doc1.DocumentBase64 = b64;
+            //doc1.Name = "Order acknowledgement"; // can be different from actual file name
+            //doc1.FileExtension = "html"; // Source data format. Signed docs are always pdf.
+            //doc1.DocumentId = "1"; // a label used to reference the doc
+
             Document doc2 = new Document
             {
                 DocumentBase64 = doc2DocxBytes,
@@ -90,78 +94,23 @@ namespace eSignature.Examples
                 DocumentId = "3"
             };
             // The order in the docs array determines the order in the envelope
-            env.Documents = new List<Document> { doc1, doc2, doc3 };
+            env.Documents = new List<Document> { doc2, doc3 };
 
-            // create a signer recipient to sign the document, identified by name and email
-            // We're setting the parameters via the object creation
-            Signer signer1 = new Signer
-            {
-                Email = signerEmail,
-                Name = signerName,
-                RecipientId = "1",
-                RoutingOrder = "1"
-            };
 
-            // routingOrder (lower means earlier) determines the order of deliveries
-            // to the recipients. Parallel routing order is supported by using the
-            // same integer as the order for two or more recipients.
+            var recipients = Assinates_Com_Copia(meuDocsign);
 
-            // create a cc recipient to receive a copy of the documents, identified by name and email
-            // We're setting the parameters via setters
-            CarbonCopy cc1 = new CarbonCopy
-            {
-                Email = ccEmail,
-                Name = ccName,
-                RecipientId = "2",
-                RoutingOrder = "2"
-            };
 
-            // Create signHere fields (also known as tabs) on the documents,
-            // We're using anchor (autoPlace) positioning
-            //
-            // The DocuSign platform searches throughout your envelope's
-            // documents for matching anchor strings. So the
-            // signHere2 tab will be used in both document 2 and 3 since they
-            // use the same anchor string for their "signer 1" tabs.
-            SignHere signHere1 = new SignHere
-            {
-                AnchorString = "**signature_1**",
-                AnchorUnits = "pixels",
-                AnchorYOffset = "10",
-                AnchorXOffset = "20"
-            };
-
-            SignHere signHere2 = new SignHere
-            {
-                AnchorString = "/sn1/",
-                AnchorUnits = "pixels",
-                AnchorYOffset = "10",
-                AnchorXOffset = "20"
-            };
-
-            // Tabs are set per recipient / signer
-            Tabs signer1Tabs = new Tabs
-            {
-                SignHereTabs = new List<SignHere> { signHere1, signHere2 }
-            };
-            signer1.Tabs = signer1Tabs;
-
-            // Add the recipients to the envelope object
-            Recipients recipients = new Recipients
-            {
-                Signers = new List<Signer> { signer1 },
-                CarbonCopies = new List<CarbonCopy> { cc1 }
-            };
             env.Recipients = recipients;
             // Request that the envelope be sent by setting |status| to "sent".
             // To request that the envelope be created as a draft, set to "created"
             env.Status = envStatus;
+            //listaEnvelope.Add(env);
 
             return env;
             // Step 3 end
         }
 
-        private static byte[] document1(string signerEmail, string signerName, string ccEmail, string ccName)
+        private static byte[] document1(string signerName, string signerEmail, string ccName, string ccEmail)
         {
             // Data for this method
             // signerEmail
@@ -169,7 +118,7 @@ namespace eSignature.Examples
             // ccEmail
             // ccName
 
-            return Encoding.UTF8.GetBytes(
+            var encode = Encoding.UTF8.GetBytes(
             " <!DOCTYPE html>\n" +
                 "    <html>\n" +
                 "        <head>\n" +
@@ -192,6 +141,85 @@ namespace eSignature.Examples
                 "        </body>\n" +
                 "    </html>"
                 );
+
+            return encode;
         }
+
+
+        private static Recipients Assinates_Com_Copia(List<MeuDocsign> meuDocsign)
+        {
+
+            var lista_assinantes = new List<Signer>();
+            var lista_CC = new List<CarbonCopy>();
+            int contar = 1;
+
+            meuDocsign.ForEach(x =>
+            {
+                Signer signerX = new Signer
+                {
+                    Email = x.signerEmail,
+                    Name = x.signerName,
+                    RecipientId = contar.ToString(),
+                    RoutingOrder = contar.ToString()
+                };
+                contar++;
+                lista_assinantes.Add(signerX);
+            });
+
+            meuDocsign.ForEach(y =>
+            {
+                CarbonCopy ccx = new CarbonCopy
+                {
+                    Email = y.ccEmail,
+                    Name = y.ccName,
+                    RecipientId = contar.ToString(),
+                    RoutingOrder = contar.ToString()
+                };
+                contar++;
+                lista_CC.Add(ccx);
+            });
+
+            for (int i = 0; i < lista_assinantes.Count; i++)
+            {
+                SignHere signHere1 = new SignHere
+                {
+                    AnchorString = "**signature_1**",
+                    AnchorUnits = "pixels",
+                    AnchorYOffset = "10",
+                    AnchorXOffset = "20"
+                };
+
+                SignHere signHere2 = new SignHere
+                {
+                    AnchorString = "/sn1/",
+                    AnchorUnits = "pixels",
+                    AnchorYOffset = "10",
+                    AnchorXOffset = "20"
+                };
+
+                // Tabs are set per recipient / signer
+                Tabs signer1Tabs = new Tabs
+                {
+                    SignHereTabs = new List<SignHere> { signHere1, signHere2 }
+                };
+                lista_assinantes[i].Tabs = signer1Tabs;
+
+            }
+
+
+
+
+            // Add the recipients to the envelope object
+            Recipients recipients = new Recipients
+            {
+                Signers = lista_assinantes,
+                CarbonCopies = lista_CC
+            };
+
+            return recipients;
+
+        }
+
+
     }
 }

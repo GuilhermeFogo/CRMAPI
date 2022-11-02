@@ -28,9 +28,9 @@ namespace CRMAPI.Controllers
         // POST api/<ValuesController>
         [HttpPost]
         [Authorize (Roles ="Funcionario, Gerente, ADM")]
-        public IActionResult Post([FromBody] DocsingDTO docsingDTO)
+        public IActionResult Post([FromBody] List<DocsingDTO> docsingDTO)
         {
-            this.assinaturaDigital.EnviaAssinatura(docsingDTO.signerEmail, docsingDTO.signerName, docsingDTO.ccEmail, docsingDTO.ccName);
+            this.assinaturaDigital.EnviaAssinatura(docsingDTO);
             return Ok();
         }
     }
