@@ -43,7 +43,9 @@ export class FormClienteComponent implements OnInit {
         estado:['', Validators.required],
         complemento:[''],
         bairro:['', Validators.required],
-        id_Endereco:['', Validators.required]
+        id_Endereco:['', Validators.required],
+        cnpj:['', Validators.required],
+        cpf:['', Validators.required]
       })
     } else {
       this.CreateEdit = "Editando";
@@ -58,7 +60,9 @@ export class FormClienteComponent implements OnInit {
         estado:[this.data.endereco.estado, Validators.required],
         bairro:[this.data.endereco.bairro, Validators.required],
         complemento:[this.data.endereco.complemento],
-        id_Endereco:[this.data.endereco.id_Endereco, Validators.required]
+        id_Endereco:[this.data.endereco.id_Endereco, Validators.required],
+        cnpj:[this.data.CNPJ, Validators.required],
+        cpf:[this.data.CPF, Validators.required]
       })
     }
   }
@@ -112,7 +116,9 @@ export class FormClienteComponent implements OnInit {
         estado: this.f.estado.value,
         idEndereco:"0",
         rua: this.f.rua.value,
-        bairro: this.f.bairro.value
+        bairro: this.f.bairro.value,
+        cnpj :this.f.cnpj.value,
+        cpf: this.f.cpf.value
       })
       return newCliente;
     } else {
@@ -127,7 +133,9 @@ export class FormClienteComponent implements OnInit {
         estado: this.f.estado.value,
         idEndereco: this.f.id_Endereco.value,
         rua: this.f.rua.value,
-        bairro: this.f.bairro.value
+        bairro: this.f.bairro.value,
+        cnpj :this.f.cnpj.value,
+        cpf: this.f.cpf.value
       })
       return editCliente;
     }

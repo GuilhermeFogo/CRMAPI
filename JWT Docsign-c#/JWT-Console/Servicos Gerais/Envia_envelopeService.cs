@@ -47,7 +47,7 @@ namespace JWT_Console.Servicos_Gerais
             var envelopeId = SigningViaEmail.SendEnvelopeViaEmail(lista, autenticar.access_token, acct.BaseUri + "/restapi", acct.AccountId, docDocx, docPdf, "sent");
 
 
-            return null;
+            return envelopeId;
         }
 
         public string Enviar(List<MeuDocsign> meuDocsign)

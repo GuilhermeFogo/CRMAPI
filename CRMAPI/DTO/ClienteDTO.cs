@@ -12,14 +12,19 @@ namespace CRMAPI.DTO
         public string Email { get; set; }
         public string Telefone { get; set; }
 
+        public string CNPJ { get; set; }
+        public string CPF { get; set; }
         public string Id_Endereco { get; set; }
         public string Rua { get; set; }
         public string Complemento { get; set; }
         public string Bairo { get; set; }
         public string CEP { get; set; }
 
+        public bool Ativo { get; set; }
+
         public bool Consentimento { get; set; }
-        public ClienteDTO(string nome, string email, string tel, string rua, string cep, string complemento, string bairro, string id_endereco, string id, bool consentimento)
+        public ClienteDTO(string nome, string email, string tel, string rua, string cep, string complemento, 
+            string bairro, string id_endereco, string id, bool consentimento, string cnpj, string cpf)
         {
             this.Id = id;
             this.Id_Endereco = id_endereco;
@@ -31,6 +36,8 @@ namespace CRMAPI.DTO
             this.Bairo = bairro;
             this.CEP = cep;
             this.Consentimento = consentimento;
+            this.CPF = cpf;
+            this.CNPJ = cnpj;
 
         }
 

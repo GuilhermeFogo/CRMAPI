@@ -81,7 +81,9 @@ namespace CRMAPI.Repository
                     endereco.Id,
                     cliente.Id,
                     cliente.Consentimento,
-                    cliente.Ativo
+                    cliente.Ativo,
+                    cliente.CNPJ,
+                    cliente.CPF
                     )
                 );
 

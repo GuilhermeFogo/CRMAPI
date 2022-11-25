@@ -25,7 +25,8 @@ namespace CRMAPI.DTO
         public string Nome_cliente { get; set; }
         public string Email_cliente { get; set; }
         public string Telefone_cliente { get; set; }
-
+        public string CPF_cliente { get; set; }
+        public string CNPJ_Cliente { get; set; }
         public DateTime Data { get; set; }
         public string Aprovador { get; set; }
     }
