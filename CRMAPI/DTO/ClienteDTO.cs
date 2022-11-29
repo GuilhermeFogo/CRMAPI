@@ -7,14 +7,14 @@ namespace CRMAPI.DTO
 {
     public class ClienteDTO : IComparable
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string Nome { get; set; }
         public string Email { get; set; }
         public string Telefone { get; set; }
 
         public string CNPJ { get; set; }
         public string CPF { get; set; }
-        public string Id_Endereco { get; set; }
+        public int Id_Endereco { get; set; }
         public string Rua { get; set; }
         public string Complemento { get; set; }
         public string Bairo { get; set; }
@@ -24,7 +24,7 @@ namespace CRMAPI.DTO
 
         public bool Consentimento { get; set; }
         public ClienteDTO(string nome, string email, string tel, string rua, string cep, string complemento, 
-            string bairro, string id_endereco, string id, bool consentimento, string cnpj, string cpf)
+            string bairro, int id_endereco, int id, bool consentimento, string cnpj, string cpf)
         {
             this.Id = id;
             this.Id_Endereco = id_endereco;

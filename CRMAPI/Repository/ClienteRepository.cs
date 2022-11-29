@@ -28,6 +28,8 @@ namespace CRMAPI.Repository
             endereço.CEP = cliente.Endereco.CEP;
             endereço.Bairo = cliente.Endereco.Bairo;
             endereço.Complemento = cliente.Endereco.Complemento;
+            clientes.CPF = cliente.CPF;
+            clientes.CNPJ = cliente.CNPJ;
             
             this.clientesDB.Update(clientes);
             this.clientesDB.Update(endereço);

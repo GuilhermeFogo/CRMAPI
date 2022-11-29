@@ -8,17 +8,17 @@ namespace CRMAPI.DTO
     public class OportunidadeDTO
     {
         public string Responsavel { get; set; }
-        public string Id_oportunidade { get; set; }
+        public int Id_oportunidade { get; set; }
         public string Tipo_oportunidade { get; set; }
 
         public bool Ativo_Oportunidade { get; set; }
 
-        public string Id_produto { get; set; }
+        public int Id_produto { get; set; }
         public string Nome_produto { get; set; }
         public string Preco_produto { get; set; }
         public string Tipo_Produto { get; set; }
 
-        public string Id_cliente { get; set; }
+        public int Id_cliente { get; set; }
         public bool Consentimento { get; set; }
         public bool Ativo_Cliente { get; set; }
 

@@ -62,7 +62,9 @@ namespace CRMAPI.Services
                     Complemento = clienteDTO.Complemento,
                     Id = clienteDTO.Id_Endereco
                 },
-                Consentimento = clienteDTO.Consentimento
+                Consentimento = clienteDTO.Consentimento,
+                CNPJ = clienteDTO.CNPJ,
+                CPF = clienteDTO.CPF
             };
         }
 

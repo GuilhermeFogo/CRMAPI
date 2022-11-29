@@ -52,15 +52,15 @@ export class FormClienteComponent implements OnInit {
       this.form = this.fb.group({
         nome: [this.data.Nome, [Validators.required]],
         telefone: [this.data.Telefone, [Validators.required]],
-        id: [this.data.Id_Cliente],
+        id: [this.data.Id],
         email: [this.data.Email, [Validators.required, Validators.email]],
-        rua: [this.data.endereco.rua,[Validators.required]],
-        cep: [this.data.endereco.cep, [Validators.required, Validators.maxLength(9)]],
-        cidade: [this.data.endereco.cidade, Validators.required],
-        estado:[this.data.endereco.estado, Validators.required],
-        bairro:[this.data.endereco.bairro, Validators.required],
-        complemento:[this.data.endereco.complemento],
-        id_Endereco:[this.data.endereco.id_Endereco, Validators.required],
+        rua: [this.data.rua,[Validators.required]],
+        cep: [this.data.cep, [Validators.required, Validators.maxLength(9)]],
+        cidade: [this.data.cidade, Validators.required],
+        estado:[this.data.estado, Validators.required],
+        bairro:[this.data.bairro, Validators.required],
+        complemento:[this.data.complemento],
+        id_Endereco:[this.data.id_Endereco, Validators.required],
         cnpj:[this.data.CNPJ, Validators.required],
         cpf:[this.data.CPF, Validators.required]
       })
@@ -87,7 +87,7 @@ export class FormClienteComponent implements OnInit {
         if (!this.data) {
            this.CamposPreenchido("0", x)
         } else {
-          this.CamposPreenchido(this.data.endereco.id_Endereco, x)
+          this.CamposPreenchido(this.data.id_Endereco, x)
         }
   
       }, error => { console.log(error) })
@@ -118,7 +118,9 @@ export class FormClienteComponent implements OnInit {
         rua: this.f.rua.value,
         bairro: this.f.bairro.value,
         cnpj :this.f.cnpj.value,
-        cpf: this.f.cpf.value
+        cpf: this.f.cpf.value,
+        ativo: true,
+        consentimento: true
       })
       return newCliente;
     } else {
@@ -135,7 +137,9 @@ export class FormClienteComponent implements OnInit {
         rua: this.f.rua.value,
         bairro: this.f.bairro.value,
         cnpj :this.f.cnpj.value,
-        cpf: this.f.cpf.value
+        cpf: this.f.cpf.value,
+        ativo: true,
+        consentimento: true
       })
       return editCliente;
     }

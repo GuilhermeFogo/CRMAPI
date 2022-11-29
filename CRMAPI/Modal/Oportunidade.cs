@@ -11,7 +11,7 @@ namespace CRMAPI.Modal
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public string Id_Oportunidade { get; set; }
+        public int Id_Oportunidade { get; set; }
         public string Responsavel { get; set; }
         public string Aprovador { get; set; }
 
@@ -32,8 +32,8 @@ namespace CRMAPI.Modal
             this.Cliente = new Cliente();
             this.Data = new DateTime();
         }
-        public Oportunidade(string responsavel, string id_oportunidade, string id_produto, string nome_produto, string preco, string tipo_produto,
-            string nome_cliente, string email, string tel, string rua, string cep, string complemento, string bairro, string id_endereco, string id_cliente, bool consentimento,
+        public Oportunidade(string responsavel, int id_oportunidade, int id_produto, string nome_produto, string preco, string tipo_produto,
+            string nome_cliente, string email, string tel, string rua, string cep, string complemento, string bairro, int id_endereco, int id_cliente, bool consentimento,
             string tipo_oportunidade, DateTime data, string aprovador) 
         {
             this.Responsavel = responsavel;

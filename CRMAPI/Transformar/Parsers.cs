@@ -100,7 +100,7 @@ namespace CRMAPI.Transformar
                     Bairo = clienteDTO.Bairo,
                     CEP = clienteDTO.CEP,
                     Complemento = clienteDTO.Complemento,
-                    Id = clienteDTO.Id_Endereco
+                    Id = clienteDTO.Id_Endereco,
                 },
                 Consentimento = clienteDTO.Consentimento,
                 CNPJ = clienteDTO.CNPJ,

@@ -1,3 +1,5 @@
+import { CookieService } from './../../cookie/cookie.service';
+import { HelperRequests } from 'src/app/Helper/helper-requests';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -7,28 +9,41 @@ import { Cliente } from 'src/app/Modal/Cliente';
 @Injectable({
   providedIn: 'root'
 })
-export class ClienteService {
+export class ClienteService extends HelperRequests {
   private readonly http: HttpClient;
   private readonly url: string;
-  constructor(http: HttpClient) {
+  constructor(http: HttpClient, cookie: CookieService) {
+    super(cookie)
     this.http = http;
-    this.url = environment.Local + "api/Cliente/";
+    this.url = environment.Local + "/api/Cliente";
   }
 
   public VerClientes(): Observable<Cliente[]> {
-    return this.http.get<Cliente[]>(this.url);
+    const header = this.Ajudarequest();
+    return this.http.get<Cliente[]>(this.url,{
+      headers: header
+    });
   }
 
   public PostCliente(cliente: Cliente): Observable<Cliente> {
-    return this.http.post<Cliente>(this.url, cliente);
+    const header = this.Ajudarequest();
+    return this.http.post<Cliente>(this.url, cliente,{
+      headers: header
+    });
   }
 
   public PutCliente(cliente: Cliente): Observable<Cliente> {
-    return this.http.put<Cliente>(this.url, cliente);
+    const header = this.Ajudarequest();
+    return this.http.put<Cliente>(this.url, cliente,{
+      headers:header
+    });
   }
 
   public DeleteCliente(cliente:Cliente): Observable<Cliente> {
-    return this.http.delete<Cliente>(this.url+ cliente.Id_Cliente);
+    const header = this.Ajudarequest();
+    return this.http.delete<Cliente>(this.url+ cliente.Id,{
+      headers: header
+    });
   }
 
 }

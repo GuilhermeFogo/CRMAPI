@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CRMAPI.Migrations
 {
-    public partial class abc1 : Migration
+    public partial class Criar_DB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -10,7 +11,8 @@ namespace CRMAPI.Migrations
                 name: "Enderecos",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Rua = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Complemento = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Bairo = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -25,7 +27,8 @@ namespace CRMAPI.Migrations
                 name: "Produtos",
                 columns: table => new
                 {
-                    Id_produto = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Id_produto = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Nome = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Preco = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Tipo = table.Column<string>(type: "nvarchar(max)", nullable: true)
@@ -56,12 +59,16 @@ namespace CRMAPI.Migrations
                 name: "Clientes",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    consentimento = table.Column<bool>(type: "bit", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CPF = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CNPJ = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Consentimento = table.Column<bool>(type: "bit", nullable: false),
+                    Ativo = table.Column<bool>(type: "bit", nullable: false),
                     Nome = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Telefone = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    EnderecoId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    EnderecoId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -78,13 +85,25 @@ namespace CRMAPI.Migrations
                 name: "Oportunidade",
                 columns: table => new
                 {
-                    Id_Oportunidade = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Id_Oportunidade = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Responsavel = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ProdutoId_produto = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    Aprovador = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ProdutoId_produto = table.Column<int>(type: "int", nullable: true),
+                    ClienteId = table.Column<int>(type: "int", nullable: true),
+                    Tipo = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Ativo = table.Column<bool>(type: "bit", nullable: false),
+                    Data = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Oportunidade", x => x.Id_Oportunidade);
+                    table.ForeignKey(
+                        name: "FK_Oportunidade_Clientes_ClienteId",
+                        column: x => x.ClienteId,
+                        principalTable: "Clientes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Oportunidade_Produtos_ProdutoId_produto",
                         column: x => x.ProdutoId_produto,
@@ -99,6 +118,11 @@ namespace CRMAPI.Migrations
                 column: "EnderecoId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Oportunidade_ClienteId",
+                table: "Oportunidade",
+                column: "ClienteId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Oportunidade_ProdutoId_produto",
                 table: "Oportunidade",
                 column: "ProdutoId_produto");
@@ -107,19 +131,19 @@ namespace CRMAPI.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Clientes");
-
-            migrationBuilder.DropTable(
                 name: "Oportunidade");
 
             migrationBuilder.DropTable(
                 name: "Usuarios");
 
             migrationBuilder.DropTable(
-                name: "Enderecos");
+                name: "Clientes");
 
             migrationBuilder.DropTable(
                 name: "Produtos");
+
+            migrationBuilder.DropTable(
+                name: "Enderecos");
         }
     }
 }

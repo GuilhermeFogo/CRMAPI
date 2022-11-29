@@ -25,7 +25,7 @@ namespace CRMAPI.Transformar
                     oportunidadeDTO.Tipo_Produto
                 ),
                 Cliente = new Cliente(oportunidadeDTO.Nome_cliente, oportunidadeDTO.Email_cliente, oportunidadeDTO.Telefone_cliente,
-                "", "", "", "", oportunidadeDTO.Id_cliente, oportunidadeDTO.Id_cliente, oportunidadeDTO.Consentimento, 
+                "", "", "", "", 0, oportunidadeDTO.Id_cliente, oportunidadeDTO.Consentimento, 
                 oportunidadeDTO.Ativo_Cliente,oportunidadeDTO.CNPJ_Cliente, oportunidadeDTO.CPF_cliente)
             };
         }

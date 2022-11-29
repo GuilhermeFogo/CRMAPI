@@ -1,3 +1,5 @@
+import { Cliente } from './../../Modal/Cliente';
+import { ClienteService } from './../../Services/HTTP/Cliente/cliente.service';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -11,11 +13,12 @@ import { FormClienteComponent } from 'src/app/Components/form-cliente/form-clien
 export class OportunidadesComponent implements OnInit {
   
   private dialog: MatDialog;
-  
+  private readonly ClienteService: ClienteService;
   private snackBar: MatSnackBar;
-  constructor(dialog: MatDialog,  _snackBar: MatSnackBar) {
+  constructor(dialog: MatDialog, _snackBar: MatSnackBar, clienteService: ClienteService) {
     this.dialog = dialog;
     this.snackBar = _snackBar;
+    this.ClienteService = clienteService
   }
   ngOnInit(): void {
   }
@@ -27,6 +30,7 @@ export class OportunidadesComponent implements OnInit {
     }).afterClosed().subscribe(x => {
       if (x != undefined) {
         console.log(x);
+        this.PostCliente(x);
       }
     });
   }
@@ -34,5 +38,16 @@ export class OportunidadesComponent implements OnInit {
   
   public AbrirModalProduto(){
     
+  }
+
+  private PostCliente(cliente: Cliente){
+    this.ClienteService.PostCliente(cliente).subscribe(x=>{
+      this.snackBar.open("Cliente cadastrado com exito", "OK");
+      console.log(x);
+      
+    }, error=>{
+      this.snackBar.open("Aconteceu algum erro", "OK");
+      console.log(error);
+    })
   }
 }

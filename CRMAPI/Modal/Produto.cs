@@ -11,7 +11,7 @@ namespace CRMAPI.Modal
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public string Id_produto { get; set; }
+        public int Id_produto { get; set; }
         public string Nome { get; set; }
         public string Preco { get; set; }
         public string Tipo { get; set; }
@@ -20,7 +20,7 @@ namespace CRMAPI.Modal
         {
 
         }
-        public Produto( string Id_produto, string nome, string preco, string tipo)
+        public Produto( int Id_produto, string nome, string preco, string tipo)
         {
             this.Id_produto = Id_produto;
             this.Nome = nome;

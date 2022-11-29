@@ -21,9 +21,10 @@ namespace CRMAPI.Migrations
 
             modelBuilder.Entity("CRMAPI.Modal.Cliente", b =>
                 {
-                    b.Property<string>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<bool>("Ativo")
                         .HasColumnType("bit");
@@ -40,8 +41,8 @@ namespace CRMAPI.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("EnderecoId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int?>("EnderecoId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");
@@ -58,9 +59,10 @@ namespace CRMAPI.Migrations
 
             modelBuilder.Entity("CRMAPI.Modal.Endereco", b =>
                 {
-                    b.Property<string>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Bairo")
                         .HasColumnType("nvarchar(max)");
@@ -81,9 +83,10 @@ namespace CRMAPI.Migrations
 
             modelBuilder.Entity("CRMAPI.Modal.Oportunidade", b =>
                 {
-                    b.Property<string>("Id_Oportunidade")
+                    b.Property<int>("Id_Oportunidade")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Aprovador")
                         .HasColumnType("nvarchar(max)");
@@ -91,14 +94,14 @@ namespace CRMAPI.Migrations
                     b.Property<bool>("Ativo")
                         .HasColumnType("bit");
 
-                    b.Property<string>("ClienteId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int?>("ClienteId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("Data")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("ProdutoId_produto")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int?>("ProdutoId_produto")
+                        .HasColumnType("int");
 
                     b.Property<string>("Responsavel")
                         .HasColumnType("nvarchar(max)");
@@ -117,9 +120,10 @@ namespace CRMAPI.Migrations
 
             modelBuilder.Entity("CRMAPI.Modal.Produto", b =>
                 {
-                    b.Property<string>("Id_produto")
+                    b.Property<int>("Id_produto")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");

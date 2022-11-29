@@ -11,7 +11,7 @@ namespace CRMAPI.Modal
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public string Id { get; set; }
+        public int Id { get; set; }
 
         public string CPF { get; set; }
         public string CNPJ { get; set; }
@@ -22,7 +22,7 @@ namespace CRMAPI.Modal
             
         }
 
-        public Cliente (string nome, string email, string tel, string rua, string cep, string complemento, string bairro, string id_endereco, string id, bool consentimento, 
+        public Cliente (string nome, string email, string tel, string rua, string cep, string complemento, string bairro, int id_endereco, int id, bool consentimento, 
             bool ativo, string cnpj, string cpf):
             base(nome,email,tel,rua,cep,complemento,bairro,id_endereco)
         {
