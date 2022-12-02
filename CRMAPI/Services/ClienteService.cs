@@ -64,7 +64,8 @@ namespace CRMAPI.Services
                 },
                 Consentimento = clienteDTO.Consentimento,
                 CNPJ = clienteDTO.CNPJ,
-                CPF = clienteDTO.CPF
+                CPF = clienteDTO.CPF,
+                Ativo = clienteDTO.Ativo
             };
         }
 

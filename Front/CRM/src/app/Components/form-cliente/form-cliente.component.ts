@@ -44,7 +44,7 @@ export class FormClienteComponent implements OnInit {
         complemento:[''],
         bairro:['', Validators.required],
         id_Endereco:['', Validators.required],
-        cnpj:['', Validators.required],
+        cnpj:['',[Validators.required]],
         cpf:['', Validators.required]
       })
     } else {
@@ -79,6 +79,8 @@ export class FormClienteComponent implements OnInit {
   }
 
 
+
+
   public searchCEP(){
     this.getCEP(this.f.cep.value)
   }
@@ -103,6 +105,19 @@ export class FormClienteComponent implements OnInit {
   }
 
 
+  public ValidaCampoCNPJ(){
+
+    if(this.form.get("cnpj")?.value !="" &&this.form.get("cnpj")?.value !=0){
+      this.form.get("cpf")?.setValue("0");
+    }
+  } 
+
+  public ValidaCampoCPF(){
+    if(this.form.get("cpf")?.value !="" && this.form.get("cpf")?.value !=0){
+      this.form.get("cnpj")?.setValue("0");
+    }
+  }
+
   private MyClient(): Cliente {
     if (!this.data) {
       const newCliente = new Cliente({
@@ -117,8 +132,8 @@ export class FormClienteComponent implements OnInit {
         idEndereco:"0",
         rua: this.f.rua.value,
         bairro: this.f.bairro.value,
-        cnpj :this.f.cnpj.value,
-        cpf: this.f.cpf.value,
+        cnpj :this.f.cnpj.value.toString(),
+        cpf: this.f.cpf.value.toString(),
         ativo: true,
         consentimento: true
       })
@@ -136,8 +151,8 @@ export class FormClienteComponent implements OnInit {
         idEndereco: this.f.id_Endereco.value,
         rua: this.f.rua.value,
         bairro: this.f.bairro.value,
-        cnpj :this.f.cnpj.value,
-        cpf: this.f.cpf.value,
+        cnpj :this.f.cnpj.value.toString(),
+        cpf: this.f.cpf.value.toString(),
         ativo: true,
         consentimento: true
       })

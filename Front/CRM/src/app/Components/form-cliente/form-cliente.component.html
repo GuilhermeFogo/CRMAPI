@@ -2,17 +2,19 @@
 <form [formGroup]="form" autocomplete="off">
     <mat-form-field class="w-75">
         <mat-label>Nome Cliente</mat-label>
-        <input matInput formControlName="nome" placeholder="Nome do usuario">
+        <input matInput type="text" formControlName="nome" placeholder="Nome do usuario">
     </mat-form-field>
 
     <mat-form-field class="w-75">
         <mat-label>CNPJ</mat-label>
-        <input matInput formControlName="cnpj" placeholder="Nome do usuario">
+        <input matInput type="number" formControlName="cnpj" placeholder="Digite o CNPJ" (keydown.Tab)="ValidaCampoCNPJ()" 
+        (focusin)="ValidaCampoCNPJ()" (focusout)="ValidaCampoCNPJ()">
     </mat-form-field>
 
     <mat-form-field class="w-75">
         <mat-label>CPF</mat-label>
-        <input matInput formControlName="cpf" placeholder="Nome do usuario">
+        <input matInput type="number" formControlName="cpf" placeholder="Digite o CPF" (keydown.Tab)="ValidaCampoCPF()" 
+        (focusin)="ValidaCampoCPF()" (focusout)="ValidaCampoCPF()">
     </mat-form-field>
 
     <mat-form-field class="w-75">
