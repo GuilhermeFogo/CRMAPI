@@ -40,4 +40,24 @@ export class Cliente {
             this.Consentimento = consentimento
     }
     
+    public get nome(): string{
+        return this.Nome;
+    }
+    public get email():string{
+        return this.email;
+    }
+
+    public get telefone():string{
+        return this.telefone
+    }
+    public get cnpj(): string{
+        return this.CNPJ
+    }
+
+    public get ativo():boolean{
+        return this.ativo
+    }
+    public get consentimento(): boolean{
+        return this.consentimento
+    }
 }

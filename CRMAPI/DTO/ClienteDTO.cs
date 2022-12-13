@@ -17,7 +17,7 @@ namespace CRMAPI.DTO
         public int Id_Endereco { get; set; }
         public string Rua { get; set; }
         public string Complemento { get; set; }
-        public string Bairo { get; set; }
+        public string Bairro { get; set; }
         public string CEP { get; set; }
 
         public bool Ativo { get; set; }
@@ -33,7 +33,7 @@ namespace CRMAPI.DTO
             this.Telefone = tel;
             this.Email = email;
             this.Complemento = complemento;
-            this.Bairo = bairro;
+            this.Bairro = bairro;
             this.CEP = cep;
             this.Consentimento = consentimento;
             this.CPF = cpf;

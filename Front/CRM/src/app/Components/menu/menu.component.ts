@@ -27,6 +27,11 @@ export class MenuComponent implements OnInit {
         titulo:"Oportunidades",
         rota: "/Oportunidades",
         display: false
+      },
+      {
+        titulo:"Clientes",
+        rota: "/Clientes",
+        display: false
       }, 
       {
         titulo: "Usuarios",

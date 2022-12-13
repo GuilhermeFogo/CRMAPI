@@ -57,7 +57,7 @@ namespace CRMAPI.Services
                 Endereco = new Endereco
                 {
                     Rua = clienteDTO.Rua,
-                    Bairo = clienteDTO.Bairo,
+                    Bairo = clienteDTO.Bairro,
                     CEP = clienteDTO.CEP,
                     Complemento = clienteDTO.Complemento,
                     Id = clienteDTO.Id_Endereco

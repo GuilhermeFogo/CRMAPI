@@ -2,7 +2,7 @@
 <form [formGroup]="form" autocomplete="off">
     <mat-form-field class="w-75">
         <mat-label>Nome Cliente</mat-label>
-        <input matInput type="text" formControlName="nome" placeholder="Nome do usuario">
+        <input matInput type="text" formControlName="nome" placeholder="Nome do Cliente">
     </mat-form-field>
 
     <mat-form-field class="w-75">
@@ -30,7 +30,7 @@
     <mat-form-field class="w-75">
         <mat-label>CEP</mat-label>
         <input matInput formControlName="cep" type="text" placeholder="000000000" (keydown.Tab)="searchCEP()"
-            (keyup.enter)="searchCEP()" maxlength="9">
+            (keyup.enter)="searchCEP()" maxlength="9" (focusin)="searchCEP()" (focusout)="searchCEP()">
     </mat-form-field>
 
 

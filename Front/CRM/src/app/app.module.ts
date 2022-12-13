@@ -1,3 +1,4 @@
+import { ClientesModule } from './Pages/clientes/clientes.module';
 import { ErrorModule } from './Pages/error/error.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -22,7 +23,8 @@ import { OportunidadesModule } from './Pages/oportunidades/oportunidades.module'
     GerenciaUserModule,
     LoginModule,
     DashboardModule,
-    OportunidadesModule
+    OportunidadesModule,
+    ClientesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
