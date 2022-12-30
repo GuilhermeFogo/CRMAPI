@@ -23,8 +23,8 @@ namespace CRMAPI.Modal
         }
 
         public Cliente (string nome, string email, string tel, string rua, string cep, string complemento, string bairro, int id_endereco, int id, bool consentimento, 
-            bool ativo, string cnpj, string cpf):
-            base(nome,email,tel,rua,cep,complemento,bairro,id_endereco)
+            bool ativo, string cnpj, string cpf, string cidade, string estado):
+            base(nome,email,tel,rua,cep,complemento,bairro,id_endereco,cidade, estado)
         {
             this.Id = id;
             this.Consentimento = consentimento;

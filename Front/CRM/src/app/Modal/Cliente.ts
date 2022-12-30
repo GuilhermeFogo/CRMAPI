@@ -54,10 +54,42 @@ export class Cliente {
         return this.CNPJ
     }
 
+    public get cpf(): string{
+        return this.cpf
+    }
+
     public get ativo():boolean{
         return this.ativo
     }
     public get consentimento(): boolean{
         return this.consentimento
+    }
+    public get id():string{
+        return this.id;
+    }
+
+    public get id_endereco():string{
+        return this.id_Endereco;
+    }
+
+    public get Rua():string{
+        return this.rua;
+    }
+
+    public get Cep():string{
+        return this.cep;
+    }
+    public get Bairro():string{
+        return this.bairro;
+    }
+
+    public get Estado():string{
+        return this.estado;
+    }
+    public get Complemento():string{
+        return this.complemento;
+    }
+    public get Cidade():string{
+        return this.cidade;
     }
 }

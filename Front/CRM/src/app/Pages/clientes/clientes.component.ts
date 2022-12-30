@@ -34,8 +34,20 @@ export class ClientesComponent implements OnInit {
       data: null
     }).afterClosed().subscribe(x => {
       if (x != undefined) {
-        console.log(x);
         this.PostCliente(x);
+      }
+    });
+  }
+
+
+  public EditarCliente(cliente:Cliente){
+    this.dialog.open(FormClienteComponent, {
+      width: '250px',
+      data: cliente
+    }).afterClosed().subscribe(x => {
+      if (x != undefined) {
+        console.log(x);
+        //this.PostCliente(x);
       }
     });
   }

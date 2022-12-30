@@ -10,11 +10,19 @@
     <thead>
         <tr>
             <th>Nome</th>
+            <th>E-mail</th>
+            <th>Telefone</th>
+            <th>Açoes</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let item of DadosTabela">
             <td>{{item.nome || item}}</td>
+            <td>{{item.email || item}}</td>
+            <td>{{item.telefone || item}}</td>
+            <td>
+                <button mat-button (click)="EditarCliente(item)">Editar</button>
+            </td>
         </tr>
     </tbody>
 </table>

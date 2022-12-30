@@ -26,7 +26,7 @@ namespace CRMAPI.Transformar
                 ),
                 Cliente = new Cliente(oportunidadeDTO.Nome_cliente, oportunidadeDTO.Email_cliente, oportunidadeDTO.Telefone_cliente,
                 "", "", "", "", 0, oportunidadeDTO.Id_cliente, oportunidadeDTO.Consentimento, 
-                oportunidadeDTO.Ativo_Cliente,oportunidadeDTO.CNPJ_Cliente, oportunidadeDTO.CPF_cliente)
+                oportunidadeDTO.Ativo_Cliente,oportunidadeDTO.CNPJ_Cliente, oportunidadeDTO.CPF_cliente,"","")
             };
         }
         public static OportunidadeDTO Oportunidade2DTO(Oportunidade oportunidade)

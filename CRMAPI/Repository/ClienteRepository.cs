@@ -85,7 +85,9 @@ namespace CRMAPI.Repository
                     cliente.Consentimento,
                     cliente.Ativo,
                     cliente.CNPJ,
-                    cliente.CPF
+                    cliente.CPF,
+                    endereco.Cidade,
+                    endereco.Estado
                     )
                 );
 

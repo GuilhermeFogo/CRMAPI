@@ -50,10 +50,10 @@ export class FormClienteComponent implements OnInit {
     } else {
       this.CreateEdit = "Editando";
       this.form = this.fb.group({
-        nome: [this.data.Nome, [Validators.required]],
-        telefone: [this.data.Telefone, [Validators.required]],
-        id: [this.data.Id],
-        email: [this.data.Email, [Validators.required, Validators.email]],
+        nome: [this.data.nome, [Validators.required]],
+        telefone: [this.data.telefone, [Validators.required]],
+        id: [this.data.id],
+        email: [this.data.email, [Validators.required, Validators.email]],
         rua: [this.data.rua,[Validators.required]],
         cep: [this.data.cep, [Validators.required, Validators.maxLength(9)]],
         cidade: [this.data.cidade, Validators.required],
@@ -61,8 +61,8 @@ export class FormClienteComponent implements OnInit {
         bairro:[this.data.bairro, Validators.required],
         complemento:[this.data.complemento],
         id_Endereco:[this.data.id_Endereco, Validators.required],
-        cnpj:[this.data.CNPJ, Validators.required],
-        cpf:[this.data.CPF, Validators.required]
+        cnpj:[this.data.cnpj, Validators.required],
+        cpf:[this.data.cpf, Validators.required]
       })
     }
   }

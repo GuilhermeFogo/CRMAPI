@@ -18,7 +18,7 @@ namespace CRMAPI
             this.Endereco = new Endereco();
         }
 
-        public Pessoa(string nome, string email, string tel, string rua, string cep, string complemento, string bairro, int id_endereco)
+        public Pessoa(string nome, string email, string tel, string rua, string cep, string complemento, string bairro, int id_endereco, string cidade, string estado)
         {
             this.Endereco = new Endereco();
             this.Nome = nome;
@@ -29,6 +29,8 @@ namespace CRMAPI
             this.Endereco.Complemento = complemento;
             this.Endereco.Bairo = bairro;
             this.Endereco.Id = id_endereco;
+            this.Endereco.Estado = estado;
+            this.Endereco.Cidade = cidade;
         }
     }
 }

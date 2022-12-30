@@ -54,8 +54,13 @@ export class FormLoginComponent implements OnInit {
     const expires =  this.cookie.Expires(0,0,2);
     
     this.Auth.Autenticar(user).subscribe(x=>{
-      this.cookie.CreateCookie(x, expires);
-      this.route.navigateByUrl("/DashBoard");
+      if(x!=null){
+        this.cookie.CreateCookie(x, expires);
+        this.route.navigateByUrl("/DashBoard");
+      }else{
+        this.route.navigateByUrl("/");
+        this._snackBar.open("Usuário não existe / Desativado ou senha invalida","OK")
+      }
     },e => this._snackBar.open("Tente Novamente","OK"));
   }
 }

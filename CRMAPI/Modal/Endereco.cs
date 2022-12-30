@@ -17,18 +17,23 @@ namespace CRMAPI.Modal
         public string Bairo { get; set; }
         public string CEP { get; set; }
 
+        public string Cidade { get; set; }
+        public string Estado { get; set; }
+
         public Endereco()
         {
 
         }
 
-        public Endereco(int id, string rua, string complemento, string bairro, string cep)
+        public Endereco(int id, string rua, string complemento, string bairro, string cep, string cidade, string estado)
         {
             this.Id = id;
             this.CEP = cep;
             this.Rua = rua;
             this.Bairo = bairro;
             this.Complemento = complemento;
+            this.Estado = estado;
+            this.Cidade = cidade;
         }
     }
 }
