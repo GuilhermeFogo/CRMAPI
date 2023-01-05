@@ -46,10 +46,16 @@ export class ClientesComponent implements OnInit {
       data: cliente
     }).afterClosed().subscribe(x => {
       if (x != undefined) {
-        console.log(x);
-        //this.PostCliente(x);
+        this.PutCliente(x);
       }
     });
+  }
+
+  /**
+   * name
+   */
+  public Delete(cliente:Cliente) {
+    this.DeleteCliente(cliente);
   }
 
   private PostCliente(cliente: Cliente){
@@ -68,5 +74,24 @@ export class ClientesComponent implements OnInit {
       console.log(x);
       this.DadosTabela =x
     });
+  }
+
+  private PutCliente(cliente: Cliente) {
+    this.ClienteService.PutCliente(cliente).subscribe(x=>{
+      this.snackBar.open("Cliente "+ cliente.nome+" Editado com exito","OK")
+    }, error=>{
+      console.log(error);
+      
+    })
+  }
+
+
+  private DeleteCliente(cliente: Cliente) {
+    this.ClienteService.DeleteCliente(cliente).subscribe(x=>{
+      this.snackBar.open("Cliente "+ cliente.nome+" Deletado com exito","OK")
+    }, error=>{
+      console.log(error);
+      
+    })
   }
 }

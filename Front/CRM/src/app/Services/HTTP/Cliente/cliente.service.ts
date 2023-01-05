@@ -34,14 +34,14 @@ export class ClienteService extends HelperRequests {
 
   public PutCliente(cliente: Cliente): Observable<Cliente> {
     const header = this.Ajudarequest();
-    return this.http.put<Cliente>(this.url, cliente,{
+    return this.http.put<Cliente>(this.url+"/"+ cliente.Id, cliente,{
       headers:header
     });
   }
 
   public DeleteCliente(cliente:Cliente): Observable<Cliente> {
     const header = this.Ajudarequest();
-    return this.http.delete<Cliente>(this.url+ cliente.Id,{
+    return this.http.delete<Cliente>(this.url+"/"+ cliente.Id,{
       headers: header
     });
   }

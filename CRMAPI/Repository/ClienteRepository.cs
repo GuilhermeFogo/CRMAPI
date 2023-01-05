@@ -24,7 +24,7 @@ namespace CRMAPI.Repository
             clientes.Telefone = cliente.Telefone;
             clientes.Email = cliente.Email;
             clientes.Consentimento = cliente.Consentimento;
-            endereço.Rua= clientes.Endereco.Rua;
+            endereço.Rua= cliente.Endereco.Rua;
             endereço.CEP = cliente.Endereco.CEP;
             endereço.Bairo = cliente.Endereco.Bairo;
             endereço.Complemento = cliente.Endereco.Complemento;

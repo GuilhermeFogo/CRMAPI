@@ -101,6 +101,8 @@ namespace CRMAPI.Transformar
                     CEP = clienteDTO.CEP,
                     Complemento = clienteDTO.Complemento,
                     Id = clienteDTO.Id_Endereco,
+                    Cidade = clienteDTO.Cidade,
+                    Estado =clienteDTO.Estado
                 },
                 Consentimento = clienteDTO.Consentimento,
                 CNPJ = clienteDTO.CNPJ,
