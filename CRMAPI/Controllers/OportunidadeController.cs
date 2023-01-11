@@ -27,7 +27,7 @@ namespace CRMAPI.Controllers
         [Authorize(Roles = "ADM, Funcionario, Gerente")]
         public IEnumerable<OportunidadeDTO> ListagemOportunidade()
         {
-            return this.serviceOportunidade.ListarTodos();
+            return this.serviceOportunidade.ListarNVinculado();
         }
 
         [HttpGet("{id}")]

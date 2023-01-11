@@ -11,11 +11,15 @@ namespace CRMAPI.Services.Interfaces
     {
         void Save(OportunidadeDTO oportunidade);
         void Delete(OportunidadeDTO oportunidade);
+        void DeleteVinculado(OportunidadeDTO oportunidade);
 
         void Atualizar(OportunidadeDTO oportunidade);
+        void AtualizarVinculado(OportunidadeDTO oportunidade);
 
-        IEnumerable<OportunidadeDTO> ListarTodos();
+        IEnumerable<OportunidadeDTO> ListarVinculado();
+        IEnumerable<OportunidadeDTO> ListarNVinculado();
 
         Oportunidade PesquisarOportunidade(OportunidadeDTO oportunidade);
+        Oportunidade PesquisarOportunidadeVinculado(OportunidadeDTO oportunidade);
     }
 }

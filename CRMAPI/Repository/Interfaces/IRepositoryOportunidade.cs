@@ -13,8 +13,10 @@ namespace CRMAPI.Repository.Interfaces
 
         void Atualizar(Oportunidade oportunidade);
 
-        IEnumerable<Oportunidade> ListarTodos();
+        IEnumerable<Oportunidade> ListarVinculado();
+        IEnumerable<Oportunidade> ListarNVinculado();
 
-        Oportunidade PesquisaOportunidade(Oportunidade oportunidade);
+        Oportunidade PesquisaOportunidadeNVinculado(Oportunidade oportunidade);
+        Oportunidade PesquisaOportunidadeVinculado(Oportunidade oportunidade);
     }
 }

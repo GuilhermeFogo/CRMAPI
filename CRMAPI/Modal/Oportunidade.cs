@@ -24,18 +24,22 @@ namespace CRMAPI.Modal
         public bool Ativo { get; set; }
 
         public DateTime Data { get; set; }
-        
+
+        public bool Vinculado { get; set; }
+
 
         public Oportunidade()
         {
             this.Produto = new Produto();
-            this.Cliente = new Cliente();
+            // this.Cliente = new Cliente();
             this.Data = new DateTime();
         }
         public Oportunidade(string responsavel, int id_oportunidade, int id_produto, string nome_produto, string preco, string tipo_produto,
-            string nome_cliente, string email, string tel, string rua, string cep, string complemento, string bairro, int id_endereco, int id_cliente, bool consentimento,
-            string tipo_oportunidade, DateTime data, string aprovador) 
+            string nome_cliente, string email, string tel, int id_cliente, bool consentimento, string cnpj, string cpf,
+            string tipo_oportunidade, DateTime data, string aprovador, bool vinculado)
         {
+            this.Produto = new Produto();
+            this.Cliente = new Cliente();
             this.Responsavel = responsavel;
             this.Id_Oportunidade = id_oportunidade;
             this.Produto.Id_produto = id_produto;
@@ -45,16 +49,31 @@ namespace CRMAPI.Modal
             this.Cliente.Id = id_cliente;
             this.Cliente.Email = email;
             this.Cliente.Consentimento = consentimento;
-            this.Cliente.Endereco.Rua = rua;
-            this.Cliente.Endereco.Bairo = bairro;
-            this.Cliente.Endereco.CEP = cep;
-            this.Cliente.Endereco.Complemento = complemento;
             this.Cliente.Nome = nome_cliente;
             this.Cliente.Telefone = tel;
-            this.Cliente.Endereco.Id = id_endereco;
             this.Tipo = tipo_oportunidade;
             this.Data = data;
             this.Aprovador = aprovador;
+            this.Cliente.CPF = cpf;
+            this.Cliente.CNPJ = cnpj;
+            this.Vinculado = vinculado;
+        }
+
+
+        public Oportunidade(string responsavel, int id_oportunidade, int id_produto, string nome_produto, string preco, string tipo_produto,
+        string tipo_oportunidade, DateTime data, string aprovador, bool vinculado)
+        {
+            this.Produto = new Produto();
+            this.Responsavel = responsavel;
+            this.Id_Oportunidade = id_oportunidade;
+            this.Produto.Id_produto = id_produto;
+            this.Produto.Nome = nome_produto;
+            this.Produto.Preco = preco;
+            this.Produto.Tipo = tipo_produto;
+            this.Tipo = tipo_oportunidade;
+            this.Data = data;
+            this.Aprovador = aprovador;
+            this.Vinculado = vinculado;
         }
     }
 }

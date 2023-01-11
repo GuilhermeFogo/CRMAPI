@@ -29,5 +29,7 @@ namespace CRMAPI.DTO
         public string CNPJ_Cliente { get; set; }
         public DateTime Data { get; set; }
         public string Aprovador { get; set; }
+
+        public bool Vinculado { get; set; }
     }
 }

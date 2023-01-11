@@ -34,14 +34,14 @@ namespace CRMAPI.Repository
             this.DB.Update(produtos);
             this.DB.SaveChanges();
 
-            var cliente = this.DB.Clientes.Where(x => x.Id == oportunidade.Cliente.Id).FirstOrDefault();
-            cliente.Email = oportunidade.Cliente.Email;
-            cliente.Consentimento = oportunidade.Cliente.Consentimento;
-            cliente.Ativo = oportunidade.Cliente.Ativo;
-            cliente.Nome = oportunidade.Cliente.Nome;
-            cliente.Telefone = oportunidade.Cliente.Telefone;
+            //var cliente = this.DB.Clientes.Where(x => x.Id == oportunidade.Cliente.Id).FirstOrDefault();
+            //cliente.Email = oportunidade.Cliente.Email;
+            //cliente.Consentimento = oportunidade.Cliente.Consentimento;
+            //cliente.Ativo = oportunidade.Cliente.Ativo;
+            //cliente.Nome = oportunidade.Cliente.Nome;
+            //cliente.Telefone = oportunidade.Cliente.Telefone;
 
-            this.DB.Update(cliente);
+            //this.DB.Update(cliente);
             this.DB.SaveChanges();
         }
 
@@ -52,17 +52,32 @@ namespace CRMAPI.Repository
             this.DB.SaveChanges();
         }
 
-        public IEnumerable<Oportunidade> ListarTodos()
+        public IEnumerable<Oportunidade> ListarVinculado()
         {
-            var join = this.JoinOportunidade();
+            var join = this.JoinOportunidadeVinculada();
             return join.AsEnumerable<Oportunidade>().ToList();
         }
 
-        public Oportunidade PesquisaOportunidade(Oportunidade oportunidade)
+        public Oportunidade PesquisaOportunidadeVinculado(Oportunidade oportunidade)
         {
-            var pesquisa =this.JoinOportunidade().Where(x => x.Id_Oportunidade == oportunidade.Id_Oportunidade).FirstOrDefault();
+            var pesquisa =this.JoinOportunidadeVinculada().Where(x => x.Id_Oportunidade == oportunidade.Id_Oportunidade).FirstOrDefault();
             return pesquisa;
         }
+
+        public IEnumerable<Oportunidade> ListarNVinculado()
+        {
+            var join = this.JoinOportunidadeNVinculado();
+            return join.AsEnumerable<Oportunidade>().ToList();
+        }
+
+        public Oportunidade PesquisaOportunidadeNVinculado(Oportunidade oportunidade)
+        {
+            var pesquisa = this.JoinOportunidadeNVinculado().Where(x => x.Id_Oportunidade == oportunidade.Id_Oportunidade).FirstOrDefault();
+            return pesquisa;
+        }
+
+
+
 
         public void Save(Oportunidade oportunidade)
         {
@@ -70,7 +85,47 @@ namespace CRMAPI.Repository
             this.DB.SaveChanges();
         }
 
-        private IQueryable<Oportunidade> JoinOportunidade()
+        private IQueryable<Oportunidade> JoinOportunidadeVinculada()
+        {
+            var JoinOportunidades =
+                from opo in this.DB.Oportunidade
+                join produtos in this.DB.Produtos
+                    on opo.Produto.Id_produto equals produtos.Id_produto
+                join cliente in this.DB.Clientes
+                    on opo.Cliente.Id equals cliente.Id
+                select new Oportunidade()
+                {
+                    Aprovador = opo.Aprovador,
+                    Ativo = opo.Ativo,
+                    Data = opo.Data,
+                    Id_Oportunidade = opo.Id_Oportunidade,
+                    Responsavel = opo.Responsavel,
+                    Tipo = opo.Tipo,
+                    Cliente = new Cliente()
+                    {
+                        Ativo = cliente.Ativo,
+                        CNPJ = cliente.CNPJ,
+                        Consentimento = cliente.Consentimento,
+                        CPF = cliente.CPF,
+                        Email = cliente.Email,
+                        Id = cliente.Id,
+                        Nome = cliente.Nome,
+                        Telefone = cliente.Telefone
+                    },
+                    Produto = new Produto()
+                    {
+                        Id_produto = produtos.Id_produto,
+                        Nome = produtos.Nome,
+                        Tipo = produtos.Tipo,
+                        Preco = produtos.Preco
+                    },
+                    Vinculado = opo.Vinculado
+                };
+
+            return JoinOportunidades;
+        }
+
+        private IQueryable<Oportunidade> JoinOportunidadeNVinculado()
         {
             var joinProdutos = this.DB.Oportunidade.Join(this.DB.Produtos,
                 (opo) => opo.Id_Oportunidade, (prod) => prod.Id_produto,
@@ -85,13 +140,14 @@ namespace CRMAPI.Repository
                     Tipo_prod = prod.Tipo,
                     Ativo = opo.Ativo,
                     Data = opo.Data,
-                    Aprovador = opo.Aprovador
+                    Aprovador = opo.Aprovador,
+                    Vinculado = opo.Vinculado
                 });
 
-            var joincliente_parcial = joinProdutos.Join(this.DB.Clientes,
+            var joincliente_parcial = joinProdutos.Join(this.DB.Clientes.DefaultIfEmpty(),
                (opo2) => opo2.Id_oportunidade, (cliente) => cliente.Id,
-               (opo2, cliente) => new Oportunidade(opo2.Responsavel,opo2.Id_oportunidade,opo2.Id_produto,opo2.Nome_prod,opo2.Preco,opo2.Tipo_prod,cliente.Nome,
-               cliente.Email,cliente.Telefone,"","","","",0,cliente.Id,cliente.Consentimento,opo2.Tipo_oportunidade,opo2.Data, opo2.Aprovador));
+               (opo2, cliente) => new Oportunidade(opo2.Responsavel,opo2.Id_oportunidade,opo2.Id_produto,opo2.Nome_prod,opo2.Preco,opo2.Tipo_prod,
+               opo2.Tipo_oportunidade,opo2.Data,opo2.Aprovador, opo2.Vinculado));
 
             return joincliente_parcial;
         }

@@ -4,14 +4,16 @@ using CRMAPI.Repository.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CRMAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20230106230051_oportunidades")]
+    partial class oportunidades
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -114,9 +116,6 @@ namespace CRMAPI.Migrations
 
                     b.Property<string>("Tipo")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("Vinculado")
-                        .HasColumnType("bit");
 
                     b.HasKey("Id_Oportunidade");
 
