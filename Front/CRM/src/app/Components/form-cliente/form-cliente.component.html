@@ -60,6 +60,13 @@
         <mat-label>Complemento</mat-label>
         <input matInput formControlName="complemento" type="text">
     </mat-form-field>
+    <br>
+    <mat-label>Ativo/Desativado</mat-label>
+    <app-select-ativo [form]="form" [FormControlName_]="'ativo'"></app-select-ativo>
+    <br>
+    <mat-label>Consentimento</mat-label>
+    <app-select-ativo [form]="form" [FormControlName_]="'consentimento'"></app-select-ativo>
+    <br>
 
     <mat-form-field class="invisible" hidden>
         <input matInput type="number" formControlName="id">

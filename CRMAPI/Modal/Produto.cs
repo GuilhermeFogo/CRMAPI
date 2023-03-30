@@ -14,7 +14,7 @@ namespace CRMAPI.Modal
         public int Id_produto { get; set; }
         public string Nome { get; set; }
         public string Preco { get; set; }
-        public string Tipo { get; set; }
+        public string Categoria { get; set; }
 
         public Produto()
         {
@@ -25,7 +25,7 @@ namespace CRMAPI.Modal
             this.Id_produto = Id_produto;
             this.Nome = nome;
             this.Preco = preco;
-            this.Tipo = tipo;
+            this.Categoria = tipo;
         }
 
     }

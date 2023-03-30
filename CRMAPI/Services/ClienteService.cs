@@ -75,7 +75,7 @@ namespace CRMAPI.Services
         {
             return new ClienteDTO(
                 cliente.Nome, cliente.Email, cliente.Telefone, cliente.Endereco.Rua, cliente.Endereco.CEP, cliente.Endereco.Complemento, cliente.Endereco.Bairo, 
-                cliente.Endereco.Id, cliente.Id, cliente.Consentimento,cliente.CNPJ,cliente.CPF, cliente.Endereco.Cidade, cliente.Endereco.Estado);
+                cliente.Endereco.Id, cliente.Id, cliente.Consentimento,cliente.CNPJ,cliente.CPF, cliente.Endereco.Cidade, cliente.Endereco.Estado, cliente.Ativo);
         }
 
 

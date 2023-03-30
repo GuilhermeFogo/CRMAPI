@@ -1,3 +1,5 @@
+import { FormOpoModule } from './../../Components/form-opo/form-opo.module';
+import { FormOpoComponent } from './../../Components/form-opo/form-opo.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MenuModule } from './../../Components/menu/menu.module';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -19,7 +21,8 @@ import { FormClienteModule } from 'src/app/Components/form-cliente/form-cliente.
     MatSnackBarModule,
     MenuModule,
     FormClienteModule,
-    MatDialogModule
+    MatDialogModule,
+    FormOpoModule
   ], 
   exports:[OportunidadesComponent]
 })

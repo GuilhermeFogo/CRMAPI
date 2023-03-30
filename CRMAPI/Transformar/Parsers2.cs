@@ -23,7 +23,7 @@ namespace CRMAPI.Transformar
                     oportunidadeDTO.Id_produto,
                     oportunidadeDTO.Nome_produto,
                     oportunidadeDTO.Preco_produto,
-                    oportunidadeDTO.Tipo_Produto
+                    oportunidadeDTO.Categoria
                 ),
                 Vinculado = oportunidadeDTO.Vinculado
             };
@@ -40,7 +40,7 @@ namespace CRMAPI.Transformar
                 Preco_produto = oportunidade.Produto.Preco,
                 Responsavel = oportunidade.Responsavel,
                 Tipo_oportunidade = oportunidade.Tipo,
-                Tipo_Produto = oportunidade.Produto.Tipo,
+                Categoria = oportunidade.Produto.Categoria,
                 Aprovador = oportunidade.Aprovador,
                 Data = oportunidade.Data,
                 Vinculado = oportunidade.Vinculado
@@ -86,12 +86,9 @@ namespace CRMAPI.Transformar
                     oportunidadeDTO.Id_produto,
                     oportunidadeDTO.Nome_produto,
                     oportunidadeDTO.Preco_produto,
-                    oportunidadeDTO.Tipo_Produto
+                    oportunidadeDTO.Categoria
                 ),
-                Cliente = new Cliente(oportunidadeDTO.Nome_cliente, oportunidadeDTO.Email_cliente, oportunidadeDTO.Telefone_cliente,
-                "", "", "", "", 0, oportunidadeDTO.Id_cliente, oportunidadeDTO.Consentimento,
-                oportunidadeDTO.Ativo_Cliente, oportunidadeDTO.CNPJ_Cliente, oportunidadeDTO.CPF_cliente, "", ""),
-                Vinculado = oportunidadeDTO.Vinculado
+                
             };
         }
 
@@ -101,23 +98,15 @@ namespace CRMAPI.Transformar
             return new OportunidadeDTO()
             {
                 Aprovador = oportunidade.Aprovador,
-                Ativo_Cliente = oportunidade.Cliente.Ativo,
                 Ativo_Oportunidade = oportunidade.Ativo,
-                CNPJ_Cliente = oportunidade.Cliente.CNPJ,
-                Consentimento = oportunidade.Cliente.Consentimento,
-                CPF_cliente = oportunidade.Cliente.CPF,
                 Data = oportunidade.Data,
-                Email_cliente = oportunidade.Cliente.Email,
-                Id_cliente = oportunidade.Cliente.Id,
                 Id_oportunidade = oportunidade.Id_Oportunidade,
                 Id_produto = oportunidade.Produto.Id_produto,
-                Nome_cliente = oportunidade.Cliente.Nome,
                 Nome_produto = oportunidade.Produto.Nome,
                 Preco_produto = oportunidade.Produto.Preco,
                 Responsavel = oportunidade.Responsavel,
-                Telefone_cliente = oportunidade.Cliente.Telefone,
                 Tipo_oportunidade = oportunidade.Tipo,
-                Tipo_Produto = oportunidade.Produto.Tipo,
+                Categoria = oportunidade.Produto.Categoria,
                 Vinculado =oportunidade.Vinculado
             };
         }

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CRMAPI.Migrations
 {
-    public partial class Criar_DB : Migration
+    public partial class criar_banco : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -16,7 +16,9 @@ namespace CRMAPI.Migrations
                     Rua = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Complemento = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Bairo = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CEP = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    CEP = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Cidade = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Estado = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -90,20 +92,14 @@ namespace CRMAPI.Migrations
                     Responsavel = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Aprovador = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ProdutoId_produto = table.Column<int>(type: "int", nullable: true),
-                    ClienteId = table.Column<int>(type: "int", nullable: true),
                     Tipo = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Ativo = table.Column<bool>(type: "bit", nullable: false),
-                    Data = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    Data = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Vinculado = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Oportunidade", x => x.Id_Oportunidade);
-                    table.ForeignKey(
-                        name: "FK_Oportunidade_Clientes_ClienteId",
-                        column: x => x.ClienteId,
-                        principalTable: "Clientes",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Oportunidade_Produtos_ProdutoId_produto",
                         column: x => x.ProdutoId_produto,
@@ -118,11 +114,6 @@ namespace CRMAPI.Migrations
                 column: "EnderecoId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Oportunidade_ClienteId",
-                table: "Oportunidade",
-                column: "ClienteId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Oportunidade_ProdutoId_produto",
                 table: "Oportunidade",
                 column: "ProdutoId_produto");
@@ -131,19 +122,19 @@ namespace CRMAPI.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "Clientes");
+
+            migrationBuilder.DropTable(
                 name: "Oportunidade");
 
             migrationBuilder.DropTable(
                 name: "Usuarios");
 
             migrationBuilder.DropTable(
-                name: "Clientes");
+                name: "Enderecos");
 
             migrationBuilder.DropTable(
                 name: "Produtos");
-
-            migrationBuilder.DropTable(
-                name: "Enderecos");
         }
     }
 }

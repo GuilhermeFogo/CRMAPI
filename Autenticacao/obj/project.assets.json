@@ -48,7 +48,7 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.Authentication.Core.dll": {}
         }
       },
-      "Microsoft.AspNetCore.Authentication.JwtBearer/5.0.11": {
+      "Microsoft.AspNetCore.Authentication.JwtBearer/5.0.17": {
         "type": "package",
         "dependencies": {
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "6.7.1"
@@ -195,6 +195,15 @@
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.AspNetCore.WebUtilities.dll": {}
+        }
+      },
+      "Microsoft.Authentication.WebAssembly.Msal/6.0.10": {
+        "type": "package",
+        "build": {
+          "buildTransitive/Microsoft.Authentication.WebAssembly.Msal.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Microsoft.Authentication.WebAssembly.Msal.props": {}
         }
       },
       "Microsoft.CSharp/4.5.0": {
@@ -627,10 +636,10 @@
         "microsoft.aspnetcore.authentication.core.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Authentication.JwtBearer/5.0.11": {
-      "sha512": "3oTEUzatJBR3vfKyqo1J+ET75fP78rgExbUYP4YwxDJMRHvj+cl7yCiGCRPLNB+CtvSOJM5g6jxMzitlNcsGrg==",
+    "Microsoft.AspNetCore.Authentication.JwtBearer/5.0.17": {
+      "sha512": "jXMB2+jOG9JvGVCjsKvc5Bo1iSgzdbQw+Iq3BM+eIZ1inDg8rnEVUcWKpRevi9Z6F1/UnSJZ0+rhElT2/aVhhQ==",
       "type": "package",
-      "path": "microsoft.aspnetcore.authentication.jwtbearer/5.0.11",
+      "path": "microsoft.aspnetcore.authentication.jwtbearer/5.0.17",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -638,7 +647,7 @@
         "THIRD-PARTY-NOTICES.TXT",
         "lib/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll",
         "lib/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.xml",
-        "microsoft.aspnetcore.authentication.jwtbearer.5.0.11.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.jwtbearer.5.0.17.nupkg.sha512",
         "microsoft.aspnetcore.authentication.jwtbearer.nuspec"
       ]
     },
@@ -770,6 +779,26 @@
         "lib/netstandard2.0/Microsoft.AspNetCore.WebUtilities.xml",
         "microsoft.aspnetcore.webutilities.2.2.0.nupkg.sha512",
         "microsoft.aspnetcore.webutilities.nuspec"
+      ]
+    },
+    "Microsoft.Authentication.WebAssembly.Msal/6.0.10": {
+      "sha512": "ZLZUm0VzJ/6wlznCWBH8Gtu8MX9ROGDxLAPkk7HVjxkpHt1JYvST+AkTLGeokHUIrJj5EifV+LOsAAAxYv//kw==",
+      "type": "package",
+      "path": "microsoft.authentication.webassembly.msal/6.0.10",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.txt",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "build/Microsoft.Authentication.WebAssembly.Msal.props",
+        "buildMultiTargeting/Microsoft.Authentication.WebAssembly.Msal.props",
+        "buildTransitive/Microsoft.Authentication.WebAssembly.Msal.props",
+        "lib/net6.0/Microsoft.Authentication.WebAssembly.Msal.dll",
+        "lib/net6.0/Microsoft.Authentication.WebAssembly.Msal.xml",
+        "microsoft.authentication.webassembly.msal.6.0.10.nupkg.sha512",
+        "microsoft.authentication.webassembly.msal.nuspec",
+        "staticwebassets/AuthenticationService.js"
       ]
     },
     "Microsoft.CSharp/4.5.0": {
@@ -1570,7 +1599,8 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "Microsoft.AspNetCore.Authentication >= 2.2.0",
-      "Microsoft.AspNetCore.Authentication.JwtBearer >= 5.0.11",
+      "Microsoft.AspNetCore.Authentication.JwtBearer >= 5.0.17",
+      "Microsoft.Authentication.WebAssembly.Msal >= 6.0.10",
       "Newtonsoft.Json >= 13.0.1"
     ]
   },
@@ -1624,7 +1654,11 @@
           },
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
-            "version": "[5.0.11, )"
+            "version": "[5.0.17, )"
+          },
+          "Microsoft.Authentication.WebAssembly.Msal": {
+            "target": "Package",
+            "version": "[6.0.10, )"
           },
           "Newtonsoft.Json": {
             "target": "Package",
@@ -1646,7 +1680,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.411\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.414\\RuntimeIdentifierGraph.json"
       }
     }
   }

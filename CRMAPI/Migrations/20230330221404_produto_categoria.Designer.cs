@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CRMAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230111010959_opo_vinculado")]
-    partial class opo_vinculado
+    [Migration("20230330221404_produto_categoria")]
+    partial class produto_categoria
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -102,9 +102,6 @@ namespace CRMAPI.Migrations
                     b.Property<bool>("Ativo")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("ClienteId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("Data")
                         .HasColumnType("datetime2");
 
@@ -122,8 +119,6 @@ namespace CRMAPI.Migrations
 
                     b.HasKey("Id_Oportunidade");
 
-                    b.HasIndex("ClienteId");
-
                     b.HasIndex("ProdutoId_produto");
 
                     b.ToTable("Oportunidade");
@@ -136,13 +131,13 @@ namespace CRMAPI.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Categoria")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Preco")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Tipo")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id_produto");
@@ -188,15 +183,9 @@ namespace CRMAPI.Migrations
 
             modelBuilder.Entity("CRMAPI.Modal.Oportunidade", b =>
                 {
-                    b.HasOne("CRMAPI.Modal.Cliente", "Cliente")
-                        .WithMany()
-                        .HasForeignKey("ClienteId");
-
                     b.HasOne("CRMAPI.Modal.Produto", "Produto")
                         .WithMany()
                         .HasForeignKey("ProdutoId_produto");
-
-                    b.Navigation("Cliente");
 
                     b.Navigation("Produto");
                 });

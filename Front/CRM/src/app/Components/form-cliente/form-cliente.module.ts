@@ -1,3 +1,4 @@
+import { SelectAtivoModule } from './../select-ativo/select-ativo.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormClienteComponent } from './form-cliente.component';
@@ -15,7 +16,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatButtonModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
+    SelectAtivoModule
   ], exports:[FormClienteComponent]
 })
 export class FormClienteModule { }

@@ -1,3 +1,4 @@
+import { FormOpoComponent } from './../../Components/form-opo/form-opo.component';
 import { Cliente } from './../../Modal/Cliente';
 import { ClienteService } from './../../Services/HTTP/Cliente/cliente.service';
 import { Component, OnInit } from '@angular/core';
@@ -36,8 +37,15 @@ export class OportunidadesComponent implements OnInit {
   }
 
   
-  public AbrirModalProduto(){
-    
+  public AbrirModalOPO(){
+    this.dialog.open(FormOpoComponent, {
+      width: '250px',
+      data: null
+    }).afterClosed().subscribe(x => {
+      if (x != undefined) {
+        console.log(x);
+      }
+    });
   }
 
   private PostCliente(cliente: Cliente){

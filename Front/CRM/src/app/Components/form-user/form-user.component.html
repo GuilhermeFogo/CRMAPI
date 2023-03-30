@@ -16,7 +16,7 @@
     </mat-form-field>
     <br>
     <app-select-role [form]="formuser"></app-select-role>
-    <app-select-ativo [form]="formuser"></app-select-ativo>
+    <app-select-ativo [form]="formuser" [FormControlName_]="'ativado'"></app-select-ativo>
     <mat-form-field class="invisible" hidden>
         <input matInput type="number" formControlName="id">
     </mat-form-field>

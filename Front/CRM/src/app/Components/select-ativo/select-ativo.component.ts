@@ -11,6 +11,7 @@ export class SelectAtivoComponent {
   readonly array: Array<any>
   @Input() form!: FormGroup;
   @Input() disabled_block!: boolean;
+  @Input() FormControlName_!: string
   constructor(fb: FormBuilder) {
     this.array = [
       { values: 1, viewValue: "Ativo", disabled: true },

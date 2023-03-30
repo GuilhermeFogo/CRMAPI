@@ -16,4 +16,7 @@
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
   </PropertyGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)microsoft.authentication.webassembly.msal\6.0.10\buildTransitive\Microsoft.Authentication.WebAssembly.Msal.props" Condition="Exists('$(NuGetPackageRoot)microsoft.authentication.webassembly.msal\6.0.10\buildTransitive\Microsoft.Authentication.WebAssembly.Msal.props')" />
+  </ImportGroup>
 </Project>

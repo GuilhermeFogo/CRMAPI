@@ -34,7 +34,9 @@ export class ClientesComponent implements OnInit {
       data: null
     }).afterClosed().subscribe(x => {
       if (x != undefined) {
+        console.log(x) ;
         this.PostCliente(x);
+        
       }
     });
   }

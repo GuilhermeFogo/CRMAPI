@@ -29,7 +29,7 @@ namespace CRMAPI.Repository
             var produtos = this.DB.Produtos.Where(x => x.Id_produto == oportunidade.Produto.Id_produto).FirstOrDefault();
             produtos.Nome = oportunidade.Produto.Nome;
             produtos.Preco = oportunidade.Produto.Preco;
-            produtos.Tipo = oportunidade.Produto.Tipo;
+            produtos.Categoria = oportunidade.Produto.Categoria;
 
             this.DB.Update(produtos);
             this.DB.SaveChanges();
@@ -42,7 +42,7 @@ namespace CRMAPI.Repository
             //cliente.Telefone = oportunidade.Cliente.Telefone;
 
             //this.DB.Update(cliente);
-            this.DB.SaveChanges();
+            //this.DB.SaveChanges();
         }
 
         public void Delete(Oportunidade oportunidade)
@@ -91,8 +91,8 @@ namespace CRMAPI.Repository
                 from opo in this.DB.Oportunidade
                 join produtos in this.DB.Produtos
                     on opo.Produto.Id_produto equals produtos.Id_produto
-                join cliente in this.DB.Clientes
-                    on opo.Cliente.Id equals cliente.Id
+                //join cliente in this.DB.Clientes
+                //    on opo.Cliente.Id equals cliente.Id
                 select new Oportunidade()
                 {
                     Aprovador = opo.Aprovador,
@@ -101,22 +101,11 @@ namespace CRMAPI.Repository
                     Id_Oportunidade = opo.Id_Oportunidade,
                     Responsavel = opo.Responsavel,
                     Tipo = opo.Tipo,
-                    Cliente = new Cliente()
-                    {
-                        Ativo = cliente.Ativo,
-                        CNPJ = cliente.CNPJ,
-                        Consentimento = cliente.Consentimento,
-                        CPF = cliente.CPF,
-                        Email = cliente.Email,
-                        Id = cliente.Id,
-                        Nome = cliente.Nome,
-                        Telefone = cliente.Telefone
-                    },
                     Produto = new Produto()
                     {
                         Id_produto = produtos.Id_produto,
                         Nome = produtos.Nome,
-                        Tipo = produtos.Tipo,
+                        Categoria = produtos.Categoria,
                         Preco = produtos.Preco
                     },
                     Vinculado = opo.Vinculado
@@ -137,7 +126,7 @@ namespace CRMAPI.Repository
                     Id_produto = prod.Id_produto,
                     Nome_prod = prod.Nome,
                     Preco = prod.Preco,
-                    Tipo_prod = prod.Tipo,
+                    Tipo_prod = prod.Categoria,
                     Ativo = opo.Ativo,
                     Data = opo.Data,
                     Aprovador = opo.Aprovador,

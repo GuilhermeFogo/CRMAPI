@@ -28,8 +28,11 @@ namespace CRMAPI.Repository
             endereço.CEP = cliente.Endereco.CEP;
             endereço.Bairo = cliente.Endereco.Bairo;
             endereço.Complemento = cliente.Endereco.Complemento;
+            endereço.Cidade = cliente.Endereco.Cidade;
+            endereço.Estado = cliente.Endereco.Estado;
             clientes.CPF = cliente.CPF;
             clientes.CNPJ = cliente.CNPJ;
+            clientes.Ativo = cliente.Ativo; 
             
             this.clientesDB.Update(clientes);
             this.clientesDB.Update(endereço);
@@ -41,8 +44,8 @@ namespace CRMAPI.Repository
             var endereço = this.clientesDB.Enderecos.Where(x => x.Id == cliente.Endereco.Id).FirstOrDefault();
             var clientes = this.clientesDB.Clientes.Where(y => y.Id == cliente.Id).FirstOrDefault();
 
-            this.clientesDB.Remove(clientes);
             this.clientesDB.Remove(endereço);
+            this.clientesDB.Remove(clientes);
             this.clientesDB.SaveChanges();
         }
 
@@ -55,8 +58,7 @@ namespace CRMAPI.Repository
         public Cliente PesquisaCliente(int id)
         {
             var JoinClientes= this.JoinClientes();
-            string ids = Convert.ToString(id);
-            var cliente =  JoinClientes.Where((cliente) => cliente.Id.Equals(ids));
+            var cliente =  JoinClientes.Where((cliente) => cliente.Id == id);
             return cliente.AsEnumerable().FirstOrDefault();
         }
 
@@ -69,27 +71,54 @@ namespace CRMAPI.Repository
 
         private IQueryable<Cliente> JoinClientes()
         {
-            var JoinClientes = this.clientesDB.Clientes.Join(this.clientesDB.Enderecos,
-                (cliente => cliente.Id),
-                (endereco => endereco.Id),
-                (cliente, endereco) => new Cliente(
-                    cliente.Nome,
-                    cliente.Email,
-                    cliente.Telefone,
-                    endereco.Rua,
-                    endereco.CEP,
-                    endereco.Complemento,
-                    endereco.Bairo,
-                    endereco.Id,
-                    cliente.Id,
-                    cliente.Consentimento,
-                    cliente.Ativo,
-                    cliente.CNPJ,
-                    cliente.CPF,
-                    endereco.Cidade,
-                    endereco.Estado
-                    )
-                );
+            //var JoinClientes = this.clientesDB.Clientes.Join(this.clientesDB.Enderecos,
+            //    (cliente => cliente.Id),
+            //    (endereco => endereco.Id),
+            //    (cliente, endereco) => new Cliente(
+            //        cliente.Nome,
+            //        cliente.Email,
+            //        cliente.Telefone,
+            //        endereco.Rua,
+            //        endereco.CEP,
+            //        endereco.Complemento,
+            //        endereco.Bairo,
+            //        endereco.Id,
+            //        cliente.Id,
+            //        cliente.Consentimento,
+            //        cliente.Ativo,
+            //        cliente.CNPJ,
+            //        cliente.CPF,
+            //        endereco.Cidade,
+            //        endereco.Estado
+            //        )
+            //    );
+
+
+            var JoinClientes =
+                from cliente in this.clientesDB.Clientes
+                join enderecos in this.clientesDB.Enderecos
+                on cliente.Id equals enderecos.Id
+                select new Cliente()
+                {
+                    Ativo = cliente.Ativo,
+                    CNPJ = cliente.CNPJ,
+                    Consentimento = cliente.Consentimento,
+                    CPF = cliente.CPF,
+                    Email = cliente.Email,
+                    Endereco = new Endereco()
+                    {
+                        Bairo = enderecos.Bairo,
+                        CEP = enderecos.CEP,
+                        Cidade = enderecos.Cidade,
+                        Complemento = enderecos.Complemento,
+                        Estado = enderecos.Estado,
+                        Rua = enderecos.Rua,
+                        Id = enderecos.Id
+                    },
+                    Id = cliente.Id,
+                    Nome = cliente.Nome,
+                    Telefone = cliente.Telefone
+                };
 
             return JoinClientes;
         }

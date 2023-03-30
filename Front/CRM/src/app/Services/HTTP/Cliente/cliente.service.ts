@@ -41,7 +41,7 @@ export class ClienteService extends HelperRequests {
 
   public DeleteCliente(cliente:Cliente): Observable<Cliente> {
     const header = this.Ajudarequest();
-    return this.http.delete<Cliente>(this.url+"/"+ cliente.Id,{
+    return this.http.delete<Cliente>(this.url+"/"+ cliente.id,{
       headers: header
     });
   }

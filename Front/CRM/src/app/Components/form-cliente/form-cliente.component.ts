@@ -45,7 +45,9 @@ export class FormClienteComponent implements OnInit {
         bairro:['', Validators.required],
         id_Endereco:['', Validators.required],
         cnpj:['',[Validators.required]],
-        cpf:['', Validators.required]
+        cpf:['', Validators.required],
+        ativo:[{value: 1, disabled:true}],
+        consentimento:[{value: 1, disabled:true}]
       })
     } else {
       this.CreateEdit = "Editando";
@@ -62,7 +64,9 @@ export class FormClienteComponent implements OnInit {
         complemento:[this.data.complemento],
         id_Endereco:[this.data.id_Endereco, Validators.required],
         cnpj:[this.data.cnpj, Validators.required],
-        cpf:[this.data.cpf, Validators.required]
+        cpf:[this.data.cpf, Validators.required],
+        ativo:[{value: this.transformAtivado(this.data.ativo), disabled:false}, Validators.required],
+        consentimento:[{value: this.transformAtivado(this.data.consentimento), disabled:false}, Validators.required]
       })
     }
   }
@@ -78,6 +82,21 @@ export class FormClienteComponent implements OnInit {
     this.f.id_Endereco.setValue(id);
   }
 
+  private transformAtivado(ativado: boolean): number {
+    if (ativado === true) {
+      return 1;
+    }
+    return 2;
+  }
+
+
+  private transformAtivado2(ativado: number): boolean {
+    if(ativado === 1){
+      return true;
+    }else{
+      return false;
+    }
+  }
 
 
 
@@ -153,8 +172,8 @@ export class FormClienteComponent implements OnInit {
         bairro: this.f.bairro.value,
         cnpj :this.f.cnpj.value.toString(),
         cpf: this.f.cpf.value.toString(),
-        ativo: true,
-        consentimento: true
+        ativo: this.transformAtivado2(this.f.ativo.value),
+        consentimento: this.transformAtivado2(this.f.consentimento.value)
       })
       return editCliente;
     }

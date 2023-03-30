@@ -27,7 +27,7 @@ namespace CRMAPI.DTO
         public string Cidade { get; set; }
         public string Estado { get; set; }
         public ClienteDTO(string nome, string email, string tel, string rua, string cep, string complemento, 
-            string bairro, int id_endereco, int id, bool consentimento, string cnpj, string cpf,  string cidade, string estado)
+            string bairro, int id_endereco, int id, bool consentimento, string cnpj, string cpf,  string cidade, string estado, bool ativo)
         {
             this.Id = id;
             this.Id_Endereco = id_endereco;
@@ -43,6 +43,7 @@ namespace CRMAPI.DTO
             this.CNPJ = cnpj;
             this.Estado = estado;
             this.Cidade = cidade;
+            this.Ativo = ativo;
 
         }
 
