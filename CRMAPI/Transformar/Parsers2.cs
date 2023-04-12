@@ -25,6 +25,8 @@ namespace CRMAPI.Transformar
                     oportunidadeDTO.Preco_produto,
                     oportunidadeDTO.Categoria
                 ),
+                CNPJ = oportunidadeDTO.CNPJ,
+                CPF = oportunidadeDTO.CPF,
                 Vinculado = oportunidadeDTO.Vinculado
             };
         }
@@ -43,7 +45,9 @@ namespace CRMAPI.Transformar
                 Categoria = oportunidade.Produto.Categoria,
                 Aprovador = oportunidade.Aprovador,
                 Data = oportunidade.Data,
-                Vinculado = oportunidade.Vinculado
+                Vinculado = oportunidade.Vinculado,
+                CPF = oportunidade.CPF,
+                CNPJ = oportunidade.CNPJ
             };
         }
 
@@ -88,7 +92,9 @@ namespace CRMAPI.Transformar
                     oportunidadeDTO.Preco_produto,
                     oportunidadeDTO.Categoria
                 ),
-                
+                Vinculado =  oportunidadeDTO.Vinculado,
+                CNPJ = oportunidadeDTO.CNPJ,
+                CPF = oportunidadeDTO.CPF
             };
         }
 
@@ -107,7 +113,9 @@ namespace CRMAPI.Transformar
                 Responsavel = oportunidade.Responsavel,
                 Tipo_oportunidade = oportunidade.Tipo,
                 Categoria = oportunidade.Produto.Categoria,
-                Vinculado =oportunidade.Vinculado
+                Vinculado =oportunidade.Vinculado,
+                CPF = oportunidade.CPF,
+                CNPJ = oportunidade.CNPJ
             };
         }
 

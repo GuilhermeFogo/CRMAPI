@@ -5,6 +5,18 @@
         <input matInput type="text" formControlName="responsavel" placeholder="Responsavel">
     </mat-form-field>
     <br>
+    <mat-form-field class="w-75">
+        <mat-label>CNPJ</mat-label>
+        <input matInput type="number" formControlName="cnpj" placeholder="Digite o CNPJ" (keydown.Tab)="ValidaCampoCNPJ()" 
+        (focusin)="ValidaCampoCNPJ()" (focusout)="ValidaCampoCNPJ()">
+    </mat-form-field>
+
+    <mat-form-field class="w-75">
+        <mat-label>CPF</mat-label>
+        <input matInput type="number" formControlName="cpf" placeholder="Digite o CPF" (keydown.Tab)="ValidaCampoCPF()" 
+        (focusin)="ValidaCampoCPF()" (focusout)="ValidaCampoCPF()">
+    </mat-form-field>
+    <br>
     <mat-form-field>
         <mat-label>Aprovador</mat-label>
         <input matInput type="text" formControlName="aprovador" placeholder="Aprovador da Oportunidade">

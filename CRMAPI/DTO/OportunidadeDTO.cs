@@ -8,6 +8,8 @@ namespace CRMAPI.DTO
     public class OportunidadeDTO
     {
         public string Responsavel { get; set; }
+        public string CPF { get; set; }
+        public string CNPJ { get; set; }
         public int Id_oportunidade { get; set; }
         public string Tipo_oportunidade { get; set; }
             

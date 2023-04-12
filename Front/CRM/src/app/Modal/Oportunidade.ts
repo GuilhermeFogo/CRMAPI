@@ -5,7 +5,8 @@ export class Oportunidade {
     private tipo_oportunidade: string
 
     private ativo_Oportunidade: boolean
-
+    private CNPJ: string
+    private CPF:string
     private id_produto: string
     private nome_produto: string
     private preco_produto: string
@@ -15,9 +16,9 @@ export class Oportunidade {
     private vinculado: boolean
 
 
-    constructor({ responsavel, id_oportunidade, tipo_oportunidade, ativo_Oportunidade, id_produto, nome_produto, preco_produto, categoria, data, aprovador, vinculado }: {
+    constructor({ responsavel, id_oportunidade, tipo_oportunidade, ativo_Oportunidade, id_produto, nome_produto, preco_produto, categoria, data, aprovador, vinculado, CPF,CNPJ }: {
             responsavel: string, id_oportunidade: string, tipo_oportunidade: string, ativo_Oportunidade: boolean, id_produto: string, nome_produto: string, 
-            preco_produto: string, categoria: string, data: Date, aprovador: string, vinculado:boolean
+            preco_produto: string, categoria: string, data: Date, aprovador: string, vinculado:boolean, CNPJ: string, CPF:string
         }
     ) {
         this.aprovador = aprovador;
@@ -30,7 +31,9 @@ export class Oportunidade {
         this.responsavel = responsavel;
         this.categoria = categoria;
         this.tipo_oportunidade = tipo_oportunidade;
-        this.vinculado =vinculado
+        this.vinculado =vinculado;
+        this.CNPJ = CNPJ;
+        this.CPF = CPF;
     }
 
     public get Aprovador(): string {
@@ -75,6 +78,16 @@ export class Oportunidade {
     public get Vinculado() : boolean {
         return this.vinculado
     }
+    
+    
+    public get CNPJs() : string {
+        return this.CNPJ;
+    }
+    
+    public get CPFs() : string {
+        return this.CPF;
+    }
+    
     
 
 }

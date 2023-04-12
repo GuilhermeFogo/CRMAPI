@@ -1605,31 +1605,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Guilherme\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Guilherme\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\Autenticacao\\Autenticacao.csproj",
+      "projectUniqueName": "C:\\Users\\Guilherme\\Desktop\\Projeto .net\\CRMAPI\\Autenticacao\\Autenticacao.csproj",
       "projectName": "Autenticacao",
-      "projectPath": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\Autenticacao\\Autenticacao.csproj",
+      "projectPath": "C:\\Users\\Guilherme\\Desktop\\Projeto .net\\CRMAPI\\Autenticacao\\Autenticacao.csproj",
       "packagesPath": "C:\\Users\\Guilherme\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\Autenticacao\\obj\\",
+      "outputPath": "C:\\Users\\Guilherme\\Desktop\\Projeto .net\\CRMAPI\\Autenticacao\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Guilherme\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Guilherme\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1680,7 +1673,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.414\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -37,7 +37,9 @@ export class FormOpoComponent implements OnInit {
         tipo_opo: [{ value: 1, disabled: false }],
         preco_produto: [0],
         tipo_produto: [{ value: 1, disabled: false }, Validators.required],
-        data: [new Date(), Validators.required]
+        data: [new Date(), Validators.required],
+        cpf:["", Validators.required],
+        cnpj:["", Validators.required]
       })
     } else {
       this.CreateEdit = "Editar";
@@ -51,7 +53,9 @@ export class FormOpoComponent implements OnInit {
         ativo_opo: [{ value: this.TransformBool2Int(this.data.Ativo_Oportunidade) }, Validators.required],
         preco_produto: [this.data.Preco_produto],
         tipo_produto: [this.data.Categoria, Validators.required],
-        data: [this.data.Data, Validators.required]
+        data: [this.data.Data, Validators.required],
+        cpf:[this.data.CPFs, Validators.required],
+        cnpj:[this.data.CNPJs, Validators.required]
       })
     }
   }
@@ -77,6 +81,19 @@ export class FormOpoComponent implements OnInit {
 
   }
 
+  
+  public ValidaCampoCNPJ(){
+
+    if(this.form.get("cnpj")?.value !="" &&this.form.get("cnpj")?.value !=0){
+      this.form.get("cpf")?.setValue("0");
+    }
+  } 
+
+  public ValidaCampoCPF(){
+    if(this.form.get("cpf")?.value !="" && this.form.get("cpf")?.value !=0){
+      this.form.get("cnpj")?.setValue("0");
+    }
+  }
 
   public Close() {
     this.dialogRef.close();
@@ -96,7 +113,9 @@ export class FormOpoComponent implements OnInit {
       preco_produto: this.f.preco_produto.value,
       tipo_oportunidade: this.f.tipo_opo.value,
       categoria: this.f.tipo_produto.value,
-      vinculado: false
+      vinculado: false,
+      CNPJ: this.f.cnpj.value,
+      CPF:this.f.cpf.value
     })
     return obj;
   }
