@@ -18,7 +18,7 @@ namespace CRMAPI.Modal
         public Produto Produto { get; set; }
 
 
-        public string Tipo { get; set; }
+        public string Status { get; set; }
 
         public bool Ativo { get; set; }
 
@@ -31,14 +31,13 @@ namespace CRMAPI.Modal
         public Oportunidade()
         {
             this.Produto = new Produto();
-            // this.Cliente = new Cliente();
             this.Data = new DateTime();
         }
 
 
 
         public Oportunidade(string responsavel, int id_oportunidade, int id_produto, string nome_produto, string preco, string categoria,
-        string tipo_oportunidade, DateTime data, string aprovador, bool vinculado, string CNPJ, string cpf)
+        string status_oportunidade, DateTime data, string aprovador, bool vinculado, string CNPJ, string cpf)
         {
             this.Produto = new Produto();
             this.Responsavel = responsavel;
@@ -47,7 +46,7 @@ namespace CRMAPI.Modal
             this.Produto.Nome = nome_produto;
             this.Produto.Preco = preco;
             this.Produto.Categoria = categoria;
-            this.Tipo = tipo_oportunidade;
+            this.Status = status_oportunidade;
             this.Data = data;
             this.Aprovador = aprovador;
             this.Vinculado = vinculado;

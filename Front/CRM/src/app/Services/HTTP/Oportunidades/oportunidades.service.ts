@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { HelperRequests } from 'src/app/Helper/helper-requests';
 import { environment } from 'src/environments/environment';
 import { CookieService } from '../../cookie/cookie.service';
+import { Oportunidade } from 'src/app/Modal/Oportunidade';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class OportunidadesService extends HelperRequests {
   constructor(http: HttpClient, cookie: CookieService) {
     super(cookie);
     this.http = http;
-    this.url = environment.Local + "";
+    this.url = environment.Local + "/api/Oportunidade";
   }
 
   public VerOportunidades(): Observable<Oportunidade[]> {

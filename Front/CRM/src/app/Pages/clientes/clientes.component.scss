@@ -1,0 +1,35 @@
+.container {
+    column-count: 3;
+}
+
+
+// .col{
+//     display: flex;
+//     width: 50%;
+//     height: 50%;
+//     justify-content: space-around;  
+// }
+
+.container {
+    width: 100%;
+    padding-right: var(--bs-gutter-x, 0.75rem);
+    padding-left: var(--bs-gutter-x, 0.75rem);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+.col {
+    flex: 0 0 auto;
+    width: 25%;
+}
+
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y) * -1);
+    margin-right: calc(var(--bs-gutter-x) * -.5);
+    margin-left: calc(var(--bs-gutter-x) * -.5);
+  }

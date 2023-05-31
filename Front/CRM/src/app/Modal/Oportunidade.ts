@@ -2,7 +2,7 @@ export class Oportunidade {
 
     private responsavel: string
     private id_oportunidade: string
-    private tipo_oportunidade: string
+    private status_oportunidade: string
 
     private ativo_Oportunidade: boolean
     private CNPJ: string
@@ -16,8 +16,8 @@ export class Oportunidade {
     private vinculado: boolean
 
 
-    constructor({ responsavel, id_oportunidade, tipo_oportunidade, ativo_Oportunidade, id_produto, nome_produto, preco_produto, categoria, data, aprovador, vinculado, CPF,CNPJ }: {
-            responsavel: string, id_oportunidade: string, tipo_oportunidade: string, ativo_Oportunidade: boolean, id_produto: string, nome_produto: string, 
+    constructor({ responsavel, id_oportunidade, status_oportunidade, ativo_Oportunidade, id_produto, nome_produto, preco_produto, categoria, data, aprovador, vinculado, CPF,CNPJ }: {
+            responsavel: string, id_oportunidade: string, status_oportunidade: string, ativo_Oportunidade: boolean, id_produto: string, nome_produto: string, 
             preco_produto: string, categoria: string, data: Date, aprovador: string, vinculado:boolean, CNPJ: string, CPF:string
         }
     ) {
@@ -30,7 +30,7 @@ export class Oportunidade {
         this.preco_produto = preco_produto;
         this.responsavel = responsavel;
         this.categoria = categoria;
-        this.tipo_oportunidade = tipo_oportunidade;
+        this.status_oportunidade = status_oportunidade;
         this.vinculado =vinculado;
         this.CNPJ = CNPJ;
         this.CPF = CPF;
@@ -63,8 +63,8 @@ export class Oportunidade {
         return this.id_produto;
     }
 
-    public get Tipo_oportunidade(): string {
-        return this.tipo_oportunidade;
+    public get Status_oportunidade(): string {
+        return this.status_oportunidade;
     }
 
     public get Id_oportunidade(): string {

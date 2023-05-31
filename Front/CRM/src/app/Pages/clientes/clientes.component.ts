@@ -15,12 +15,15 @@ export class ClientesComponent implements OnInit {
   private dialog: MatDialog;
   private readonly ClienteService: ClienteService;
   private snackBar: MatSnackBar;
-  public DadosTabela: Cliente[]
+  public DadosTabela: Cliente[];
+  public panelOpenState:boolean;
   constructor(dialog: MatDialog, _snackBar: MatSnackBar, clienteService: ClienteService) {
     this.dialog = dialog;
     this.snackBar = _snackBar;
     this.ClienteService = clienteService
     this.DadosTabela =[]
+    
+    this.panelOpenState = false;
   }
 
   ngOnInit(): void {

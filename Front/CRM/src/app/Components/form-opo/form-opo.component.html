@@ -26,8 +26,12 @@
     <app-select-ativo [form]="form" [FormControlName_]="'ativo_opo'"></app-select-ativo>
 
     <br>
-    <mat-label>Tipo de Oportunidade</mat-label>
-    <app-select-opo [form]="form" [FormControlName_]="'tipo_opo'"></app-select-opo>
+    <mat-label>Status de Oportunidade</mat-label>
+    <app-select-opo [form]="form" [FormControlName_]="'status_opo'"></app-select-opo>
+    <mat-form-field>
+        <mat-label>Nome do Produto</mat-label>
+        <input matInput type="text" formControlName="nome_produto" placeholder="Nome do Produto">
+    </mat-form-field>
     <br>
     <mat-label>Tipo de Produto</mat-label>
     <app-select-product [form]="form" [FormControlName_]="'tipo_produto'"></app-select-product>
@@ -42,7 +46,7 @@
     </mat-form-field> -->
 
     <mat-form-field>
-        <mat-label>Choose a date</mat-label>
+        <mat-label>Data da Oportunidade</mat-label>
         <input matInput [matDatepicker]="picker"  formControlName="data">
         <mat-hint>DD/MM/YYYY</mat-hint>
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>

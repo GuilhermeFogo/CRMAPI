@@ -11,7 +11,7 @@ namespace CRMAPI.DTO
         public string CPF { get; set; }
         public string CNPJ { get; set; }
         public int Id_oportunidade { get; set; }
-        public string Tipo_oportunidade { get; set; }
+        public string Status_oportunidade { get; set; }
             
         public bool Ativo_Oportunidade { get; set; }
 

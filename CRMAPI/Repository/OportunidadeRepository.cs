@@ -21,7 +21,7 @@ namespace CRMAPI.Repository
         {
             var oportunidades = this.DB.Oportunidade.Where(x => x.Id_Oportunidade == oportunidade.Id_Oportunidade).FirstOrDefault();
             oportunidades.Responsavel = oportunidade.Responsavel;
-            oportunidades.Tipo = oportunidade.Tipo;
+            oportunidades.Status = oportunidade.Status;
             oportunidades.Ativo = oportunidade.Ativo;
             this.DB.Update(oportunidades);
             this.DB.SaveChanges();
@@ -100,7 +100,7 @@ namespace CRMAPI.Repository
                     Data = opo.Data,
                     Id_Oportunidade = opo.Id_Oportunidade,
                     Responsavel = opo.Responsavel,
-                    Tipo = opo.Tipo,
+                    Status = opo.Status,
                     Produto = new Produto()
                     {
                         Id_produto = produtos.Id_produto,
@@ -122,7 +122,7 @@ namespace CRMAPI.Repository
                 {
                     Id_oportunidade = opo.Id_Oportunidade,
                     Responsavel = opo.Responsavel,
-                    Tipo_oportunidade = opo.Tipo,
+                    Status_oportunidade = opo.Status,
                     Id_produto = prod.Id_produto,
                     Nome_prod = prod.Nome,
                     Preco = prod.Preco,
@@ -138,7 +138,7 @@ namespace CRMAPI.Repository
             var joincliente_parcial = joinProdutos.Join(this.DB.Clientes.DefaultIfEmpty(),
                (opo2) => opo2.Id_oportunidade, (cliente) => cliente.Id,
                (opo2, cliente) => new Oportunidade(opo2.Responsavel,opo2.Id_oportunidade,opo2.Id_produto,opo2.Nome_prod,opo2.Preco,opo2.Tipo_prod,
-               opo2.Tipo_oportunidade,opo2.Data,opo2.Aprovador, opo2.Vinculado, opo2.CNPJ, opo2.CPF));
+               opo2.Status_oportunidade,opo2.Data,opo2.Aprovador, opo2.Vinculado, opo2.CNPJ, opo2.CPF));
 
             return joincliente_parcial;
         }

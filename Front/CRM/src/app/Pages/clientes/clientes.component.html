@@ -1,29 +1,47 @@
-
 <div>
-    <app-menu></app-menu>
+  <app-menu></app-menu>
 </div>
 
 <div>
-    <button mat-button (click)="AbrirModalCliente()">Cadastro Cliente</button>
+  <button mat-button (click)="AbrirModalCliente()">Cadastro Cliente</button>
 </div>
-<table>
-    <thead>
-        <tr>
-            <th>Nome</th>
-            <th>E-mail</th>
-            <th>Telefone</th>
-            <th>Açoes</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let item of DadosTabela">
-            <td>{{item.nome || item}}</td>
-            <td>{{item.email || item}}</td>
-            <td>{{item.telefone || item}}</td>
-            <td>
-                <button mat-button (click)="EditarCliente(item)">Editar</button>
-                <button mat-button color="warn" (click)="Delete(item)">Deletar</button>
-            </td>
-        </tr>
-    </tbody>
-</table>
+
+<div *ngFor="let item of DadosTabela">
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Nome da Empresa: {{item.nome}}
+        </mat-panel-title>
+        <mat-panel-description>
+          CNPJ / CPF: {{item.cnpj =="0" ? item.cpf: item.cnpj}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      Ações:
+      <button mat-button (click)="EditarCliente(item)">Editar</button>
+      <button mat-button color="warn" (click)="Delete(item)">Deletar</button>
+
+
+      <h2>Dados Da Empresa</h2>
+
+      <p>Telefone: {{item.telefone}}</p>
+      <p>E-mail: {{item.email}}</p>
+
+
+      <h2>Localização da Empresa</h2>
+
+      <p>Rua: {{item.rua}}</p>
+      <p>Bairro: {{item.bairro}}</p>
+      <p>CEP: {{item.cep}}</p>
+      <p>Cidade: {{item.cidade}}</p>
+      <p>Estado: {{item.estado}}</p>
+      <p>Complemento: {{item.complemento}}</p>
+
+
+
+      <h2>Status Cliente</h2>
+      <p>Situação: {{item.ativo== true ? "Ativo": "Desativado"}}</p>
+      <p>Consentimento empresarial: {{item.consentimento== true ? "Ativo": "Desativado"}}</p>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

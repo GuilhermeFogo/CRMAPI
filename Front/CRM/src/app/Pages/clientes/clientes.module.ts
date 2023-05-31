@@ -6,7 +6,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormClienteModule } from 'src/app/Components/form-cliente/form-cliente.module';
 import { MatDialogModule } from '@angular/material/dialog';
-
+import { MatExpansionModule } from '@angular/material/expansion';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 @NgModule({
@@ -20,7 +21,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatSnackBarModule,
     MenuModule,
     FormClienteModule,
-    MatDialogModule
+    MatDialogModule,
+    MatExpansionModule,
+    MatGridListModule
   ], exports:[
     ClientesComponent
   ]
