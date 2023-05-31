@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uW0VJ26E4+ImsxRYcsZmajzO3VoC7p8R+aZP70izK4qMvul65tEacl7TebtJzQ3O1hQvf5lDAcpxsApAef/ZpQ==",
+  "dgSpecHash": "naGA5/oT1Qs7/ipD7NiD8yaxdHDCZQGsGuZ0jc4mMDDohUXfC6KzAQke4m0wZYkumcz7575GC0M4YOeB6DiVhg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Guilherme\\Desktop\\Projeto .net\\CRMAPI\\JWT Docsign-c#\\JWT-Console\\JWT-Console.csproj",
+  "projectFilePath": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\JWT Docsign-c#\\JWT-Console\\JWT-Console.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Guilherme\\.nuget\\packages\\docusign.esign.dll\\5.9.0\\docusign.esign.dll.5.9.0.nupkg.sha512",
     "C:\\Users\\Guilherme\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
@@ -95,10 +95,7 @@
     "C:\\Users\\Guilherme\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Guilherme\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Guilherme\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\Guilherme\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
-    "C:\\Users\\Guilherme\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
-    "C:\\Users\\Guilherme\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
-    "C:\\Users\\Guilherme\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512"
+    "C:\\Users\\Guilherme\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }
