@@ -11,5 +11,7 @@
         <mat-error>Algo de errado aconteceu com o campo senha, Tente novamente</mat-error>
     </mat-form-field>
     <br>
+    <button mat-button (click)="ResetSenha()">Esqueci a senha</button>
+    <br>
     <button mat-button (click)="OnSubmit()" [disabled]="form.invalid">Entar</button>
 </form>

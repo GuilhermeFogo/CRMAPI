@@ -63,4 +63,8 @@ export class FormLoginComponent implements OnInit {
       }
     },e => this._snackBar.open("Tente Novamente","OK"));
   }
+
+  public ResetSenha(){
+    this.route.navigateByUrl("/resetSenha");
+  }
 }

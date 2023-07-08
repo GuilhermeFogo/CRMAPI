@@ -10,6 +10,7 @@ import { GerenciaUserModule } from './Pages/gerencia-user/gerencia-user.module';
 import { LoginModule } from './Pages/login/login.module';
 import { DashboardModule } from './Pages/dashboard/dashboard.module';
 import { OportunidadesModule } from './Pages/oportunidades/oportunidades.module';
+import { ResetsenhaModule } from './Pages/Resetsenha/resetsenha.module';
 @NgModule({
   declarations: [
     AppComponent
@@ -23,7 +24,8 @@ import { OportunidadesModule } from './Pages/oportunidades/oportunidades.module'
     LoginModule,
     DashboardModule,
     OportunidadesModule,
-    ClientesModule
+    ClientesModule,
+    ResetsenhaModule
   ],
   providers: [],
   bootstrap: [AppComponent]
