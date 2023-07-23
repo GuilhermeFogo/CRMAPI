@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "my1jZXL0HnTIbxjMo7UgXq2x2J1FVahxS6/fD+cOQwcsAq2HlB9XWpyqsdvq/ctySzPNtb7H1clv5n7lV/AGPw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Guilherme\\Desktop\\Projeto .net\\CRMAPI\\MensageiroSys\\MensageiroSys.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Guilherme\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

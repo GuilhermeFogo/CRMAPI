@@ -2446,6 +2446,19 @@
         "runtime": {
           "bin/placeholder/JWT-Console.dll": {}
         }
+      },
+      "MensageiroSys/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "bin/placeholder/MensageiroSys.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MensageiroSys.dll": {}
+        }
       }
     }
   },
@@ -7438,12 +7451,18 @@
       "type": "project",
       "path": "../JWT Docsign-c#/JWT-Console/JWT-Console.csproj",
       "msbuildProject": "../JWT Docsign-c#/JWT-Console/JWT-Console.csproj"
+    },
+    "MensageiroSys/1.0.0": {
+      "type": "project",
+      "path": "../MensageiroSys/MensageiroSys.csproj",
+      "msbuildProject": "../MensageiroSys/MensageiroSys.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
       "Autenticacao >= 1.0.0",
       "JWT-Console >= 1.0.0",
+      "MensageiroSys >= 1.0.0",
       "Microsoft.Authentication.WebAssembly.Msal >= 6.0.10",
       "Microsoft.EntityFrameworkCore >= 5.0.11",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.11",
@@ -7489,6 +7508,9 @@
             },
             "C:\\Users\\Guilherme\\Desktop\\Projeto .net\\CRMAPI\\JWT Docsign-c#\\JWT-Console\\JWT-Console.csproj": {
               "projectPath": "C:\\Users\\Guilherme\\Desktop\\Projeto .net\\CRMAPI\\JWT Docsign-c#\\JWT-Console\\JWT-Console.csproj"
+            },
+            "C:\\Users\\Guilherme\\Desktop\\Projeto .net\\CRMAPI\\MensageiroSys\\MensageiroSys.csproj": {
+              "projectPath": "C:\\Users\\Guilherme\\Desktop\\Projeto .net\\CRMAPI\\MensageiroSys\\MensageiroSys.csproj"
             }
           }
         }

@@ -12,7 +12,7 @@ namespace CRMAPI.Repository.Interfaces
         void Delete(Usuario usuario);
 
         void Atualizar(Usuario usuario);
-
+        void Atualizar(Usuario usuario, string senha);
         IEnumerable<Usuario> ListarTodos();
 
         Usuario PesquisaUsuario(int id);

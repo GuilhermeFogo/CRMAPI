@@ -11,10 +11,11 @@ namespace CRMAPI.Controllers
     public class ResetsenhaUser : Controller
     {
         private readonly IUsuarioService usuarioService;
-
-        public ResetsenhaUser(IUsuarioService usuarioService)
+        private readonly IResetsenhaService resetsenhaService;
+        public ResetsenhaUser(IUsuarioService usuarioService, IResetsenhaService resetsenhaService)
         {
             this.usuarioService = usuarioService;
+            this.resetsenhaService = resetsenhaService;
         }
 
         [HttpPost]
@@ -30,7 +31,8 @@ namespace CRMAPI.Controllers
                 var usuarioexiste = this.usuarioService.PesquisarUsuario(user.Email);
                 if (!string.IsNullOrEmpty(usuarioexiste.Email))
                 {
-
+                    this.resetsenhaService.RedefinirSenha(usuarioexiste);
+                    return Ok();
                 }
                 return BadRequest("informe um usuário valido");
             }

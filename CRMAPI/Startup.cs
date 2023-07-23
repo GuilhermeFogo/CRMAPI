@@ -24,6 +24,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SystemAPI.Mensagero;
 
 namespace CRMAPI
 {
@@ -51,7 +52,7 @@ namespace CRMAPI
                 {
                     Description =
                         "JWT Authorization Header - utilizado com Bearer Authentication.\r\n\r\n" +
-                        "Digite 'Bearer' [espaço] e então seu token no campo abaixo.\r\n\r\n" +
+                        "Digite 'Bearer' [espaï¿½o] e entï¿½o seu token no campo abaixo.\r\n\r\n" +
                         "Exemplo (informar sem as aspas): 'Bearer 12345abcdef'",
                     Name = "Authorization",
                     In = ParameterLocation.Header,
@@ -124,11 +125,13 @@ namespace CRMAPI
             services.AddScoped<IUsuarioService, UsuarioService>();
             services.AddScoped<IServiceOportunidade, ServiceOportunidade>();
             services.AddScoped<IAssinaturaDigital, AssinaturaDocsingService>();
-            
+            services.AddScoped<IResetsenhaService, ResetsenhaService>();
+
             services.AddScoped<IAutenticacao, AutenticacaoService>();
             services.AddScoped<ITokenService, MeuTokenService>();
 
             services.AddScoped<IEnvia_envelope, Envia_envelopeService>();
+            services.AddScoped<IMensageiro,Mensageiro>();
         }
 
         private void Autenticacao(IServiceCollection services)

@@ -30,6 +30,15 @@ namespace CRMAPI.Repository
             this.usuarioDB.SaveChanges();
         }
 
+        public void Atualizar(Usuario usuario, string senha)
+        {
+            var user = this.usuarioDB.Usuarios.Where((x) => x.Id == usuario.Id).FirstOrDefault();
+            user.Senha = senha;
+
+            this.usuarioDB.Update(user);
+            this.usuarioDB.SaveChanges();
+        }
+
         public void Delete(Usuario usuario)
         {
             var user = this.usuarioDB.Usuarios.Where((x) => x.Id == usuario.Id).FirstOrDefault();   

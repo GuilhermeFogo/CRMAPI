@@ -29,6 +29,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Autenticacao\Autenticacao.csproj" />
     <ProjectReference Include="..\JWT Docsign-c#\JWT-Console\JWT-Console.csproj" />
+    <ProjectReference Include="..\MensageiroSys\MensageiroSys.csproj" />
   </ItemGroup>
 
 </Project>

@@ -12,6 +12,7 @@ namespace CRMAPI.Services.Interfaces
         void Delete(UsuarioDTO user);
 
         void Atualizar(UsuarioDTO user);
+        void AtualizarSenha(UsuarioDTO user);
 
         IEnumerable<UsuarioDTO> ListarTodos();
 
