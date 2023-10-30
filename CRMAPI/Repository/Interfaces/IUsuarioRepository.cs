@@ -17,5 +17,6 @@ namespace CRMAPI.Repository.Interfaces
 
         Usuario PesquisaUsuario(int id);
         Usuario PesquisaUsuario(string nome);
+        Usuario PesquisaEmailUsuario(string Email);
     }
 }

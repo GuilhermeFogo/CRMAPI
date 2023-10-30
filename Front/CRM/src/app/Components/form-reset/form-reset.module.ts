@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormResetComponent } from './form-reset.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -13,7 +14,8 @@ import { MatInputModule } from '@angular/material/input';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MatIconModule
   ], 
   exports: [FormResetComponent]
 })

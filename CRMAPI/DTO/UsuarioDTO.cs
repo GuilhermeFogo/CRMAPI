@@ -15,6 +15,9 @@ namespace CRMAPI.DTO
 
         public bool Ativado { get; set; }
 
+        public bool Resetsenha{get; set;}
+        public string CodigoResgate{get; set;}
+
         public int CompareTo(object obj)
         {
            var usuario2 = (UsuarioDTO) obj;

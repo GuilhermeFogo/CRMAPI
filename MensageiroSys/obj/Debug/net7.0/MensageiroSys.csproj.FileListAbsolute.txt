@@ -1,0 +1,12 @@
+C:\Users\Guilherme\Desktop\Projeto .net\CRMAPI\MensageiroSys\bin\Debug\net7.0\MensageiroSys.deps.json
+C:\Users\Guilherme\Desktop\Projeto .net\CRMAPI\MensageiroSys\bin\Debug\net7.0\MensageiroSys.dll
+C:\Users\Guilherme\Desktop\Projeto .net\CRMAPI\MensageiroSys\bin\Debug\net7.0\MensageiroSys.pdb
+C:\Users\Guilherme\Desktop\Projeto .net\CRMAPI\MensageiroSys\obj\Debug\net7.0\MensageiroSys.csproj.AssemblyReference.cache
+C:\Users\Guilherme\Desktop\Projeto .net\CRMAPI\MensageiroSys\obj\Debug\net7.0\MensageiroSys.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Guilherme\Desktop\Projeto .net\CRMAPI\MensageiroSys\obj\Debug\net7.0\MensageiroSys.AssemblyInfoInputs.cache
+C:\Users\Guilherme\Desktop\Projeto .net\CRMAPI\MensageiroSys\obj\Debug\net7.0\MensageiroSys.AssemblyInfo.cs
+C:\Users\Guilherme\Desktop\Projeto .net\CRMAPI\MensageiroSys\obj\Debug\net7.0\MensageiroSys.csproj.CoreCompileInputs.cache
+C:\Users\Guilherme\Desktop\Projeto .net\CRMAPI\MensageiroSys\obj\Debug\net7.0\MensageiroSys.dll
+C:\Users\Guilherme\Desktop\Projeto .net\CRMAPI\MensageiroSys\obj\Debug\net7.0\refint\MensageiroSys.dll
+C:\Users\Guilherme\Desktop\Projeto .net\CRMAPI\MensageiroSys\obj\Debug\net7.0\MensageiroSys.pdb
+C:\Users\Guilherme\Desktop\Projeto .net\CRMAPI\MensageiroSys\obj\Debug\net7.0\ref\MensageiroSys.dll

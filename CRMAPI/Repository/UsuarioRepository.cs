@@ -34,7 +34,9 @@ namespace CRMAPI.Repository
         {
             var user = this.usuarioDB.Usuarios.Where((x) => x.Id == usuario.Id).FirstOrDefault();
             user.Senha = senha;
-
+            user.Resetsenha = usuario.Resetsenha;
+            user.CodigoResgate =usuario.CodigoResgate;
+            
             this.usuarioDB.Update(user);
             this.usuarioDB.SaveChanges();
         }
@@ -62,9 +64,17 @@ namespace CRMAPI.Repository
             var usu = this.usuarioDB.Usuarios.Where((x) => x.Nome == nome);
             return usu.AsEnumerable().FirstOrDefault();
         }
+        
+        public Usuario PesquisaEmailUsuario(string Email)
+        {
+            var usu = this.usuarioDB.Usuarios.Where((x) => x.Email == Email);
+            return usu.AsEnumerable().FirstOrDefault();
+        }
 
         public void Save(Usuario usuario)
         {
+            usuario.CodigoResgate="";
+            usuario.Resetsenha = false;
             this.usuarioDB.Add(usuario);
             this.usuarioDB.SaveChanges();
         }

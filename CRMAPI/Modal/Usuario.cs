@@ -16,5 +16,7 @@ namespace CRMAPI.Modal
         public string Role { get; set; }
         public string Email { get; set; }
         public bool Ativado { get; set; }
+        public bool Resetsenha{get; set;}
+        public string CodigoResgate{get; set;}
     }
 }

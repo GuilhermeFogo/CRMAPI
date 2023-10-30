@@ -28,7 +28,7 @@ namespace CRMAPI.Services
 
                 var usu = this.usuarioRepository.PesquisaUsuario(usuario.Nome);
                 if (usu != null)
-                {
+                {   
                     if ((usu.Nome == usuario.Nome && usu.Senha == usuario.Senha) && usu.Ativado == true)
                     {
                         var user = Parsers.ParseUsuarioAuth(usu);

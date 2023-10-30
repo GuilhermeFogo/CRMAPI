@@ -19,7 +19,9 @@ namespace CRMAPI.Transformar
                 Role = MyRolesINT(usuarioDTO.Role),
                 Senha = usuarioDTO.Senha,
                 Email = usuarioDTO.Email,
-                Ativado = usuarioDTO.Ativado
+                Ativado = usuarioDTO.Ativado,
+                Resetsenha = usuarioDTO.Resetsenha,
+                CodigoResgate = usuarioDTO.CodigoResgate
             };
         }
 
@@ -32,7 +34,9 @@ namespace CRMAPI.Transformar
                 Role = MyRolesstrig(usuario.Role),
                 Senha = usuario.Senha,
                 Email = usuario.Email,
-                Ativado = usuario.Ativado
+                Ativado = usuario.Ativado,
+                Resetsenha = usuario.Resetsenha,
+                CodigoResgate = usuario.CodigoResgate
             };
         }
 
@@ -80,7 +84,8 @@ namespace CRMAPI.Transformar
                 Role = usuario.Role,
                 Senha = "",
                 Email = usuario.Email,
-                Ativado = usuario.Ativado
+                Ativado = usuario.Ativado,
+                Resetsenha = usuario.Resetsenha
             };
         }
 

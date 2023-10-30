@@ -1,0 +1,12 @@
+C:\Users\Guilherme\Desktop\Projeto .net\CRMAPI\Autenticacao\bin\Debug\net7.0\Autenticacao.deps.json
+C:\Users\Guilherme\Desktop\Projeto .net\CRMAPI\Autenticacao\bin\Debug\net7.0\Autenticacao.dll
+C:\Users\Guilherme\Desktop\Projeto .net\CRMAPI\Autenticacao\bin\Debug\net7.0\Autenticacao.pdb
+C:\Users\Guilherme\Desktop\Projeto .net\CRMAPI\Autenticacao\obj\Debug\net7.0\Autenticacao.csproj.AssemblyReference.cache
+C:\Users\Guilherme\Desktop\Projeto .net\CRMAPI\Autenticacao\obj\Debug\net7.0\Autenticacao.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Guilherme\Desktop\Projeto .net\CRMAPI\Autenticacao\obj\Debug\net7.0\Autenticacao.AssemblyInfoInputs.cache
+C:\Users\Guilherme\Desktop\Projeto .net\CRMAPI\Autenticacao\obj\Debug\net7.0\Autenticacao.AssemblyInfo.cs
+C:\Users\Guilherme\Desktop\Projeto .net\CRMAPI\Autenticacao\obj\Debug\net7.0\Autenticacao.csproj.CoreCompileInputs.cache
+C:\Users\Guilherme\Desktop\Projeto .net\CRMAPI\Autenticacao\obj\Debug\net7.0\Autenticacao.dll
+C:\Users\Guilherme\Desktop\Projeto .net\CRMAPI\Autenticacao\obj\Debug\net7.0\refint\Autenticacao.dll
+C:\Users\Guilherme\Desktop\Projeto .net\CRMAPI\Autenticacao\obj\Debug\net7.0\Autenticacao.pdb
+C:\Users\Guilherme\Desktop\Projeto .net\CRMAPI\Autenticacao\obj\Debug\net7.0\ref\Autenticacao.dll
