@@ -1,3 +1,4 @@
+import { DefineSenhaService } from './../../Services/HTTP/Resetsenha/definesenha.service';
 import { CookieService } from './../../Services/cookie/cookie.service';
 import { ResetsenhaService } from './../../Services/HTTP/Resetsenha/resetsenha.service';
 import { Component, OnInit } from '@angular/core';
@@ -17,13 +18,13 @@ export class DefinePassComponent implements OnInit {
   private readonly fb: FormBuilder;
   private readonly _snackBar: MatSnackBar;
   private readonly CookieService:CookieService;
-  private ResetsenhaService: ResetsenhaService
+  private defineSenhaService: DefineSenhaService;
 
-  constructor(fb: FormBuilder, _snackBar: MatSnackBar, ResetsenhaService: ResetsenhaService,
+  constructor(fb: FormBuilder, _snackBar: MatSnackBar, DefineSenhaService: DefineSenhaService,
     CookieService:CookieService) {
     this.fb = fb;
     this._snackBar =_snackBar;
-    this.ResetsenhaService =ResetsenhaService;
+    this.defineSenhaService = DefineSenhaService;
     this.CookieService = CookieService;
   }
 
@@ -49,7 +50,8 @@ export class DefinePassComponent implements OnInit {
         role: 0,
         email: this.PegaCookie(),
         ativado: false,
-        restsenha: false
+        restsenha: false,
+        codigoResgate:this.PegaCookie2()
       });
 
       this.PostResetsenha(user);
@@ -72,8 +74,12 @@ export class DefinePassComponent implements OnInit {
     return this.CookieService.getValueCookie("reset");
   }
 
+  private PegaCookie2(){
+    return this.CookieService.getValueCookie("segredo");
+  }
+
   private PostResetsenha(user: User): any {
-    this.ResetsenhaService.PostEmail(user).subscribe({
+    this.defineSenhaService.PostEmail(user).subscribe({
       next: () => {
         this._snackBar.open("Troca de Senha efetuada com exito", "OK");
       },

@@ -20,8 +20,12 @@ namespace CRMAPI.Controllers
 
         [HttpPost("Define")]
         [AllowAnonymous]
-        public IActionResult Definesenha([FromBody] UsuarioDTO usuarioDTO, string codigo){
-            return Ok();
+        public IActionResult Definesenha([FromBody] UsuarioDTO usuarioDTO){
+            if(this.resetsenhaService.DefineSenha(usuarioDTO)){
+                return Ok("Senha Trocada");
+            }else{
+               return BadRequest("Erro");
+            }
         }
 
         [HttpPost("Valida")]

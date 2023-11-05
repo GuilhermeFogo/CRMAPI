@@ -50,7 +50,8 @@ export class FormLoginComponent implements OnInit {
       role: 0,
       email: "",
       ativado : false,
-      restsenha: false
+      restsenha: false,
+      codigoResgate:""
     });
     const expires =  this.cookie.Expires(0,0,2);
     

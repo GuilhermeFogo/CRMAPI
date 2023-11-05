@@ -21,11 +21,15 @@ namespace CRMAPI.Services
 
         public bool DefineSenha(UsuarioDTO usuario)
         {
-            if (usuario.Resetsenha == true)
-            {
-                usuario.Resetsenha = false;
-                this.usuarioService.AtualizarSenha(usuario);
-                return true;
+            var userExiste = this.usuarioService.PesquisarEmailUsuario(usuario.Email);
+            if(userExiste !=null){
+                if (userExiste.Resetsenha == true &&(usuario.CodigoResgate == userExiste.CodigoResgate) 
+                && userExiste.Ativado == true)
+                {
+                    userExiste.Resetsenha = false;
+                    this.usuarioService.AtualizarSenha(usuario);
+                    return true;
+                }
             }
             return false;
         }

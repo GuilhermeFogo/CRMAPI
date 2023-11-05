@@ -45,7 +45,8 @@ export class FormResetComponent implements OnInit {
       role: 0,
       email: this.f.email.value,
       ativado: false,
-      restsenha: false
+      restsenha: false,
+      codigoResgate:""
     });
 
     this.PostResetsenha(user);
