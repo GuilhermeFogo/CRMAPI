@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Guilherme\\Desktop\\Projeto .net\\CRMAPI\\JWT Docsign-c#\\JWT-Console\\JWT-Console.csproj": {}
+    "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\JWT Docsign-c#\\JWT-Console\\JWT-Console.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Guilherme\\Desktop\\Projeto .net\\CRMAPI\\JWT Docsign-c#\\JWT-Console\\JWT-Console.csproj": {
+    "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\JWT Docsign-c#\\JWT-Console\\JWT-Console.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Guilherme\\Desktop\\Projeto .net\\CRMAPI\\JWT Docsign-c#\\JWT-Console\\JWT-Console.csproj",
+        "projectUniqueName": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\JWT Docsign-c#\\JWT-Console\\JWT-Console.csproj",
         "projectName": "JWT-Console",
-        "projectPath": "C:\\Users\\Guilherme\\Desktop\\Projeto .net\\CRMAPI\\JWT Docsign-c#\\JWT-Console\\JWT-Console.csproj",
+        "projectPath": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\JWT Docsign-c#\\JWT-Console\\JWT-Console.csproj",
         "packagesPath": "C:\\Users\\Guilherme\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Guilherme\\Desktop\\Projeto .net\\CRMAPI\\JWT Docsign-c#\\JWT-Console\\obj\\",
+        "outputPath": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\JWT Docsign-c#\\JWT-Console\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Guilherme\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Guilherme\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -71,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     }

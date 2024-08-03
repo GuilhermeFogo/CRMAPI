@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zP2C7ek8NVfF658wmy29meQq6tTGoJaHyVyMIcC3GS9E/4/Q9jKLYA7NMHMZNiJr1krVeWYj/ZVJ8pztvDWlgQ==",
+  "dgSpecHash": "/JAFRDN63koZctV1TT5j6/rF547Ugx3lYXIiwtGkgH0poIgRL/73NsgP1dj6Owb62FAJ5AJlK33+q0s8z4Ceaw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Guilherme\\Desktop\\Projeto .net\\CRMAPI\\Autenticacao\\Autenticacao.csproj",
+  "projectFilePath": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\Autenticacao\\Autenticacao.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Guilherme\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\Guilherme\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
