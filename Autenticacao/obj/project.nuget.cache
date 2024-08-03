@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "/JAFRDN63koZctV1TT5j6/rF547Ugx3lYXIiwtGkgH0poIgRL/73NsgP1dj6Owb62FAJ5AJlK33+q0s8z4Ceaw==",
+=======
+  "dgSpecHash": "cgKdpy2xS+E3Fhmuif3WcNGYeVNGsSbSyCoLwRl/73H0BMhsLTj3RLzhUdL2Psbp01Dj0lB1fCwsFUkN3CQUAA==",
+>>>>>>> 0b5c8aeb158c7ccd42a29ad6962224edccf6cdf4
   "success": true,
   "projectFilePath": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\Autenticacao\\Autenticacao.csproj",
   "expectedPackageFiles": [

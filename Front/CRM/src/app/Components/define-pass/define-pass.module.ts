@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormResetComponent } from './form-reset.component';
+import { DefinePassComponent } from '../define-pass/define-pass.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
@@ -9,14 +9,16 @@ import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
-    FormResetComponent
+    DefinePassComponent
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     MatInputModule,
     MatIconModule
-  ], 
-  exports: [FormResetComponent]
+  ],
+  exports:[
+    DefinePassComponent
+  ]
 })
-export class FormResetModule { }
+export class DefinePassModule { }

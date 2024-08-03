@@ -19,20 +19,51 @@ namespace CRMAPI.Services
             this.usuarioService = usuarioService;
         }
 
+        public bool DefineSenha(UsuarioDTO usuario)
+        {
+            var userExiste = this.usuarioService.PesquisarEmailUsuario(usuario.Email);
+            if(userExiste !=null){
+                if (userExiste.Resetsenha == true &&(usuario.CodigoResgate == userExiste.CodigoResgate) 
+                && userExiste.Ativado == true)
+                {
+                    userExiste.Resetsenha = false;
+                    this.usuarioService.AtualizarSenha(usuario);
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public void RedefinirSenha(UsuarioDTO usuario)
         {
             var senha = this.CriadorSenha();
-            usuario.Senha = senha;
+            usuario.Resetsenha = true;
+            usuario.CodigoResgate = senha;
             //gravar a senha no banco 
             this.usuarioService.AtualizarSenha(usuario);
             // envio de e-mail
-            string texto = $"Olá {usuario.Nome}, sua nova senha é {senha}";
-            this.mensageiro.EnviarEmail(usuario.Email,"Redefinição de senha", texto);
+            string texto = $"Olá {usuario.Nome}, seu Codigo de resgate é {senha}";
+            this.mensageiro.EnviarEmail(usuario.Email, "Redefinição de senha", texto);
             // testar o codigo agora , para ver se tudo funciona 
+
         }
 
+        public bool ValidaCodigo(UsuarioDTO usuario)
+        {
+            var userExiste = this.usuarioService.PesquisarEmailUsuario(usuario.Email);
+            if (userExiste != null)
+            {
+                if ((usuario.CodigoResgate == userExiste.CodigoResgate) && userExiste.Ativado == true)
+                {
+                    return true;
+                }
+                return false;
+            }
+            return false;
+        }
 
-        private string CriadorSenha(){
+        private string CriadorSenha()
+        {
             IList<string> lista = new List<string>();
             string senhanova = string.Empty;
             var aleatorio = this.random.NextInt64();
@@ -59,7 +90,5 @@ namespace CRMAPI.Services
             valor += meuAscii;
             return valor;
         }
-
-
     }
 }

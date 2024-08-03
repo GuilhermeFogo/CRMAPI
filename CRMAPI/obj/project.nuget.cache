@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "asCgiQgo12PYH3Lg4okc40UcMzSvpgRbCNpD+opRZSMez1BZ5Fr+u89HAumWZvOw33wy18AzODjAlgGgPToNHA==",
+=======
+  "dgSpecHash": "c7ycAltpmKqznDDCiG9xvKB3ZJov/pGBUzPKOPrDNAbsSJ3LBb+QElSrFMUPFVgDoknjkaT94yWyMB4QXs5oiw==",
+>>>>>>> 0b5c8aeb158c7ccd42a29ad6962224edccf6cdf4
   "success": true,
   "projectFilePath": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\CRMAPI\\CRMAPI.csproj",
   "expectedPackageFiles": [

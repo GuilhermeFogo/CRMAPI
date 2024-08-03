@@ -18,6 +18,48 @@ namespace CRMAPI.Controllers
             this.resetsenhaService = resetsenhaService;
         }
 
+        [HttpPost("Define")]
+        [AllowAnonymous]
+        public IActionResult Definesenha([FromBody] UsuarioDTO usuarioDTO){
+            if(this.resetsenhaService.DefineSenha(usuarioDTO)){
+                return Ok("Senha Trocada");
+            }else{
+               return BadRequest("Erro");
+            }
+        }
+
+        [HttpPost("Valida")]
+        [AllowAnonymous]
+        public IActionResult ValidaCodigo([FromBody] UsuarioDTO user)
+        {
+
+            if (user == null)
+            {
+                return BadRequest("Usuário invalido");
+            }
+            else
+            {
+                if (!string.IsNullOrEmpty(user.Email))
+                {
+                    var valida = this.resetsenhaService.ValidaCodigo(user);
+                    if (valida)
+                    {
+                        return Ok();
+                    }
+                    else
+                    {
+                        return Forbid("Usuário proibido");
+                    }
+
+                }
+                else
+                {
+                    return BadRequest("Usuário invalido");
+                }
+
+            }
+        }
+
         [HttpPost]
         [AllowAnonymous]
         public IActionResult Resetsenha([FromBody] UsuarioDTO user)
@@ -28,7 +70,7 @@ namespace CRMAPI.Controllers
             }
             else
             {
-                var usuarioexiste = this.usuarioService.PesquisarUsuario(user.Email);
+                var usuarioexiste = this.usuarioService.PesquisarEmailUsuario(user.Email);
                 if (!string.IsNullOrEmpty(usuarioexiste.Email))
                 {
                     this.resetsenhaService.RedefinirSenha(usuarioexiste);

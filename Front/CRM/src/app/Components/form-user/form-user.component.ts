@@ -87,7 +87,9 @@ export class FormUserComponent implements OnInit {
         id: 0,
         email: this.f("email")?.value,
         role: this.f("roles")?.value,
-        ativado: this.transformNum(this.f("ativado")?.value)
+        ativado: this.transformNum(this.f("ativado")?.value), 
+        restsenha : false,
+        codigoResgate: ""
       })
       console.log(newUser);
 
@@ -99,7 +101,9 @@ export class FormUserComponent implements OnInit {
         id: this.f("id")?.value,
         email: this.f("email")?.value,
         role: this.f("roles")?.value,
-        ativado: this.transformNum(this.f("ativado")?.value)
+        ativado: this.transformNum(this.f("ativado")?.value),
+        restsenha: false,
+        codigoResgate:""
       })
       return editUser;
     }

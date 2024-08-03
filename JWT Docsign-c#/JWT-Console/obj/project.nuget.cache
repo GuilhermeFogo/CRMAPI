@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "Xg6AtV/LzGYem4z4H5QnLrlW0+LVLdwPezCzoUF2JfYkzuBD6xjpsHRDA4Vz27gKb7wVYLfnoT+M9JSErriaRA==",
+=======
+  "dgSpecHash": "8fB/kdB4lS8nwLRgx7gzRt/S/AAwkEdr/5ya7E9c0X/86Qz23DVEB6O0IREU44lUwJjFvVNQ0p5y8nztprcxXQ==",
+>>>>>>> 0b5c8aeb158c7ccd42a29ad6962224edccf6cdf4
   "success": true,
   "projectFilePath": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\JWT Docsign-c#\\JWT-Console\\JWT-Console.csproj",
   "expectedPackageFiles": [

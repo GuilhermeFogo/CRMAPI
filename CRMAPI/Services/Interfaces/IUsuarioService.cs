@@ -18,5 +18,6 @@ namespace CRMAPI.Services.Interfaces
 
         UsuarioDTO PesquisarUsuario(int id);
         UsuarioDTO PesquisarUsuario(string nome);
+        UsuarioDTO PesquisarEmailUsuario(string Email);
     }
 }

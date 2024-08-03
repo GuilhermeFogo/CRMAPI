@@ -63,12 +63,16 @@ namespace CRMAPI.Services
             var usu = this.usuarioRepository.PesquisaUsuario(nome);
             return Parsers.ParseUsuario(usu);
         }
+        public UsuarioDTO PesquisarEmailUsuario(string Email)
+        {
+            var usu = this.usuarioRepository.PesquisaEmailUsuario(Email);
+            return Parsers.ParseUsuario(usu);
+        }
 
         public void AtualizarSenha(UsuarioDTO user)
         {
             var modaluser = Parsers.ParseUsuarioDTO(user);
-            this.usuarioRepository.Atualizar(modaluser,user.Senha);
-            
+            this.usuarioRepository.Atualizar(modaluser, user.Senha);
         }
     }
 }

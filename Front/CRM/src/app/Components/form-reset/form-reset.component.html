@@ -1,9 +1,9 @@
 <form [formGroup]="form">
-    <mat-form-field>
-        <mat-label>Seu e-mail</mat-label>
-        <input matInput placeholder="nome@empresa.com" formControlName="email">
-        <mat-error>E-mail incorreto ou não existe</mat-error>
-      </mat-form-field>
-      
-      <button mat-button (click)="OnSubmit()" [disabled]="form.invalid">Enviar</button>
+  <mat-form-field>
+    <mat-label>Seu e-mail</mat-label>
+    <input matInput placeholder="nome@empresa.com" formControlName="email">
+    <mat-error>E-mail incorreto ou não existe</mat-error>
+  </mat-form-field>
+  <br>
+  <button mat-raised-button (click)="OnSubmit()" [disabled]="form.invalid">Enviar</button>
 </form>

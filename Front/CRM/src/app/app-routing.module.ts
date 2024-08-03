@@ -7,12 +7,12 @@ import { GuardService } from './Services/guard/guard.service';
 import { DashboardComponent } from './Pages/dashboard/dashboard.component';
 import { LoginComponent } from './Pages/login/login.component';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes, CanActivate } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { ResetsenhaComponent } from './Pages/Resetsenha/resetsenha.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent, canActivate: [LoginBlockService] },
-  { path: 'resetSenha', component: ResetsenhaComponent },
+  { path: 'resetSenha', component: ResetsenhaComponent},
 
   { path: 'DashBoard', component: DashboardComponent, canActivate: [GuardService] },
   { path: 'Users', component: GerenciaUserComponent, canActivate: [GuardService] },

@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "Kfw86zAcXFqFN9pzh878Jb8ka6r2+66ivLcDeq0z6qvzEnrivPSarFr5j4cppzQvqprXmn0/ttHj69c0QMyjcA==",
+=======
+  "dgSpecHash": "9Z1mBE6tll2JiVfpyRS7QtZYUtvU5qyzccifA0LU1BVYGj32s99ReTmzVGLbQSdjv7bW7Z9+dTL24ZXgbUOIBg==",
+>>>>>>> 0b5c8aeb158c7ccd42a29ad6962224edccf6cdf4
   "success": true,
   "projectFilePath": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\MensageiroSys\\MensageiroSys.csproj",
   "expectedPackageFiles": [
