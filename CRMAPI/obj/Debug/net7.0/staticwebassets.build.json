@@ -1,0 +1,50 @@
+{
+  "Version": 1,
+  "Hash": "u5LYPBFKOVSkFo01RCPdePznfFLByZtqxG9f9x5WmRc=",
+  "Source": "CRMAPI",
+  "BasePath": "_content/CRMAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Guilherme\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.authentication\\6.0.10\\staticwebassets\\AuthenticationService.js",
+      "SourceId": "Microsoft.AspNetCore.Components.WebAssembly.Authentication",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\Guilherme\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.authentication\\6.0.10\\staticwebassets\\",
+      "BasePath": "_content/Microsoft.AspNetCore.Components.WebAssembly.Authentication",
+      "RelativePath": "AuthenticationService.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\Guilherme\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.authentication\\6.0.10\\staticwebassets\\AuthenticationService.js"
+    },
+    {
+      "Identity": "C:\\Users\\Guilherme\\.nuget\\packages\\microsoft.authentication.webassembly.msal\\6.0.10\\staticwebassets\\AuthenticationService.js",
+      "SourceId": "Microsoft.Authentication.WebAssembly.Msal",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\Guilherme\\.nuget\\packages\\microsoft.authentication.webassembly.msal\\6.0.10\\staticwebassets\\",
+      "BasePath": "_content/Microsoft.Authentication.WebAssembly.Msal",
+      "RelativePath": "AuthenticationService.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\Guilherme\\.nuget\\packages\\microsoft.authentication.webassembly.msal\\6.0.10\\staticwebassets\\AuthenticationService.js"
+    }
+  ]
+}

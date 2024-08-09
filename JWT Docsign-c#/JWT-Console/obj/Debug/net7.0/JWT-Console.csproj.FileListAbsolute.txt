@@ -1,0 +1,13 @@
+C:\Users\Guilherme\Desktop\MeuTreinamento\MeuCRM\JWT Docsign-c#\JWT-Console\bin\Debug\net7.0\JWT-Console.deps.json
+C:\Users\Guilherme\Desktop\MeuTreinamento\MeuCRM\JWT Docsign-c#\JWT-Console\bin\Debug\net7.0\JWT-Console.dll
+C:\Users\Guilherme\Desktop\MeuTreinamento\MeuCRM\JWT Docsign-c#\JWT-Console\bin\Debug\net7.0\JWT-Console.pdb
+C:\Users\Guilherme\Desktop\MeuTreinamento\MeuCRM\JWT Docsign-c#\JWT-Console\obj\Debug\net7.0\JWT-Console.csproj.AssemblyReference.cache
+C:\Users\Guilherme\Desktop\MeuTreinamento\MeuCRM\JWT Docsign-c#\JWT-Console\obj\Debug\net7.0\JWT-Console.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Guilherme\Desktop\MeuTreinamento\MeuCRM\JWT Docsign-c#\JWT-Console\obj\Debug\net7.0\JWT-Console.AssemblyInfoInputs.cache
+C:\Users\Guilherme\Desktop\MeuTreinamento\MeuCRM\JWT Docsign-c#\JWT-Console\obj\Debug\net7.0\JWT-Console.AssemblyInfo.cs
+C:\Users\Guilherme\Desktop\MeuTreinamento\MeuCRM\JWT Docsign-c#\JWT-Console\obj\Debug\net7.0\JWT-Console.csproj.CoreCompileInputs.cache
+C:\Users\Guilherme\Desktop\MeuTreinamento\MeuCRM\JWT Docsign-c#\JWT-Console\obj\Debug\net7.0\JWT-Console.sourcelink.json
+C:\Users\Guilherme\Desktop\MeuTreinamento\MeuCRM\JWT Docsign-c#\JWT-Console\obj\Debug\net7.0\JWT-Console.dll
+C:\Users\Guilherme\Desktop\MeuTreinamento\MeuCRM\JWT Docsign-c#\JWT-Console\obj\Debug\net7.0\refint\JWT-Console.dll
+C:\Users\Guilherme\Desktop\MeuTreinamento\MeuCRM\JWT Docsign-c#\JWT-Console\obj\Debug\net7.0\JWT-Console.pdb
+C:\Users\Guilherme\Desktop\MeuTreinamento\MeuCRM\JWT Docsign-c#\JWT-Console\obj\Debug\net7.0\ref\JWT-Console.dll

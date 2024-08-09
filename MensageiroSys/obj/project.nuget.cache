@@ -1,14 +1,13 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "Kfw86zAcXFqFN9pzh878Jb8ka6r2+66ivLcDeq0z6qvzEnrivPSarFr5j4cppzQvqprXmn0/ttHj69c0QMyjcA==",
-=======
-  "dgSpecHash": "9Z1mBE6tll2JiVfpyRS7QtZYUtvU5qyzccifA0LU1BVYGj32s99ReTmzVGLbQSdjv7bW7Z9+dTL24ZXgbUOIBg==",
->>>>>>> 0b5c8aeb158c7ccd42a29ad6962224edccf6cdf4
+  "dgSpecHash": "whx670pLOpo=",
   "success": true,
   "projectFilePath": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\MensageiroSys\\MensageiroSys.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Guilherme\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+    "C:\\Users\\Guilherme\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\Guilherme\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.20\\microsoft.aspnetcore.app.ref.7.0.20.nupkg.sha512",
+    "C:\\Users\\Guilherme\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.20\\microsoft.netcore.app.ref.7.0.20.nupkg.sha512",
+    "C:\\Users\\Guilherme\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.20\\microsoft.windowsdesktop.app.ref.7.0.20.nupkg.sha512"
   ],
   "logs": []
 }
