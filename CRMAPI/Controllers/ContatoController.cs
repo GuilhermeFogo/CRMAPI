@@ -10,24 +10,24 @@ namespace CRMAPI.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]
-    public class ClienteController : ControllerBase
+    public class ContatoController : ControllerBase
     {
-        private readonly IClienteService clienteService;
-        public ClienteController(IClienteService clienteService)
+        private readonly IContatoService clienteService;
+        public ContatoController(IContatoService clienteService)
         {
             this.clienteService = clienteService;
         }
 
         [HttpGet]
         [Authorize(Roles = "Funcionario, Gerente, ADM")]
-        public IEnumerable<ClienteDTO> ListaTodos()
+        public IEnumerable<ContatoDTO> ListaTodos()
         {
             return this.clienteService.ListarTodos();
         }
 
         [HttpPost]
         [Authorize(Roles =  "Funcionario, Gerente, ADM")]
-        public IActionResult Post([FromBody] ClienteDTO value)
+        public IActionResult Post([FromBody] ContatoDTO value)
         {
             if (value !=null)
             {
@@ -43,7 +43,7 @@ namespace CRMAPI.Controllers
 
         [HttpPut("{id}")]
         [Authorize(Roles = "Gerente, ADM")]
-        public IActionResult Put(int id, [FromBody] ClienteDTO cliente)
+        public IActionResult Put(int id, [FromBody] ContatoDTO cliente)
         {
             if (cliente != null && !cliente.Id.Equals(Convert.ToString(id)))
             {

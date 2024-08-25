@@ -117,11 +117,11 @@ namespace CRMAPI
         private void InjecaoDependencia(IServiceCollection services)
         {
             services.AddDbContext<DataContext>();
-            services.AddScoped<IClienteRepository, ClienteRepository>();
+            services.AddScoped<IContatoRepository, ContatoRepository>();
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
             services.AddScoped<IRepositoryOportunidade, OportunidadeRepository>();
             
-            services.AddScoped<IClienteService, ClienteService>();
+            services.AddScoped<IContatoService, ContatoService>();
             services.AddScoped<IUsuarioService, UsuarioService>();
             services.AddScoped<IServiceOportunidade, ServiceOportunidade>();
             services.AddScoped<IAssinaturaDigital, AssinaturaDocsingService>();

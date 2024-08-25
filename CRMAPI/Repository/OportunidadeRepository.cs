@@ -135,7 +135,7 @@ namespace CRMAPI.Repository
                     CNPJ = opo.CNPJ
                 });
 
-            var joincliente_parcial = joinProdutos.Join(this.DB.Clientes.DefaultIfEmpty(),
+            var joincliente_parcial = joinProdutos.Join(this.DB.Contatos.DefaultIfEmpty(),
                (opo2) => opo2.Id_oportunidade, (cliente) => cliente.Id,
                (opo2, cliente) => new Oportunidade(opo2.Responsavel,opo2.Id_oportunidade,opo2.Id_produto,opo2.Nome_prod,opo2.Preco,opo2.Tipo_prod,
                opo2.Status_oportunidade,opo2.Data,opo2.Aprovador, opo2.Vinculado, opo2.CNPJ, opo2.CPF));

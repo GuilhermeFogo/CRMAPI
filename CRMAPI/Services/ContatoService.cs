@@ -9,29 +9,29 @@ using System.Collections.Generic;
 
 namespace CRMAPI.Services
 {
-    public class ClienteService : IClienteService
+    public class ContatoService : IContatoService
     {
-        private readonly IClienteRepository clienteRepository;
+        private readonly IContatoRepository clienteRepository;
 
-        public ClienteService(IClienteRepository clienteRepository)
+        public ContatoService(IContatoRepository clienteRepository)
         {
             this.clienteRepository = clienteRepository;
         }
 
 
-        public void Atualizar(ClienteDTO cliente)
+        public void Atualizar(ContatoDTO cliente)
         {
             var clientes = TransformDTOtoCliente(cliente);
             this.clienteRepository.Atualizar(clientes);
         }
 
-        public void Delete(ClienteDTO cliente)
+        public void Delete(ContatoDTO cliente)
         {
             var clientes = TransformDTOtoCliente(cliente);
             this.clienteRepository.Delete(clientes);
         }
 
-        public IEnumerable<ClienteDTO> ListarTodos()
+        public IEnumerable<ContatoDTO> ListarTodos()
         {
            var listaClientes = this.clienteRepository.ListarTodos();
             var transfom = TransformInListaDTO(listaClientes);
@@ -39,16 +39,16 @@ namespace CRMAPI.Services
            
         }
 
-        public void Save(ClienteDTO cliente)
+        public void Save(ContatoDTO cliente)
         {
             var clientes = TransformDTOtoCliente(cliente);
             this.clienteRepository.Save(clientes);
         }
 
 
-        private Cliente TransformDTOtoCliente(ClienteDTO clienteDTO)
+        private Contato TransformDTOtoCliente(ContatoDTO clienteDTO)
         {
-            return new Cliente
+            return new Contato
             {
                 Nome = clienteDTO.Nome,
                 Email = clienteDTO.Email,
@@ -64,25 +64,22 @@ namespace CRMAPI.Services
                     Cidade = clienteDTO.Cidade,
                     Estado = clienteDTO.Estado
                 },
-                Consentimento = clienteDTO.Consentimento,
-                CNPJ = clienteDTO.CNPJ,
-                CPF = clienteDTO.CPF,
-                Ativo = clienteDTO.Ativo
+                Consentimento = clienteDTO.Consentimento
             };
         }
 
-        private ClienteDTO TransformClienteTODTO(Cliente cliente)
+        private ContatoDTO TransformClienteTODTO(Contato cliente)
         {
-            return new ClienteDTO(
+            return new ContatoDTO(
                 cliente.Nome, cliente.Email, cliente.Telefone, cliente.Endereco.Rua, cliente.Endereco.CEP, cliente.Endereco.Complemento, cliente.Endereco.Bairo, 
-                cliente.Endereco.Id, cliente.Id, cliente.Consentimento,cliente.CNPJ,cliente.CPF, cliente.Endereco.Cidade, cliente.Endereco.Estado, cliente.Ativo);
+                cliente.Endereco.Id, cliente.Id, cliente.Consentimento, cliente.Endereco.Cidade, cliente.Endereco.Estado);
         }
 
 
-        private IEnumerable<ClienteDTO> TransformInListaDTO(IEnumerable<Cliente> lista)
+        private IEnumerable<ContatoDTO> TransformInListaDTO(IEnumerable<Contato> lista)
         {
-            var listaDTOS = new List<ClienteDTO>();
-            foreach(Cliente cliente in lista)
+            var listaDTOS = new List<ContatoDTO>();
+            foreach(Contato cliente in lista)
             {
                 var trasforma = this.TransformClienteTODTO(cliente);
                 listaDTOS.Add(trasforma);
@@ -91,7 +88,7 @@ namespace CRMAPI.Services
             return listaDTOS;
         }
 
-        public ClienteDTO PesquisarCliente(int id)
+        public ContatoDTO PesquisarCliente(int id)
         {
             var cliente = this.clienteRepository.PesquisaCliente(id);
             return this.TransformClienteTODTO(cliente);

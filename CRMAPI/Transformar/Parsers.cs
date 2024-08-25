@@ -91,9 +91,9 @@ namespace CRMAPI.Transformar
 
        
 
-        public static Cliente TransformDTOtoCliente(ClienteDTO clienteDTO)
+        public static Contato TransformDTOtoCliente(ContatoDTO clienteDTO)
         {
-            return new Cliente
+            return new Contato
             {
                 Nome = clienteDTO.Nome,
                 Email = clienteDTO.Email,
@@ -109,25 +109,22 @@ namespace CRMAPI.Transformar
                     Cidade = clienteDTO.Cidade,
                     Estado =clienteDTO.Estado
                 },
-                Consentimento = clienteDTO.Consentimento,
-                CNPJ = clienteDTO.CNPJ,
-                CPF = clienteDTO.CPF,
-                Ativo = clienteDTO.Ativo
+                Consentimento = clienteDTO.Consentimento
             };
         }
 
-        public static ClienteDTO TransformClienteTODTO(Cliente cliente)
+        public static ContatoDTO TransformClienteTODTO(Contato cliente)
         {
-            return new ClienteDTO(
+            return new ContatoDTO(
                 cliente.Nome, cliente.Email, cliente.Telefone, cliente.Endereco.Rua, cliente.Endereco.CEP, cliente.Endereco.Complemento, cliente.Endereco.Bairo,
-                cliente.Endereco.Id, cliente.Id, cliente.Consentimento,cliente.CNPJ, cliente.CPF, cliente.Endereco.Cidade, cliente.Endereco.Estado, cliente.Ativo);
+                cliente.Endereco.Id, cliente.Id, cliente.Consentimento , cliente.Endereco.Cidade, cliente.Endereco.Estado);
         }
 
 
-        public static IEnumerable<ClienteDTO> TransformInListaDTO(IEnumerable<Cliente> lista)
+        public static IEnumerable<ContatoDTO> TransformInListaDTO(IEnumerable<Contato> lista)
         {
-            var listaDTOS = new List<ClienteDTO>();
-            foreach (Cliente cliente in lista)
+            var listaDTOS = new List<ContatoDTO>();
+            foreach (Contato cliente in lista)
             {
                 var trasforma = TransformClienteTODTO(cliente);
                 listaDTOS.Add(trasforma);
@@ -144,6 +141,55 @@ namespace CRMAPI.Transformar
                 Role = usuario.Role,
                 Senha = usuario.Senha
             };
+        }
+
+        public static EmpresaDTO Empresa2EmpresaDTOs(Empresa empresa)
+        {
+            return new EmpresaDTO
+            {
+                Ativo = empresa.Ativo,
+                CNPJ = empresa.CNPJ,
+                CPF = empresa.CPF,
+                Nome_fantasia = empresa.Nome_fantasia,
+                Razao = empresa.Razao,
+                Id_empresa = empresa.Id
+            };
+        }
+
+        public static Empresa EmpresaDTO2Empresa(EmpresaDTO empresa)
+        {
+            return new Empresa
+            {
+                Ativo = empresa.Ativo,
+                CNPJ = empresa.CNPJ,
+                CPF = empresa.CPF,
+                Nome_fantasia = empresa.Nome_fantasia,
+                Razao = empresa.Razao,
+                Id = empresa.Id_empresa
+            };
+        }
+
+        public static IEnumerable<EmpresaDTO> TransformarListaEmpresas(IEnumerable<Empresa> lista)
+        {
+            var listaDTOS = new List<EmpresaDTO>();
+            foreach (Empresa cliente in lista)
+            {
+                listaDTOS.Add(Empresa2EmpresaDTOs(cliente));
+            }
+
+            return listaDTOS;
+        }
+
+
+        public static IEnumerable<Empresa> TransformarListaEmpresasDTO(IEnumerable<EmpresaDTO> lista)
+        {
+            var listaEmp = new List<Empresa>();
+            foreach (EmpresaDTO cliente in lista)
+            {
+                listaEmp.Add(EmpresaDTO2Empresa(cliente));
+            }
+
+            return listaEmp;
         }
     }
 }

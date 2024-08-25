@@ -8,18 +8,18 @@ using System.Threading.Tasks;
 
 namespace CRMAPI.Repository
 {
-    public class ClienteRepository : IClienteRepository
+    public class ContatoRepository : IContatoRepository
     {
         private readonly DataContext clientesDB;
-        public ClienteRepository(DataContext dataContext)
+        public ContatoRepository(DataContext dataContext)
         {
             this.clientesDB = dataContext;
         }
 
-        public void Atualizar(Cliente cliente)
+        public void Atualizar(Contato cliente)
         {
             var endereço = this.clientesDB.Enderecos.Where(x => x.Id == cliente.Endereco.Id).FirstOrDefault();
-            var clientes = this.clientesDB.Clientes.Where(y => y.Id == cliente.Id).FirstOrDefault();
+            var clientes = this.clientesDB.Contatos.Where(y => y.Id == cliente.Id).FirstOrDefault();
             clientes.Nome = cliente.Nome;
             clientes.Telefone = cliente.Telefone;
             clientes.Email = cliente.Email;
@@ -30,46 +30,43 @@ namespace CRMAPI.Repository
             endereço.Complemento = cliente.Endereco.Complemento;
             endereço.Cidade = cliente.Endereco.Cidade;
             endereço.Estado = cliente.Endereco.Estado;
-            clientes.CPF = cliente.CPF;
-            clientes.CNPJ = cliente.CNPJ;
-            clientes.Ativo = cliente.Ativo; 
             
             this.clientesDB.Update(clientes);
             this.clientesDB.Update(endereço);
             this.clientesDB.SaveChanges();
         }
 
-        public void Delete(Cliente cliente)
+        public void Delete(Contato cliente)
         {
             var endereço = this.clientesDB.Enderecos.Where(x => x.Id == cliente.Endereco.Id).FirstOrDefault();
-            var clientes = this.clientesDB.Clientes.Where(y => y.Id == cliente.Id).FirstOrDefault();
+            var clientes = this.clientesDB.Contatos.Where(y => y.Id == cliente.Id).FirstOrDefault();
 
             this.clientesDB.Remove(endereço);
             this.clientesDB.Remove(clientes);
             this.clientesDB.SaveChanges();
         }
 
-        public IEnumerable<Cliente> ListarTodos()
+        public IEnumerable<Contato> ListarTodos()
         {
             var JoinClientes = this.JoinClientes();
-            return JoinClientes.AsEnumerable<Cliente>().ToList();
+            return JoinClientes.AsEnumerable<Contato>().ToList();
         }
 
-        public Cliente PesquisaCliente(int id)
+        public Contato PesquisaCliente(int id)
         {
             var JoinClientes= this.JoinClientes();
             var cliente =  JoinClientes.Where((cliente) => cliente.Id == id);
             return cliente.AsEnumerable().FirstOrDefault();
         }
 
-        public void Save(Cliente cliente)
+        public void Save(Contato cliente)
         {
             this.clientesDB.Add(cliente);
             this.clientesDB.SaveChanges();
         }
 
 
-        private IQueryable<Cliente> JoinClientes()
+        private IQueryable<Contato> JoinClientes()
         {
             //var JoinClientes = this.clientesDB.Clientes.Join(this.clientesDB.Enderecos,
             //    (cliente => cliente.Id),
@@ -95,15 +92,12 @@ namespace CRMAPI.Repository
 
 
             var JoinClientes =
-                from cliente in this.clientesDB.Clientes
+                from cliente in this.clientesDB.Contatos
                 join enderecos in this.clientesDB.Enderecos
                 on cliente.Id equals enderecos.Id
-                select new Cliente()
+                select new Contato()
                 {
-                    Ativo = cliente.Ativo,
-                    CNPJ = cliente.CNPJ,
                     Consentimento = cliente.Consentimento,
-                    CPF = cliente.CPF,
                     Email = cliente.Email,
                     Endereco = new Endereco()
                     {
