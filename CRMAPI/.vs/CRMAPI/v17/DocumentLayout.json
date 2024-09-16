@@ -3,12 +3,81 @@
   "WorkspaceRootPath": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\CRMAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7B6FA7D8-B1A7-4408-B622-68B2FEC215AA}|CRMAPI.csproj|c:\\users\\guilherme\\desktop\\meutreinamento\\meucrm\\crmapi\\controllers\\empresacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7B6FA7D8-B1A7-4408-B622-68B2FEC215AA}|CRMAPI.csproj|solutionrelative:controllers\\empresacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7B6FA7D8-B1A7-4408-B622-68B2FEC215AA}|CRMAPI.csproj|c:\\users\\guilherme\\desktop\\meutreinamento\\meucrm\\crmapi\\services\\empresaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B6FA7D8-B1A7-4408-B622-68B2FEC215AA}|CRMAPI.csproj|solutionrelative:services\\empresaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B6FA7D8-B1A7-4408-B622-68B2FEC215AA}|CRMAPI.csproj|c:\\users\\guilherme\\desktop\\meutreinamento\\meucrm\\crmapi\\services\\resetsenhaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B6FA7D8-B1A7-4408-B622-68B2FEC215AA}|CRMAPI.csproj|solutionrelative:services\\resetsenhaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B6FA7D8-B1A7-4408-B622-68B2FEC215AA}|CRMAPI.csproj|c:\\users\\guilherme\\desktop\\meutreinamento\\meucrm\\crmapi\\services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B6FA7D8-B1A7-4408-B622-68B2FEC215AA}|CRMAPI.csproj|solutionrelative:services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B6FA7D8-B1A7-4408-B622-68B2FEC215AA}|CRMAPI.csproj|c:\\users\\guilherme\\desktop\\meutreinamento\\meucrm\\crmapi\\services\\serviceoportunidade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B6FA7D8-B1A7-4408-B622-68B2FEC215AA}|CRMAPI.csproj|solutionrelative:services\\serviceoportunidade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B6FA7D8-B1A7-4408-B622-68B2FEC215AA}|CRMAPI.csproj|c:\\users\\guilherme\\desktop\\meutreinamento\\meucrm\\crmapi\\repository\\interfaces\\iusuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B6FA7D8-B1A7-4408-B622-68B2FEC215AA}|CRMAPI.csproj|solutionrelative:repository\\interfaces\\iusuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B6FA7D8-B1A7-4408-B622-68B2FEC215AA}|CRMAPI.csproj|c:\\users\\guilherme\\desktop\\meutreinamento\\meucrm\\crmapi\\repository\\interfaces\\irepositoryoportunidade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B6FA7D8-B1A7-4408-B622-68B2FEC215AA}|CRMAPI.csproj|solutionrelative:repository\\interfaces\\irepositoryoportunidade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B6FA7D8-B1A7-4408-B622-68B2FEC215AA}|CRMAPI.csproj|c:\\users\\guilherme\\desktop\\meutreinamento\\meucrm\\crmapi\\repository\\interfaces\\iempresarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B6FA7D8-B1A7-4408-B622-68B2FEC215AA}|CRMAPI.csproj|solutionrelative:repository\\interfaces\\iempresarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B6FA7D8-B1A7-4408-B622-68B2FEC215AA}|CRMAPI.csproj|c:\\users\\guilherme\\desktop\\meutreinamento\\meucrm\\crmapi\\repository\\interfaces\\icontatorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B6FA7D8-B1A7-4408-B622-68B2FEC215AA}|CRMAPI.csproj|solutionrelative:repository\\interfaces\\icontatorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B6FA7D8-B1A7-4408-B622-68B2FEC215AA}|CRMAPI.csproj|c:\\users\\guilherme\\desktop\\meutreinamento\\meucrm\\crmapi\\repository\\data\\datacontex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B6FA7D8-B1A7-4408-B622-68B2FEC215AA}|CRMAPI.csproj|solutionrelative:repository\\data\\datacontex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B6FA7D8-B1A7-4408-B622-68B2FEC215AA}|CRMAPI.csproj|c:\\users\\guilherme\\desktop\\meutreinamento\\meucrm\\crmapi\\dto\\oportunidadedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B6FA7D8-B1A7-4408-B622-68B2FEC215AA}|CRMAPI.csproj|solutionrelative:dto\\oportunidadedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B6FA7D8-B1A7-4408-B622-68B2FEC215AA}|CRMAPI.csproj|c:\\users\\guilherme\\desktop\\meutreinamento\\meucrm\\crmapi\\dto\\usuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B6FA7D8-B1A7-4408-B622-68B2FEC215AA}|CRMAPI.csproj|solutionrelative:dto\\usuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B6FA7D8-B1A7-4408-B622-68B2FEC215AA}|CRMAPI.csproj|c:\\users\\guilherme\\desktop\\meutreinamento\\meucrm\\crmapi\\dto\\empresadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B6FA7D8-B1A7-4408-B622-68B2FEC215AA}|CRMAPI.csproj|solutionrelative:dto\\empresadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B6FA7D8-B1A7-4408-B622-68B2FEC215AA}|CRMAPI.csproj|c:\\users\\guilherme\\desktop\\meutreinamento\\meucrm\\crmapi\\dto\\docsingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B6FA7D8-B1A7-4408-B622-68B2FEC215AA}|CRMAPI.csproj|solutionrelative:dto\\docsingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B6FA7D8-B1A7-4408-B622-68B2FEC215AA}|CRMAPI.csproj|c:\\users\\guilherme\\desktop\\meutreinamento\\meucrm\\crmapi\\dto\\contatodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B6FA7D8-B1A7-4408-B622-68B2FEC215AA}|CRMAPI.csproj|solutionrelative:dto\\contatodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7B6FA7D8-B1A7-4408-B622-68B2FEC215AA}|CRMAPI.csproj|c:\\users\\guilherme\\desktop\\meutreinamento\\meucrm\\crmapi\\controllers\\contatocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7B6FA7D8-B1A7-4408-B622-68B2FEC215AA}|CRMAPI.csproj|solutionrelative:controllers\\contatocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B6FA7D8-B1A7-4408-B622-68B2FEC215AA}|CRMAPI.csproj|c:\\users\\guilherme\\desktop\\meutreinamento\\meucrm\\crmapi\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B6FA7D8-B1A7-4408-B622-68B2FEC215AA}|CRMAPI.csproj|solutionrelative:startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64509658-A525-4156-AE05-F78B0606E198}|..\\JWT Docsign-c#\\JWT-Console\\JWT-Console.csproj|c:\\users\\guilherme\\desktop\\meutreinamento\\meucrm\\jwt docsign-c#\\jwt-console\\launcher-csharp\\esignature\\examples\\signingviaemail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64509658-A525-4156-AE05-F78B0606E198}|..\\JWT Docsign-c#\\JWT-Console\\JWT-Console.csproj|c:\\users\\guilherme\\desktop\\meutreinamento\\meucrm\\jwt docsign-c#\\jwt-console\\helpers\\jwtauth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64509658-A525-4156-AE05-F78B0606E198}|..\\JWT Docsign-c#\\JWT-Console\\JWT-Console.csproj|c:\\users\\guilherme\\desktop\\meutreinamento\\meucrm\\jwt docsign-c#\\jwt-console\\servicos gerais\\envia_envelopeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B6FA7D8-B1A7-4408-B622-68B2FEC215AA}|CRMAPI.csproj|c:\\users\\guilherme\\desktop\\meutreinamento\\meucrm\\crmapi\\controllers\\empresacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B6FA7D8-B1A7-4408-B622-68B2FEC215AA}|CRMAPI.csproj|solutionrelative:controllers\\empresacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7B6FA7D8-B1A7-4408-B622-68B2FEC215AA}|CRMAPI.csproj|c:\\users\\guilherme\\desktop\\meutreinamento\\meucrm\\crmapi\\controllers\\autenticacaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,11 +95,245 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EmpresaService.cs",
+              "DocumentMoniker": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\CRMAPI\\Services\\EmpresaService.cs",
+              "RelativeDocumentMoniker": "Services\\EmpresaService.cs",
+              "ToolTip": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\CRMAPI\\Services\\EmpresaService.cs",
+              "RelativeToolTip": "Services\\EmpresaService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-16T00:05:09.795Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "ResetsenhaService.cs",
+              "DocumentMoniker": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\CRMAPI\\Services\\ResetsenhaService.cs",
+              "RelativeDocumentMoniker": "Services\\ResetsenhaService.cs",
+              "ToolTip": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\CRMAPI\\Services\\ResetsenhaService.cs",
+              "RelativeToolTip": "Services\\ResetsenhaService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-16T00:00:40.797Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ServiceOportunidade.cs",
+              "DocumentMoniker": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\CRMAPI\\Services\\ServiceOportunidade.cs",
+              "RelativeDocumentMoniker": "Services\\ServiceOportunidade.cs",
+              "ToolTip": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\CRMAPI\\Services\\ServiceOportunidade.cs",
+              "RelativeToolTip": "Services\\ServiceOportunidade.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-16T00:00:39.047Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UsuarioService.cs",
+              "DocumentMoniker": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\CRMAPI\\Services\\UsuarioService.cs",
+              "RelativeDocumentMoniker": "Services\\UsuarioService.cs",
+              "ToolTip": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\CRMAPI\\Services\\UsuarioService.cs",
+              "RelativeToolTip": "Services\\UsuarioService.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAgwEkAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-16T00:00:37.844Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IUsuarioRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\CRMAPI\\Repository\\Interfaces\\IUsuarioRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\Interfaces\\IUsuarioRepository.cs",
+              "ToolTip": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\CRMAPI\\Repository\\Interfaces\\IUsuarioRepository.cs",
+              "RelativeToolTip": "Repository\\Interfaces\\IUsuarioRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-16T00:00:22.76Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IRepositoryOportunidade.cs",
+              "DocumentMoniker": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\CRMAPI\\Repository\\Interfaces\\IRepositoryOportunidade.cs",
+              "RelativeDocumentMoniker": "Repository\\Interfaces\\IRepositoryOportunidade.cs",
+              "ToolTip": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\CRMAPI\\Repository\\Interfaces\\IRepositoryOportunidade.cs",
+              "RelativeToolTip": "Repository\\Interfaces\\IRepositoryOportunidade.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-16T00:00:22.082Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IEmpresaRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\CRMAPI\\Repository\\Interfaces\\IEmpresaRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\Interfaces\\IEmpresaRepository.cs",
+              "ToolTip": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\CRMAPI\\Repository\\Interfaces\\IEmpresaRepository.cs",
+              "RelativeToolTip": "Repository\\Interfaces\\IEmpresaRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-16T00:00:20.598Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IContatoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\CRMAPI\\Repository\\Interfaces\\IContatoRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\Interfaces\\IContatoRepository.cs",
+              "ToolTip": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\CRMAPI\\Repository\\Interfaces\\IContatoRepository.cs",
+              "RelativeToolTip": "Repository\\Interfaces\\IContatoRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-16T00:00:18.22Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DataContex.cs",
+              "DocumentMoniker": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\CRMAPI\\Repository\\Data\\DataContex.cs",
+              "RelativeDocumentMoniker": "Repository\\Data\\DataContex.cs",
+              "ToolTip": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\CRMAPI\\Repository\\Data\\DataContex.cs",
+              "RelativeToolTip": "Repository\\Data\\DataContex.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAA9wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-16T00:00:10.902Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "OportunidadeDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\CRMAPI\\DTO\\OportunidadeDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\OportunidadeDTO.cs",
+              "ToolTip": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\CRMAPI\\DTO\\OportunidadeDTO.cs",
+              "RelativeToolTip": "DTO\\OportunidadeDTO.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAA8wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T23:59:47.642Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UsuarioDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\CRMAPI\\DTO\\UsuarioDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\UsuarioDTO.cs",
+              "ToolTip": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\CRMAPI\\DTO\\UsuarioDTO.cs",
+              "RelativeToolTip": "DTO\\UsuarioDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T23:59:46.241Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "EmpresaDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\CRMAPI\\DTO\\EmpresaDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\EmpresaDTO.cs",
+              "ToolTip": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\CRMAPI\\DTO\\EmpresaDTO.cs",
+              "RelativeToolTip": "DTO\\EmpresaDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T23:59:44.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "DocsingDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\CRMAPI\\DTO\\DocsingDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\DocsingDTO.cs",
+              "ToolTip": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\CRMAPI\\DTO\\DocsingDTO.cs",
+              "RelativeToolTip": "DTO\\DocsingDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T23:59:40.97Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ContatoDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\CRMAPI\\DTO\\ContatoDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\ContatoDTO.cs",
+              "ToolTip": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\CRMAPI\\DTO\\ContatoDTO.cs",
+              "RelativeToolTip": "DTO\\ContatoDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T23:59:37.901Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "SigningViaEmail.cs",
+              "DocumentMoniker": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\JWT Docsign-c#\\JWT-Console\\launcher-csharp\\eSignature\\Examples\\SigningViaEmail.cs",
+              "RelativeDocumentMoniker": "..\\JWT Docsign-c#\\JWT-Console\\launcher-csharp\\eSignature\\Examples\\SigningViaEmail.cs",
+              "ToolTip": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\JWT Docsign-c#\\JWT-Console\\launcher-csharp\\eSignature\\Examples\\SigningViaEmail.cs",
+              "RelativeToolTip": "..\\JWT Docsign-c#\\JWT-Console\\launcher-csharp\\eSignature\\Examples\\SigningViaEmail.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAewB4AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T23:54:56.483Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "JWTAuth.cs",
+              "DocumentMoniker": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\JWT Docsign-c#\\JWT-Console\\Helpers\\JWTAuth.cs",
+              "RelativeDocumentMoniker": "..\\JWT Docsign-c#\\JWT-Console\\Helpers\\JWTAuth.cs",
+              "ToolTip": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\JWT Docsign-c#\\JWT-Console\\Helpers\\JWTAuth.cs",
+              "RelativeToolTip": "..\\JWT Docsign-c#\\JWT-Console\\Helpers\\JWTAuth.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAewBAAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T23:54:45.169Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Envia_envelopeService.cs",
+              "DocumentMoniker": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\JWT Docsign-c#\\JWT-Console\\Servicos Gerais\\Envia_envelopeService.cs",
+              "RelativeDocumentMoniker": "..\\JWT Docsign-c#\\JWT-Console\\Servicos Gerais\\Envia_envelopeService.cs",
+              "ToolTip": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\JWT Docsign-c#\\JWT-Console\\Servicos Gerais\\Envia_envelopeService.cs",
+              "RelativeToolTip": "..\\JWT Docsign-c#\\JWT-Console\\Servicos Gerais\\Envia_envelopeService.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAwwBUAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T23:51:49.468Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Startup.cs",
+              "DocumentMoniker": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\CRMAPI\\Startup.cs",
+              "RelativeDocumentMoniker": "Startup.cs",
+              "ToolTip": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\CRMAPI\\Startup.cs",
+              "RelativeToolTip": "Startup.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJ0AAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T23:40:28.41Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "ContatoController.cs",
               "DocumentMoniker": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\CRMAPI\\Controllers\\ContatoController.cs",
               "RelativeDocumentMoniker": "Controllers\\ContatoController.cs",
@@ -43,7 +346,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 20,
               "Title": "AutenticacaoController.cs",
               "DocumentMoniker": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\CRMAPI\\Controllers\\AutenticacaoController.cs",
               "RelativeDocumentMoniker": "Controllers\\AutenticacaoController.cs",
@@ -51,12 +354,11 @@
               "RelativeToolTip": "Controllers\\AutenticacaoController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-25T23:07:00.456Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-25T23:07:00.456Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 19,
               "Title": "EmpresaController.cs",
               "DocumentMoniker": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\CRMAPI\\Controllers\\EmpresaController.cs",
               "RelativeDocumentMoniker": "Controllers\\EmpresaController.cs",
@@ -69,7 +371,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 21,
               "Title": "AssinaturaController.cs",
               "DocumentMoniker": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\MeuCRM\\CRMAPI\\Controllers\\AssinaturaController.cs",
               "RelativeDocumentMoniker": "Controllers\\AssinaturaController.cs",
@@ -77,8 +379,7 @@
               "RelativeToolTip": "Controllers\\AssinaturaController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-25T23:06:14.111Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-25T23:06:14.111Z"
             }
           ]
         }

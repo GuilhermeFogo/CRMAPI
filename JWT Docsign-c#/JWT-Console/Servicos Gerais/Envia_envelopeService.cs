@@ -15,11 +15,11 @@ namespace JWT_Console.Servicos_Gerais
 {
     public class Envia_envelopeService : ClassBase, IEnvia_envelope
     {
-        private ApiClient apiClient;
+        private DocuSignClient apiClient;
 
         public Envia_envelopeService()
         {
-            this.apiClient = new ApiClient();
+            this.apiClient = new DocuSignClient();
         }
 
 

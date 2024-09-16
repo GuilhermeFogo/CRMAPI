@@ -14,7 +14,7 @@ namespace Helpers
         /// <returns>Auth token needed for API calls</returns>
         public static OAuthToken AuthenticateWithJWT(string api, string clientId, string impersonatedUserId, string authServer, string privateKeyFile)
         {
-            var apiClient = new ApiClient();
+            var apiClient = new DocuSignClient();
             var apiType = Enum.Parse<ExamplesAPIType>(api);
             var scopes = new List<string>
                 {

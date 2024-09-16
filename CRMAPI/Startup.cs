@@ -120,12 +120,14 @@ namespace CRMAPI
             services.AddScoped<IContatoRepository, ContatoRepository>();
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
             services.AddScoped<IRepositoryOportunidade, OportunidadeRepository>();
+            services.AddScoped<IEmpresaRepository, EmpresaRepository>();
             
             services.AddScoped<IContatoService, ContatoService>();
             services.AddScoped<IUsuarioService, UsuarioService>();
             services.AddScoped<IServiceOportunidade, ServiceOportunidade>();
             services.AddScoped<IAssinaturaDigital, AssinaturaDocsingService>();
             services.AddScoped<IResetsenhaService, ResetsenhaService>();
+            services.AddScoped<IEmpresasServices, EmpresaService>();
 
             services.AddScoped<IAutenticacao, AutenticacaoService>();
             services.AddScoped<ITokenService, MeuTokenService>();

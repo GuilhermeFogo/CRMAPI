@@ -28,7 +28,7 @@ namespace eSignature.Examples
         {
             // Step 1 start
             EnvelopeDefinition env = MakeEnvelope(meuDocsign, docDocx, docPdf, envStatus);
-            var apiClient = new ApiClient(basePath);
+            var apiClient = new DocuSignClient(basePath);
             apiClient.Configuration.DefaultHeader.Add("Authorization", "Bearer " + accessToken);
             EnvelopesApi envelopesApi = new EnvelopesApi(apiClient);
             EnvelopeSummary results = envelopesApi.CreateEnvelope(accountId, env);
